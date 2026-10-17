@@ -38,7 +38,7 @@
       allExtra: false
     },
     filterWeek: {
-      allQuizzes: 'all', // 'all' (120 Qs) | 'with0' (130 Qs) | weekNum
+      allQuizzes: 'all', // 'all' (all 130 Qs including Week 0) | 'weeks1-12' (120 Qs) | weekNum
       allExtra: 'all'    // 'all' (240 Qs) | weekNum
     },
     userChoices: {
@@ -144,7 +144,7 @@
 
       updateBannerTitle(
         'All-Weeks Assignment Quiz',
-        '120 Official Assignment Questions across all 12 weeks (Weeks 1 to 12) • With or Without Shuffle'
+        '130 Official Assignment Questions across all weeks (Weeks 0 to 12) • With or Without Shuffle'
       );
       renderQuiz('allQuizzes');
     } else if (modeName === 'all-extra') {
@@ -359,11 +359,11 @@
       let targetWeeks;
 
       if (state.filterWeek.allQuizzes === 'all') {
-        // Standard full course: All 12 weeks (Weeks 1 to 12 = 120 questions)
-        targetWeeks = weeks.filter(w => w !== 0);
-      } else if (state.filterWeek.allQuizzes === 'with0') {
-        // All weeks including Week 0 (130 questions)
+        // All weeks including Week 0: Total 130 questions
         targetWeeks = weeks;
+      } else if (state.filterWeek.allQuizzes === 'weeks1-12') {
+        // Weeks 1 to 12 only: 120 questions
+        targetWeeks = weeks.filter(w => w !== 0);
       } else {
         targetWeeks = [parseInt(state.filterWeek.allQuizzes, 10)];
       }
@@ -642,9 +642,9 @@
       } else if (viewType === 'allQuizzes') {
         const filter = state.filterWeek.allQuizzes;
         if (filter === 'all') {
-          displayEl.textContent = `120 Questions from All 12 Official Assignments`;
-        } else if (filter === 'with0') {
-          displayEl.textContent = `130 Questions from All Assignments (Including Week 0)`;
+          displayEl.textContent = `130 Questions from All Official Assignments (Weeks 0 to 12)`;
+        } else if (filter === 'weeks1-12') {
+          displayEl.textContent = `120 Questions from Weeks 1 to 12 Official Assignments`;
         } else {
           displayEl.textContent = `Week ${filter}: ${questions.length} Official Assignment Questions`;
         }
@@ -697,7 +697,7 @@
           state.userChoices[storeKey][state.currentWeek] = {};
         } else if (viewType === 'allQuizzes') {
           const filter = state.filterWeek.allQuizzes;
-          if (filter === 'all' || filter === 'with0') {
+          if (filter === 'all' || filter === 'weeks1-12') {
             state.userChoices.assignment = {};
           } else {
             state.userChoices.assignment[filter] = {};

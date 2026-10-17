@@ -27,7 +27,7 @@ The application separates weekly study from comprehensive mock testing via top-l
 
 2. **All-Weeks Quiz (Separate Standalone Mode):**
    - Independent full-course assignment quiz mode (completely separated from weekly navigation).
-   - Contains all official assignment questions across all available weeks (110 questions across 11 uploaded weeks; will become 120 once Week 7 is added).
+   - Contains all official assignment questions across all weeks (130 questions across Weeks 0 to 12 by default, with an option to filter to standard 120 questions across Weeks 1 to 12, or filter by any single week).
    - Shuffle mode toggle (`Shuffle: ON / OFF`) and `Reshuffle` button for simulated exam conditions.
    - Live score counter, instant feedback, and answer reveals.
 
