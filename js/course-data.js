@@ -5,7 +5,7 @@
  */
 
 window.COURSE_DATA = {
-  "activeWeek": 3,
+  "activeWeek": 6,
   "weeks": {
     "1": {
       "weekNumber": 1,
@@ -1528,6 +1528,1385 @@ window.COURSE_DATA = {
           "answer": 1,
           "letter": "B",
           "explanation": "Why: Sustainable use requires extraction to remain within regenerative limits."
+        }
+      ]
+    },
+    "4": {
+      "weekNumber": 4,
+      "title": "Week 4: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 4 Solutions & Practice MCQs",
+      "source": "Based on uploaded Week 4 Solutions PDF and revision material",
+      "reminders": [
+        "Climate normals: the supplied assignment identifies 30 years as the classical period for calculating climate averages.",
+        "Shelford's Law of Tolerance: organisms need conditions within their tolerance limits.",
+        "Extinct in the Wild: survives only in captivity, cultivation or other human-managed settings.",
+        "Genetic rescue: introducing individuals from another population can increase diversity and reduce inbreeding.",
+        "Eutrophication: excess nutrients -> algal growth -> oxygen decline -> harm to aquatic life.",
+        "Allee effect: very low population size or density can reduce survival or reproduction.",
+        "Decomposers: break down dead matter and wastes, returning nutrients to the nutrient pool."
+      ],
+      "definitions": [
+        {
+          "term": "Overexploitation",
+          "definition": "Taking biological resources faster than nature can replace them."
+        },
+        {
+          "term": "Climate normals",
+          "definition": "A standard period for calculating climate averages; the uploaded assignment identifies 30 years as the classical period."
+        },
+        {
+          "term": "Specialist species",
+          "definition": "Species with narrow ecological requirements and few alternatives when conditions change."
+        },
+        {
+          "term": "Shelford's Law of Tolerance",
+          "definition": "Organisms survive and perform within environmental tolerance limits; conditions outside their coping capacity can cause population decline."
+        },
+        {
+          "term": "Extinct in the Wild",
+          "definition": "An IUCN Red List category for species surviving only in captivity, cultivation or other human-managed settings."
+        },
+        {
+          "term": "Climate change impacts",
+          "definition": "Rising temperatures, changing rainfall patterns, more frequent extremes and shifting seasons."
+        },
+        {
+          "term": "Genetic rescue",
+          "definition": "Introducing individuals from another population to increase genetic diversity and reduce inbreeding problems."
+        },
+        {
+          "term": "Eutrophication",
+          "definition": "Excess nutrients trigger rapid algal growth, which can lead to oxygen decline and harm aquatic life."
+        },
+        {
+          "term": "Allee effect",
+          "definition": "Reduced survival or reproduction when population size or density becomes too low."
+        },
+        {
+          "term": "Decomposers",
+          "definition": "Organisms that break down dead material and wastes, returning nutrients to the nutrient pool."
+        },
+        {
+          "term": "Nutrient cycling",
+          "definition": "Movement and reuse of nutrients through organisms and the environment."
+        },
+        {
+          "term": "Genetic diversity",
+          "definition": "Variation in genes within a species or population."
+        },
+        {
+          "term": "Inbreeding",
+          "definition": "Reproduction between related individuals, potentially increasing harmful recessive effects and reducing fitness."
+        },
+        {
+          "term": "Tolerance limits",
+          "definition": "The environmental range within which an organism can survive, grow and reproduce."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "What does overexploitation mean?",
+          "options": [
+            "The movement of species into new habitats",
+            "Taking biological resources faster than nature can replace them",
+            "The recycling of nutrients by decomposers",
+            "The restoration of extinct species through cloning"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Taking biological resources faster than nature can replace them"
+        },
+        {
+          "id": 2,
+          "question": "What is the classical period used for calculating climate averages?",
+          "options": [
+            "5 years",
+            "10 years",
+            "20 years",
+            "30 years"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "30 years"
+        },
+        {
+          "id": 3,
+          "question": "Why are specialist species especially vulnerable to climate change?",
+          "options": [
+            "They always have large home ranges",
+            "They reproduce faster than generalists",
+            "They have narrow ecological requirements and few alternatives when conditions change",
+            "They are unaffected by changes in food quality"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "They have narrow ecological requirements and few alternatives when conditions change"
+        },
+        {
+          "id": 4,
+          "question": "Under Shelford's Law of Tolerance, what happens when an ecological condition falls outside an organism's coping capacity?",
+          "options": [
+            "The population reaches its optimum level",
+            "The species immediately adapts genetically",
+            "The species shifts into its most suitable range",
+            "The population drops to zero"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "The population drops to zero"
+        },
+        {
+          "id": 5,
+          "question": "What does the IUCN Red List category Extinct in the Wild mean?",
+          "options": [
+            "The species has many stable wild populations",
+            "The species has no known individuals anywhere",
+            "The species survives only in zoos, seed banks, or other human-managed settings",
+            "The species is common but declining slowly"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "The species survives only in zoos, seed banks, or other human-managed settings"
+        },
+        {
+          "id": 6,
+          "question": "Which set correctly identifies major climatic changes affecting biodiversity?",
+          "options": [
+            "Soil erosion, mining, hunting, and disease",
+            "Rising temperature, changing rainfall patterns, more frequent extremes, and shifting seasons",
+            "Urbanisation, overgrazing, logging, and fishing",
+            "Mutation, migration, predation, and reproduction"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Rising temperature, changing rainfall patterns, more frequent extremes, and shifting seasons"
+        },
+        {
+          "id": 7,
+          "question": "What is genetic rescue?",
+          "options": [
+            "Introducing individuals from another population to increase genetic diversity and reduce inbreeding problems",
+            "Removing all predators from a protected area",
+            "Converting a dryland into agricultural land",
+            "Increasing pollutant concentration in predators"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Introducing individuals from another population to increase genetic diversity and reduce inbreeding problems"
+        },
+        {
+          "id": 8,
+          "question": "What is eutrophication?",
+          "options": [
+            "Rapid algal growth triggered by excess nutrients, leading to oxygen decline and harm to aquatic life",
+            "Movement of animals toward cooler latitudes",
+            "Recovery of forests after fire",
+            "A process of genetic rescue in small populations"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Rapid algal growth triggered by excess nutrients, leading to oxygen decline and harm to aquatic life"
+        },
+        {
+          "id": 9,
+          "question": "What does the Allee effect describe?",
+          "options": [
+            "Increased survival when nutrient runoff is high",
+            "Reduced shell-building due to seawater chemistry",
+            "Faster adaptation in fragmented landscapes",
+            "Failure of survival or reproduction when population size or density becomes too low"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "Failure of survival or reproduction when population size or density becomes too low"
+        },
+        {
+          "id": 10,
+          "question": "In a nutrient cycle, what role do decomposers perform?",
+          "options": [
+            "They prevent nutrients from entering food webs",
+            "They convert all nutrients into fossil fuels",
+            "They remove producers from ecosystems",
+            "They break down dead material and wastes, returning nutrients to the nutrient pool"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "They break down dead material and wastes, returning nutrients to the nutrient pool"
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "Overexploitation occurs when:",
+          "options": [
+            "Resource use remains below regeneration",
+            "Resources are taken faster than nature can replace them",
+            "A species moves to a new habitat",
+            "Nutrients are recycled by decomposers"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: The removal rate exceeds the resource's capacity to regenerate."
+        },
+        {
+          "id": 2,
+          "question": "The classical climate-average period in the assignment is:",
+          "options": [
+            "5 years",
+            "10 years",
+            "20 years",
+            "30 years"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "Why: The supplied assignment identifies 30 years as the classical period."
+        },
+        {
+          "id": 3,
+          "question": "Specialist species are vulnerable to climate change mainly because they:",
+          "options": [
+            "Have no ecological requirements",
+            "Have narrow requirements and few alternatives",
+            "Always reproduce faster",
+            "Are unaffected by food changes"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Narrow requirements make adjustment to changing conditions harder."
+        },
+        {
+          "id": 4,
+          "question": "Shelford's Law of Tolerance concerns:",
+          "options": [
+            "Only predator-prey relationships",
+            "How organisms respond to environmental conditions within tolerance limits",
+            "The number of genes in a population",
+            "Nutrient runoff in lakes"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Organisms need conditions within their tolerance limits to survive and reproduce."
+        },
+        {
+          "id": 5,
+          "question": "A species classified as Extinct in the Wild survives:",
+          "options": [
+            "In many stable wild populations",
+            "Only in human-managed settings such as captivity or cultivation",
+            "Nowhere, including captivity",
+            "Only in a rapidly declining wild population"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Extinct in the Wild differs from Extinct because individuals survive outside the wild."
+        },
+        {
+          "id": 6,
+          "question": "Which is a major climatic change affecting biodiversity?",
+          "options": [
+            "Changing rainfall patterns",
+            "Only mining activity",
+            "Only predation",
+            "Only mutation"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Temperature, rainfall, extremes and seasonal timing can all affect biodiversity."
+        },
+        {
+          "id": 7,
+          "question": "Genetic rescue is intended to:",
+          "options": [
+            "Increase inbreeding",
+            "Increase genetic diversity by introducing individuals from another population",
+            "Remove every predator",
+            "Increase nutrient pollution"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Gene flow can increase diversity and reduce inbreeding problems."
+        },
+        {
+          "id": 8,
+          "question": "Eutrophication commonly begins with:",
+          "options": [
+            "Excess nutrients entering water",
+            "Loss of all sunlight",
+            "Genetic rescue",
+            "Lower population density in all species"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Excess nutrients can trigger algal growth and later oxygen decline."
+        },
+        {
+          "id": 9,
+          "question": "The Allee effect refers to:",
+          "options": [
+            "Higher survival at all low population sizes",
+            "Reduced survival or reproduction at very low population size or density",
+            "Rapid algal growth",
+            "The return of nutrients to soil"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Very small or sparse populations may have difficulty finding mates or cooperating."
+        },
+        {
+          "id": 10,
+          "question": "Decomposers help nutrient cycling by:",
+          "options": [
+            "Removing nutrients permanently",
+            "Breaking down dead matter and returning nutrients to the nutrient pool",
+            "Preventing decomposition",
+            "Converting all nutrients to fossil fuels"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Decomposers recycle nutrients from dead material and waste."
+        },
+        {
+          "id": 11,
+          "question": "Which condition can contribute to eutrophication?",
+          "options": [
+            "Excess nutrient runoff into a lake",
+            "A reduction in all nutrients",
+            "Genetic rescue",
+            "Low population density alone"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Nutrient enrichment can trigger excessive algal growth."
+        },
+        {
+          "id": 12,
+          "question": "A population with very low density may experience the Allee effect because:",
+          "options": [
+            "Individuals always reproduce faster",
+            "Finding mates or cooperating may become difficult",
+            "Nutrients automatically increase",
+            "The species becomes a decomposer"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Low density can reduce survival or reproduction."
+        },
+        {
+          "id": 13,
+          "question": "Why might genetic rescue help a small isolated population?",
+          "options": [
+            "It always eliminates all disease",
+            "It can introduce genetic variation and reduce inbreeding",
+            "It prevents climate change",
+            "It turns a specialist into a generalist immediately"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Introducing individuals can increase diversity, although outcomes depend on the populations involved."
+        },
+        {
+          "id": 14,
+          "question": "Which pair is correctly matched?",
+          "options": [
+            "Eutrophication — excess nutrients and algal growth",
+            "Allee effect — decomposition of dead matter",
+            "Genetic rescue — taking resources faster than replacement",
+            "Overexploitation — 30-year climate averages"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Eutrophication is associated with excess nutrients and rapid algal growth."
+        },
+        {
+          "id": 15,
+          "question": "Which statement about climate and biodiversity matches the assignment?",
+          "options": [
+            "Only temperature changes matter",
+            "Rainfall patterns, extremes and seasons can also change",
+            "Climate never affects specialist species",
+            "Climate change is the same as soil erosion"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Several aspects of climate can affect habitats and species."
+        },
+        {
+          "id": 16,
+          "question": "Tolerance limits describe:",
+          "options": [
+            "Conditions under which an organism can survive and reproduce",
+            "The market value of a species",
+            "The number of decomposers in soil",
+            "A climate average of exactly 30 years"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Tolerance limits describe the environmental range an organism can cope with."
+        },
+        {
+          "id": 17,
+          "question": "Which category means the species has no known individuals anywhere, including captivity?",
+          "options": [
+            "Extinct in the Wild",
+            "Vulnerable",
+            "Extinct",
+            "Near Threatened"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Extinct means no known surviving individuals; Extinct in the Wild means survival only outside wild populations."
+        },
+        {
+          "id": 18,
+          "question": "What is a key role of decomposers?",
+          "options": [
+            "They prevent nutrients from cycling",
+            "They return nutrients from dead matter and wastes",
+            "They stop all algal growth",
+            "They increase overexploitation"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Decomposition releases nutrients back into the ecosystem."
+        },
+        {
+          "id": 19,
+          "question": "Which statement about a renewable biological resource is correct?",
+          "options": [
+            "It cannot be depleted",
+            "It can be depleted if removal exceeds regeneration",
+            "Its regeneration is unrelated to use",
+            "All legal harvesting is sustainable"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Overuse can exceed a resource's capacity to recover."
+        },
+        {
+          "id": 20,
+          "question": "Which concept describes introducing individuals from another population to reduce inbreeding?",
+          "options": [
+            "Eutrophication",
+            "Allee effect",
+            "Genetic rescue",
+            "Shelford's Law of Tolerance"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Genetic rescue can increase genetic variation and reduce inbreeding problems."
+        }
+      ]
+    },
+    "5": {
+      "weekNumber": 5,
+      "title": "Week 5: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 5 Solutions & Practice MCQs",
+      "source": "Based on uploaded Week 5 Solutions PDF and revision material",
+      "reminders": [
+        "Human–wildlife conflict: clash between wildlife needs/behaviour and human interests; may lead to damage, fear, injury, loss, or retaliation.",
+        "Protected areas alone may be insufficient because species use resources and seasonal habitats beyond boundaries.",
+        "Option value = keeping biodiversity available for possible future uses.",
+        "NTFP examples: fruits, nuts, resins, medicinal plants, bamboo, and fibres.",
+        "Vegetation regulates microclimate through shade, lower surface temperatures, and humidity influence.",
+        "Cultural services include recreation, inspiration, education, heritage, and shared public spaces.",
+        "Fortress thinking cannot isolate all biodiversity from people.",
+        "Water regulation is linked to infiltration, storage, and runoff shaped by vegetation, roots, and living soils.",
+        "Poorly planned roads, settlements, farms, and infrastructure can make coexistence difficult.",
+        "Biodiversity can support health through pollutant filtering, improved air/water quality, and ecological regulation; it does not remove all disease risk."
+      ],
+      "definitions": [
+        {
+          "term": "Human–wildlife conflict",
+          "definition": "Occurs when wildlife behaviour or needs clash with human interests, causing damage, fear, injury, loss, or retaliation."
+        },
+        {
+          "term": "Protected areas and connected landscapes",
+          "definition": "Protected areas are important, but a reserve alone may not secure a species over time. Animals may move outside boundaries for food, water, mates, migration, or seasonal habitat."
+        },
+        {
+          "term": "Option value of biodiversity",
+          "definition": "The benefit of keeping biodiversity available for possible future uses, including uses that are not currently known or commercially valuable."
+        },
+        {
+          "term": "Non-timber forest products (NTFPs)",
+          "definition": "Forest products other than timber, such as fruits, nuts, resins, medicinal plants, bamboo, fibres, honey, and leaves."
+        },
+        {
+          "term": "Microclimate regulation by vegetation",
+          "definition": "Trees and other vegetation provide shade, cool surfaces through evapotranspiration, and influence local humidity and wind."
+        },
+        {
+          "term": "Cultural ecosystem services",
+          "definition": "Non-material benefits people gain from ecosystems and biodiversity, including recreation, inspiration, education, heritage, identity, aesthetic enjoyment, and shared public spaces."
+        },
+        {
+          "term": "Fortress conservation / fortress thinking",
+          "definition": "An approach that treats nature as something to isolate from people. Limited because wildlife crosses boundaries and many communities depend on ecosystems."
+        },
+        {
+          "term": "Water regulation by biodiversity",
+          "definition": "Vegetation, roots, litter, wetlands, and living soils influence infiltration, water storage, groundwater recharge, and runoff."
+        },
+        {
+          "term": "Coexistence challenges",
+          "definition": "Arise when conservation costs fall unfairly on particular communities, institutions are weak, compensation is delayed, or infrastructure is poorly planned."
+        },
+        {
+          "term": "Biodiversity and physical health",
+          "definition": "Healthy ecosystems can filter pollutants, support air and water quality, moderate heat, and contribute to stable ecological regulation."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "What is human–wildlife conflict?",
+          "options": [
+            "A situation where wildlife needs or behaviour clash with human interests and lead to damage, fear, injury, loss, or retaliation",
+            "Any peaceful interaction between humans and wildlife",
+            "The presence of wildlife in a landscape without any cost",
+            "A condition where all species remain inside protected areas"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Option (a) describes a clash between wildlife and human interests that can lead to harm or loss."
+        },
+        {
+          "id": 2,
+          "question": "Why can a protected area alone fail to secure a species over time?",
+          "options": [
+            "Protected areas always reduce biodiversity",
+            "Species cannot survive inside reserves",
+            "Human activity is absent around all reserves",
+            "Many species move beyond reserves for food, water, mates, or seasonal habitat"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Many species depend on habitat and resources beyond reserve boundaries."
+        },
+        {
+          "id": 3,
+          "question": "What is option value in biodiversity valuation?",
+          "options": [
+            "The value of replacing ecosystems with infrastructure",
+            "The value of using only one species now",
+            "The benefit of keeping biodiversity available for possible future uses",
+            "The cost of removing biodiversity from markets"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Option value preserves the possibility of future benefits or uses."
+        },
+        {
+          "id": 4,
+          "question": "What are examples of non-timber forest products?",
+          "options": [
+            "Fruits, nuts, resins, medicinal plants, bamboo, and fibres",
+            "Roads, drains, fences, and bridges",
+            "Coal, cement, steel, and petroleum",
+            "Cars, buildings, markets, and pipelines"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "These are forest-derived products other than timber."
+        },
+        {
+          "id": 5,
+          "question": "What is microclimate regulation by vegetation?",
+          "options": [
+            "Reducing heat stress by shade, lower surface temperatures, and humidity influence",
+            "Increasing heat stress by removing tree cover",
+            "Preventing all seasonal variation in climate",
+            "Replacing water regulation with pest regulation"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Vegetation changes local shade, surface temperature, and moisture conditions."
+        },
+        {
+          "id": 6,
+          "question": "Which set represents cultural services of biodiversity?",
+          "options": [
+            "Flood control, pollination, soil structure, and carbon storage",
+            "Recreation, inspiration, education, heritage, and shared public spaces",
+            "Crop raiding, livestock loss, property damage, and fear",
+            "Compensation, insurance, fences, and early warnings"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Cultural services are non-material benefits such as recreation, learning, and heritage."
+        },
+        {
+          "id": 7,
+          "question": "What is a major limitation of fortress thinking in conservation?",
+          "options": [
+            "Not all biodiversity can be isolated from people",
+            "It gives too much importance to shared landscapes",
+            "It ignores the need for protected areas altogether",
+            "It assumes people and wildlife must always interact directly"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Wildlife movement and human dependence on landscapes make total separation unrealistic in many contexts."
+        },
+        {
+          "id": 8,
+          "question": "How does biodiversity help regulate water in a landscape?",
+          "options": [
+            "By stopping rainfall from entering the soil",
+            "By increasing surface runoff in simplified landscapes",
+            "By influencing infiltration, storage, and runoff through vegetation, roots, and living soils",
+            "By eliminating wetlands from human-used areas"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Vegetation and living soils influence how water enters, is stored in, and flows across land."
+        },
+        {
+          "id": 9,
+          "question": "Which factor can make coexistence difficult?",
+          "options": [
+            "Perfectly equal sharing of all conservation costs",
+            "Inadequate planning of roads, settlements, farms, or infrastructure",
+            "Complete absence of ecological uncertainty",
+            "Guaranteed support from all institutions"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Poorly planned development can fragment habitats and increase human–wildlife encounters."
+        },
+        {
+          "id": 10,
+          "question": "How can biodiversity support physical health?",
+          "options": [
+            "By increasing polluted water flow",
+            "By removing all disease risk permanently",
+            "By replacing all healthcare systems",
+            "By filtering pollutants, improving air and water quality, and supporting stable ecological regulation"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Ecosystems can support cleaner air and water and help regulate environmental conditions."
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "A crop-raiding incident followed by villagers harming the animal is best described as:",
+          "options": [
+            "A cultural ecosystem service",
+            "Human–wildlife conflict",
+            "Option value",
+            "Microclimate regulation"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Conflict involves clashing interests and can lead to damage or retaliation."
+        },
+        {
+          "id": 2,
+          "question": "Why might a wide-ranging mammal need habitat outside a protected reserve?",
+          "options": [
+            "Only for avoiding all other species",
+            "For resources such as food, water, mates, or seasonal habitat",
+            "Because reserves never contain food",
+            "To prevent gene flow"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Species may rely on resources across a wider landscape."
+        },
+        {
+          "id": 3,
+          "question": "Which statement best captures option value?",
+          "options": [
+            "Only immediate market price matters",
+            "Future possible benefits are preserved by conserving biodiversity",
+            "All species must be used commercially",
+            "Biodiversity has no value unless harvested"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Option value keeps future opportunities open."
+        },
+        {
+          "id": 4,
+          "question": "Which is an NTFP?",
+          "options": [
+            "Sal timber",
+            "A forest road",
+            "Resin collected sustainably",
+            "A concrete bridge"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Resin is a non-timber forest product."
+        },
+        {
+          "id": 5,
+          "question": "A shaded street with tree cover is likely to have:",
+          "options": [
+            "Higher surface temperatures in every case",
+            "No humidity",
+            "Reduced local heat stress",
+            "No seasonal changes"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Shade and evapotranspiration can cool local conditions."
+        },
+        {
+          "id": 6,
+          "question": "Which is a cultural ecosystem service?",
+          "options": [
+            "Carbon storage only",
+            "A place used for recreation and cultural heritage",
+            "Surface runoff",
+            "Livestock loss"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Recreation and heritage are cultural benefits."
+        },
+        {
+          "id": 7,
+          "question": "Fortress conservation is limited when:",
+          "options": [
+            "Wildlife never leaves reserves",
+            "People and biodiversity share connected landscapes",
+            "All habitats are fenced naturally",
+            "Species have no resource needs"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Many species and communities use landscapes beyond protected boundaries."
+        },
+        {
+          "id": 8,
+          "question": "Which landscape feature can improve infiltration and water storage?",
+          "options": [
+            "Healthy soil with roots and organic matter",
+            "Compacted bare ground only",
+            "A sealed road surface",
+            "Removal of all vegetation"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Roots and soil structure can improve infiltration and storage."
+        },
+        {
+          "id": 9,
+          "question": "A new road cuts through a wildlife movement route. This may:",
+          "options": [
+            "Improve connectivity automatically",
+            "Create a coexistence challenge through fragmentation",
+            "Remove all ecological uncertainty",
+            "Guarantee no human–wildlife contact"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Infrastructure can fragment habitat and change encounter patterns."
+        },
+        {
+          "id": 10,
+          "question": "Which claim about biodiversity and health is most accurate?",
+          "options": [
+            "Biodiversity permanently eliminates all disease",
+            "Ecosystems can support air and water quality",
+            "Healthcare systems are unnecessary",
+            "Pollution is always increased by vegetation"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Ecosystem functions can contribute to environmental conditions important for health."
+        },
+        {
+          "id": 11,
+          "question": "Which action most directly reduces conflict around farms?",
+          "options": [
+            "Ignore local losses",
+            "Combine land-use planning with locally appropriate prevention and response",
+            "Remove all wildlife from the region",
+            "Assume compensation is never needed"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Coexistence generally requires practical planning and fair, context-specific measures."
+        },
+        {
+          "id": 12,
+          "question": "A forest provides medicinal plants and fibres to local people. These are:",
+          "options": [
+            "Non-timber forest products",
+            "Industrial minerals",
+            "Cultural services only",
+            "Climate averages"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Medicinal plants and fibres are NTFPs."
+        },
+        {
+          "id": 13,
+          "question": "Why is biodiversity conservation useful even when a species has no known current use?",
+          "options": [
+            "Its option value and ecological role may matter in the future",
+            "It must be worthless",
+            "It can only be useful if sold",
+            "It should always be replaced with infrastructure"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Future uses and ecological relationships may be unknown today."
+        },
+        {
+          "id": 14,
+          "question": "Which is NOT a cultural service listed in the assignment concept?",
+          "options": [
+            "Education",
+            "Inspiration",
+            "Heritage",
+            "Pollination"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "Why: Pollination is a regulating ecosystem service, not a cultural service."
+        },
+        {
+          "id": 15,
+          "question": "Vegetation affects local temperature partly through:",
+          "options": [
+            "Shade and evapotranspiration",
+            "Stopping all rainfall",
+            "Eliminating seasons",
+            "Removing soil organisms"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Shade and evapotranspiration contribute to cooling."
+        },
+        {
+          "id": 16,
+          "question": "Which is the best example of landscape-scale conservation?",
+          "options": [
+            "Protect a reserve but ignore all surrounding land",
+            "Maintain habitat links and plan development around wildlife movement",
+            "Fence every ecosystem away from people",
+            "Remove corridors"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Species movement often requires connected habitat beyond a single reserve."
+        },
+        {
+          "id": 17,
+          "question": "A wetland and vegetated soil help reduce rapid runoff by:",
+          "options": [
+            "Increasing impermeable surface",
+            "Influencing water storage and infiltration",
+            "Preventing rainfall completely",
+            "Removing roots"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Wetlands and soils can retain and regulate water."
+        },
+        {
+          "id": 18,
+          "question": "Which situation most clearly signals unfair conservation costs?",
+          "options": [
+            "All affected groups share benefits and costs fairly",
+            "One farming community bears repeated losses with no effective support",
+            "A habitat corridor is maintained",
+            "A monitoring plan is created"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Unequal costs and inadequate support can undermine coexistence."
+        },
+        {
+          "id": 19,
+          "question": "A species depends on seasonal wetlands outside a park. The key implication is:",
+          "options": [
+            "The park boundary may not cover all its needs",
+            "It cannot survive anywhere",
+            "Wetlands have no ecological value",
+            "Seasonal habitat is irrelevant"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Protection may need to include seasonal habitats beyond the reserve."
+        },
+        {
+          "id": 20,
+          "question": "Which pairing is correct?",
+          "options": [
+            "Option value — possible future uses",
+            "Cultural service — surface runoff",
+            "NTFP — petroleum",
+            "Microclimate regulation — guaranteed absence of seasons"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Option value is the benefit of keeping biodiversity available for future use."
+        }
+      ]
+    },
+    "6": {
+      "weekNumber": 6,
+      "title": "Week 6: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 6 Solutions & Practice MCQs",
+      "source": "Based on uploaded Week 6 Solutions PDF and revision material",
+      "reminders": [
+        "Ecological species concept = niche, resources, and environmental conditions used.",
+        "Habitat quality = food, water, shelter, breeding sites, and low disturbance.",
+        "Genetic diversity = variation in hereditary information among individuals and populations.",
+        "Biodiversity hotspot = high species richness + high endemism + significant threat.",
+        "Temporal isolation acts before fertilization; hybrid sterility, hybrid breakdown, and embryo inviability act after fertilization.",
+        "Allelopathy = one organism releases chemicals that inhibit or affect another.",
+        "Alpha diversity = local/site diversity; beta diversity = differences among sites; gamma diversity = total diversity across a larger region.",
+        "Biodiversity spans variation within species, among species, and among ecosystems.",
+        "Speciation = splitting of one lineage into independently evolving species.",
+        "Species concepts are flexible tools emphasizing interbreeding, form, ancestry, or niche."
+      ],
+      "definitions": [
+        {
+          "term": "Biodiversity",
+          "definition": "The variety of life at multiple levels: within species (genetic diversity), among species (species diversity), and among ecosystems (ecosystem diversity)."
+        },
+        {
+          "term": "Species concepts",
+          "definition": "Different concepts emphasize different evidence: ecological (niche, resources), biological (interbreeding, reproductive isolation), morphological (form), evolutionary (lineage and history)."
+        },
+        {
+          "term": "Habitat quality",
+          "definition": "Depends on whether organisms can meet their needs, including food, water, shelter, breeding sites, and sufficiently low disturbance. Legal status alone does not determine quality."
+        },
+        {
+          "term": "Genetic diversity",
+          "definition": "Variation in hereditary information among individuals and populations. Helps populations respond to environmental change and reduce risks of low genetic variation."
+        },
+        {
+          "term": "Biodiversity hotspots",
+          "definition": "Characterized by high species richness, high endemism (species restricted to a region), and significant threat. Important conservation priorities under pressure."
+        },
+        {
+          "term": "Reproductive isolation",
+          "definition": "Prezygotic barriers act before fertilization (e.g. temporal isolation); postzygotic barriers act after fertilization (e.g. hybrid sterility, hybrid breakdown, embryo inviability)."
+        },
+        {
+          "term": "Allelopathy",
+          "definition": "An interaction in which one organism releases chemicals that inhibit or affect another organism, such as influencing germination or growth of neighbouring plants."
+        },
+        {
+          "term": "Alpha diversity",
+          "definition": "Diversity within a local site or habitat."
+        },
+        {
+          "term": "Beta diversity",
+          "definition": "Differences or turnover in species composition between sites."
+        },
+        {
+          "term": "Gamma diversity",
+          "definition": "Total diversity across a larger region."
+        },
+        {
+          "term": "Speciation",
+          "definition": "The splitting of one lineage into two or more independently evolving species."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "Which species concept defines species mainly by niche, resources, and environmental conditions used?",
+          "options": [
+            "Evolutionary species concept",
+            "Ecological species concept",
+            "Biological species concept",
+            "Morphological species concept"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "The ecological species concept emphasizes ecological niche and resource use."
+        },
+        {
+          "id": 2,
+          "question": "Habitat quality depends mainly on:",
+          "options": [
+            "Legal status alone",
+            "Whether the habitat appears on a map",
+            "Food, water, shelter, breeding sites, and low disturbance",
+            "Whether only one species is present"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Habitat quality depends on resources, breeding opportunities, shelter, and disturbance."
+        },
+        {
+          "id": 3,
+          "question": "Genetic diversity refers to:",
+          "options": [
+            "Variation in hereditary information among individuals and populations",
+            "Difference in species composition between two ecosystems",
+            "Number of habitats across a landscape",
+            "Number of visible traits in a field guide"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Genetic diversity is variation in hereditary information."
+        },
+        {
+          "id": 4,
+          "question": "A biodiversity hotspot combines which three features?",
+          "options": [
+            "High rainfall, high elevation, and high productivity",
+            "High abundance, low disturbance, and uniform habitat",
+            "High genetic similarity, low endemism, and low threat",
+            "High species richness, high endemism, and significant threat"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "The option combines richness, endemism, and threat."
+        },
+        {
+          "id": 5,
+          "question": "Which barrier acts before fertilization?",
+          "options": [
+            "Hybrid sterility",
+            "Hybrid breakdown",
+            "Embryo inviability",
+            "Temporal isolation"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Temporal isolation prevents mating or fertilization when reproductive timing differs; the other listed barriers are postzygotic."
+        },
+        {
+          "id": 6,
+          "question": "Allelopathy occurs when:",
+          "options": [
+            "Animals form groups to avoid predators",
+            "One organism releases chemicals that inhibit another",
+            "Species shift upward in altitude because of warming",
+            "Adjacent populations interbreed around a barrier"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Allelopathy is chemical inhibition or influence of one organism on another."
+        },
+        {
+          "id": 7,
+          "question": "Gamma diversity refers to:",
+          "options": [
+            "Diversity within one wetland",
+            "Total diversity across a larger region",
+            "Evenness of individuals among species",
+            "Fitness differences between populations"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Gamma diversity is regional diversity."
+        },
+        {
+          "id": 8,
+          "question": "What does biodiversity mean?",
+          "options": [
+            "Only the number of large animals in a forest",
+            "Only the number of protected areas in a landscape",
+            "Only variation in climate and soil",
+            "The variety of life within species, among species, and among ecosystems"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Biodiversity includes genetic, species, and ecosystem diversity."
+        },
+        {
+          "id": 9,
+          "question": "What is speciation?",
+          "options": [
+            "The seasonal movement of individuals between habitats",
+            "The increase in population size within one area",
+            "The grouping of organisms according to body colour",
+            "The splitting of one lineage into two or more independently evolving species"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Speciation is the formation of independently evolving species."
+        },
+        {
+          "id": 10,
+          "question": "Which idea best describes a species as a scientific concept?",
+          "options": [
+            "A fixed sentence that applies equally to every organism",
+            "A category based only on visible form",
+            "A flexible tool that may emphasize interbreeding, form, ancestry, or niche",
+            "A group that must always be geographically isolated"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Species concepts emphasize different criteria and have different uses."
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "Which diversity level concerns variation in DNA or inherited traits within a species?",
+          "options": [
+            "Alpha diversity",
+            "Genetic diversity",
+            "Gamma diversity",
+            "Ecosystem diversity"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Genetic diversity is variation in hereditary information."
+        },
+        {
+          "id": 2,
+          "question": "A species concept based mainly on interbreeding and reproductive isolation is the:",
+          "options": [
+            "Biological species concept",
+            "Ecological species concept",
+            "Morphological species concept",
+            "Habitat concept"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: The biological species concept focuses on interbreeding and reproductive isolation."
+        },
+        {
+          "id": 3,
+          "question": "Which feature is essential to habitat quality in the assignment's framing?",
+          "options": [
+            "Legal protection alone",
+            "Food, water, shelter, breeding sites, and low disturbance",
+            "A map label",
+            "Presence of one species only"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Habitat quality depends on whether needs can be met."
+        },
+        {
+          "id": 4,
+          "question": "Which set best characterizes a biodiversity hotspot?",
+          "options": [
+            "High richness, high endemism, significant threat",
+            "Low richness, low endemism, no threat",
+            "High rainfall only",
+            "High abundance without endemism"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: These three features define the hotspot framing in the assignment."
+        },
+        {
+          "id": 5,
+          "question": "Temporal isolation is an example of a:",
+          "options": [
+            "Postzygotic barrier",
+            "Prezygotic barrier",
+            "Genetic rescue",
+            "Type of gamma diversity"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Different breeding times can prevent mating or fertilization."
+        },
+        {
+          "id": 6,
+          "question": "Hybrid sterility usually means that hybrids:",
+          "options": [
+            "Cannot reproduce successfully",
+            "Never form",
+            "Always have greater fitness",
+            "Are a type of ecosystem"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Sterility is a postzygotic barrier affecting reproduction."
+        },
+        {
+          "id": 7,
+          "question": "An organism releases a chemical that suppresses germination of nearby plants. This is:",
+          "options": [
+            "Allelopathy",
+            "Speciation",
+            "Gamma diversity",
+            "Endemism"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Chemical inhibition between organisms is allelopathy."
+        },
+        {
+          "id": 8,
+          "question": "Total species diversity across a broad region is:",
+          "options": [
+            "Alpha diversity",
+            "Beta diversity",
+            "Gamma diversity",
+            "Genetic diversity"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Gamma diversity is regional diversity."
+        },
+        {
+          "id": 9,
+          "question": "Species composition differs strongly between two sites. This most directly concerns:",
+          "options": [
+            "Beta diversity",
+            "Genetic diversity",
+            "Allelopathy",
+            "Habitat quality only"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Beta diversity concerns turnover or differences among sites."
+        },
+        {
+          "id": 10,
+          "question": "Diversity within a single local site is commonly called:",
+          "options": [
+            "Gamma diversity",
+            "Alpha diversity",
+            "Beta diversity",
+            "Evolutionary diversity"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Alpha diversity is local or within-site diversity."
+        },
+        {
+          "id": 11,
+          "question": "Which statement about species concepts is most defensible?",
+          "options": [
+            "Only one definition works for all organisms",
+            "Species concepts can emphasize different criteria",
+            "Species are defined only by colour",
+            "Species must always be geographically isolated"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Different concepts are useful for different organisms and evidence."
+        },
+        {
+          "id": 12,
+          "question": "Which factor is NOT listed as a direct component of habitat quality in the assignment?",
+          "options": [
+            "Food",
+            "Water",
+            "Breeding sites",
+            "Legal status alone"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "Why: Legal status alone is not sufficient to determine habitat quality."
+        },
+        {
+          "id": 13,
+          "question": "Endemism means that a species:",
+          "options": [
+            "Occurs naturally only in a particular region",
+            "Has no genetic variation",
+            "Lives only in a zoo",
+            "Always migrates seasonally"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: An endemic species has a restricted native distribution."
+        },
+        {
+          "id": 14,
+          "question": "A population with little genetic variation may have:",
+          "options": [
+            "Less variation for responding to environmental change",
+            "Guaranteed adaptation to all changes",
+            "No need for reproduction",
+            "Higher gamma diversity by definition"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Genetic variation can support adaptive potential."
+        },
+        {
+          "id": 15,
+          "question": "Which is a postzygotic reproductive barrier?",
+          "options": [
+            "Temporal isolation",
+            "Habitat isolation before mating",
+            "Hybrid sterility",
+            "Different mating seasons"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Hybrid sterility acts after hybrid formation."
+        },
+        {
+          "id": 16,
+          "question": "A lineage splits and the resulting groups evolve independently as species. This is:",
+          "options": [
+            "Allelopathy",
+            "Speciation",
+            "Alpha diversity",
+            "Habitat selection"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: That is the definition of speciation."
+        },
+        {
+          "id": 17,
+          "question": "Biodiversity includes:",
+          "options": [
+            "Only species counts",
+            "Only ecosystem types",
+            "Genetic, species, and ecosystem-level variety",
+            "Only large mammals"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Biodiversity is multidimensional."
+        },
+        {
+          "id": 18,
+          "question": "A field guide groups two organisms by similar appearance. This most closely reflects the:",
+          "options": [
+            "Morphological species concept",
+            "Ecological species concept",
+            "Biological species concept",
+            "Gamma concept"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: The morphological concept emphasizes form."
+        },
+        {
+          "id": 19,
+          "question": "Which statement best explains why hotspots are conservation priorities?",
+          "options": [
+            "They combine distinctive biodiversity and significant threat",
+            "They always have no human activity",
+            "They contain only common species",
+            "They have no endemic species"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: High richness and endemism under threat make hotspots important."
+        },
+        {
+          "id": 20,
+          "question": "Which pairing is correct?",
+          "options": [
+            "Alpha — regional total; Gamma — within-site diversity",
+            "Ecological concept — niche and resources",
+            "Allelopathy — seasonal migration",
+            "Genetic diversity — differences between ecosystems only"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: The ecological species concept focuses on niche and resource use."
         }
       ]
     }
