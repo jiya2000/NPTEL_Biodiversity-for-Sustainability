@@ -14,23 +14,38 @@ Access the live portal on desktop, tablet, or mobile:
 
 ---
 
-## Simple 3-Page Structure
+## Portal Sections
 
-For each week, the portal provides exactly 3 focused pages:
+The portal provides 5 focused learning and practice modes:
 
-1. **Study Notes (Study Page):**
+1. **Study Notes:**
    - High-yield concept reminders.
    - Core definitions and concepts table directly from course notes.
-   - Last-minute checklists and traps (where applicable).
+   - Last-minute checklists and traps.
 
-2. **Assignment MCQs (MCQ Page):**
-   - 10 official assignment questions for the week.
+2. **Assignment MCQs (Week-wise):**
+   - 10 official assignment questions for each week.
    - Interactive option selection with instant feedback and verified answers.
-   - "Show All Answers" toggle for quick review.
+   - Shuffle mode toggle (`Shuffle: ON / OFF`) and Reshuffle button.
+   - "Show All Answers" toggle and Reset Quiz button.
 
-3. **Extra Practice MCQs (Extra MCQ Page):**
-   - 20 exam-style practice MCQs with explanations explaining why each correct answer is right.
-   - Interactive practice mode with score tracking.
+3. **Extra Practice MCQs (Week-wise):**
+   - 20 exam-style practice MCQs per week with detailed explanations.
+   - Interactive option selection with instant feedback.
+   - Shuffle mode toggle (`Shuffle: ON / OFF`) and Reshuffle button.
+   - Score tracking, answer reveal, and quiz reset.
+
+4. **All Weeks Quiz (All Assignments Combined):**
+   - All 110 official assignment questions across all weeks (Weeks 1–6 & 8–12).
+   - In-panel week filter buttons (`All Weeks (110)` or filter to any specific week).
+   - Shuffle mode toggle (`Shuffle: ON / OFF`) and Reshuffle button for randomized mock tests.
+   - Synchronized answers and comprehensive score counter.
+
+5. **Extra Questions Practice (Week-wise & All Weeks):**
+   - All 220 practice exam-style questions with full explanations.
+   - Week selector buttons (`All Weeks (220)` or practice any week individually).
+   - Shuffle mode toggle (`Shuffle: ON / OFF`) and Reshuffle button.
+   - Full answer reveal and reset options.
 
 ---
 

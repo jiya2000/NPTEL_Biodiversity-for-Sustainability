@@ -412,6 +412,78 @@ body {
 .quiz-actions {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Filter Bar (Week-wise Filter) --- */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.filter-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.25rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+/* --- Shuffle Active State --- */
+.btn.active-shuffle {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+/* --- Week Tag in Question Cards --- */
+.week-tag {
+  display: inline-block;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: var(--radius-sm);
+  margin-right: 0.45rem;
+  vertical-align: middle;
 }
 
 /* --- MCQ Questions --- */

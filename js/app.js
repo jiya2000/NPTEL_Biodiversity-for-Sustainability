@@ -2,8 +2,13 @@
  * Biodiversity for Sustainability
  * Clean, Simple, Single-Page App Logic
  * Strictly handles:
- * 1. Week Switching (Week 1, Week 2, Week 3)
- * 2. Three Focused Tabs: Study Notes, Assignment MCQs, Extra Practice MCQs
+ * 1. Week Switching (Weeks 1-6, 8-12)
+ * 2. Five Focused Views:
+ *    - Study Notes (High-yield reminders & definitions)
+ *    - Assignment MCQs (Week-wise official assignment questions with shuffle)
+ *    - Extra Practice MCQs (Week-wise practice questions with shuffle)
+ *    - All Weeks Quiz (All official assignment quizzes combined with/without shuffle & filter)
+ *    - Extra Questions Practice (Extra questions week-wise or all weeks with/without shuffle)
  * 3. Interactive Quiz Feedback & Answer Reveals
  */
 
@@ -13,14 +18,59 @@
   // Application State
   const state = {
     currentWeek: 12,
-    currentTab: 'study',
-    assignmentAnswersShown: false,
-    extraAnswersShown: false,
+    currentTab: 'study', // 'study' | 'assignment' | 'extra' | 'all-quizzes' | 'all-extra'
+    shuffle: {
+      assignment: false,
+      extra: false,
+      allQuizzes: false,
+      allExtra: false
+    },
+    shuffledOrder: {
+      assignment: null,
+      extra: null,
+      allQuizzes: null,
+      allExtra: null
+    },
+    answersShown: {
+      assignment: false,
+      extra: false,
+      allQuizzes: false,
+      allExtra: false
+    },
+    filterWeek: {
+      allQuizzes: 'all',
+      allExtra: 'all'
+    },
     userChoices: {
-      assignment: {}, // { [week]: { [qId]: optionIndex } }
-      extra: {}       // { [week]: { [qId]: optionIndex } }
+      assignment: {}, // { [weekNum]: { [qId]: optionIndex } }
+      extra: {}       // { [weekNum]: { [qId]: optionIndex } }
     }
   };
+
+  // --- Helper: DOM Slug for view types ---
+  function getDomSlug(viewType) {
+    if (viewType === 'assignment') return 'assignment';
+    if (viewType === 'extra') return 'extra';
+    if (viewType === 'allQuizzes') return 'all-quizzes';
+    if (viewType === 'allExtra') return 'all-extra';
+    return viewType;
+  }
+
+  // --- Helper: Get available week numbers from data ---
+  function getWeekList() {
+    if (!window.COURSE_DATA || !window.COURSE_DATA.weeks) return [];
+    return Object.keys(window.COURSE_DATA.weeks).map(Number).sort((a, b) => a - b);
+  }
+
+  // --- Helper: Fisher-Yates array shuffle ---
+  function shuffleArray(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
 
   // --- Theme Management ---
   function initTheme() {
@@ -39,7 +89,7 @@
     }
   }
 
-  // --- Week Switching ---
+  // --- Week Selector (Top Bar) ---
   function initWeekSelector() {
     const buttons = document.querySelectorAll('.week-btn');
     buttons.forEach(btn => {
@@ -54,7 +104,11 @@
     if (!window.COURSE_DATA || !window.COURSE_DATA.weeks[weekNum]) return;
     state.currentWeek = weekNum;
 
-    // Update buttons
+    // Invalidate cached single-week shuffle when week changes
+    state.shuffledOrder.assignment = null;
+    state.shuffledOrder.extra = null;
+
+    // Update top week buttons
     document.querySelectorAll('.week-btn').forEach(btn => {
       const w = parseInt(btn.getAttribute('data-week'), 10);
       btn.classList.toggle('active', w === weekNum);
@@ -62,22 +116,48 @@
 
     const weekData = window.COURSE_DATA.weeks[weekNum];
 
-    // Update banner
-    const titleEl = document.getElementById('current-week-title');
-    const subEl = document.getElementById('current-week-subtitle');
-    if (titleEl) titleEl.textContent = weekData.title;
-    if (subEl) subEl.textContent = weekData.subtitle;
-
-    // Update counts
+    // Update counts in tabs
     const countAssign = document.getElementById('count-assignment');
     const countExtra = document.getElementById('count-extra');
     if (countAssign) countAssign.textContent = weekData.assignmentMCQs ? weekData.assignmentMCQs.length : 10;
     if (countExtra) countExtra.textContent = weekData.extraMCQs ? weekData.extraMCQs.length : 20;
 
-    // Render active week data
+    // Update banner
+    updateBannerForTab(state.currentTab);
+
+    // If currently on study, assignment, or extra, render them
     renderStudyNotes(weekData);
-    renderAssignmentMCQs(weekData);
-    renderExtraMCQs(weekData);
+    if (state.currentTab === 'assignment') {
+      renderQuiz('assignment');
+    } else if (state.currentTab === 'extra') {
+      renderQuiz('extra');
+    } else if (state.currentTab === 'all-quizzes') {
+      // Also update in-panel filter to match selected week if desired
+      setFilterWeek('allQuizzes', weekNum);
+    } else if (state.currentTab === 'all-extra') {
+      setFilterWeek('allExtra', weekNum);
+    }
+  }
+
+  // --- Banner Updates ---
+  function updateBannerForTab(tabName) {
+    const titleEl = document.getElementById('current-week-title');
+    const subEl = document.getElementById('current-week-subtitle');
+    if (!titleEl || !subEl) return;
+
+    if (tabName === 'all-quizzes') {
+      titleEl.textContent = 'All Weeks Assignment Quiz';
+      subEl.textContent = '110 Official Assignment Questions (Weeks 1–6 & 8–12) with Shuffle & Filter Options';
+    } else if (tabName === 'all-extra') {
+      titleEl.textContent = 'Extra Questions Practice';
+      subEl.textContent = '220 Practice Exam-Style Questions with Explanations • Week-wise & Shuffle Modes';
+    } else {
+      const weekData = window.COURSE_DATA.weeks[state.currentWeek];
+      if (weekData) {
+        titleEl.textContent = weekData.title;
+        subEl.textContent = weekData.subtitle;
+      }
+    }
   }
 
   // --- Tab Navigation ---
@@ -109,12 +189,29 @@
       targetPanel.classList.add('active');
     }
 
-    // Scroll to top of content
+    updateBannerForTab(tabName);
+
+    // Render active panel
+    if (tabName === 'study') {
+      const weekData = window.COURSE_DATA.weeks[state.currentWeek];
+      if (weekData) renderStudyNotes(weekData);
+    } else if (tabName === 'assignment') {
+      renderQuiz('assignment');
+    } else if (tabName === 'extra') {
+      renderQuiz('extra');
+    } else if (tabName === 'all-quizzes') {
+      renderQuiz('allQuizzes');
+    } else if (tabName === 'all-extra') {
+      renderQuiz('allExtra');
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // --- 1. Render Study Notes ---
   function renderStudyNotes(weekData) {
+    if (!weekData) return;
+
     // High Yield Reminders
     const remindersList = document.getElementById('reminders-list');
     if (remindersList && weekData.reminders) {
@@ -132,7 +229,7 @@
       `).join('');
     }
 
-    // Traps (Week 1 only or if available)
+    // Traps (Week 1 only or when available)
     const trapsSection = document.getElementById('traps-section');
     const trapsList = document.getElementById('traps-list');
     if (trapsSection && trapsList) {
@@ -151,26 +248,197 @@
     }
   }
 
-  // --- 2. Render Assignment MCQs ---
-  function renderAssignmentMCQs(weekData) {
-    const container = document.getElementById('assignment-questions-container');
-    if (!container || !weekData.assignmentMCQs) return;
-
-    if (!state.userChoices.assignment[state.currentWeek]) {
-      state.userChoices.assignment[state.currentWeek] = {};
+  // --- Question Gathering Helpers ---
+  function getBaseQuestions(viewType) {
+    if (viewType === 'assignment') {
+      const weekData = window.COURSE_DATA.weeks[state.currentWeek];
+      if (!weekData || !weekData.assignmentMCQs) return [];
+      return weekData.assignmentMCQs.map((q, idx) => ({
+        ...q,
+        weekNum: state.currentWeek,
+        originalIndex: idx
+      }));
     }
-    const currentChoices = state.userChoices.assignment[state.currentWeek];
-    const showAll = state.assignmentAnswersShown;
 
-    container.innerHTML = weekData.assignmentMCQs.map((q, qIdx) => {
-      const userChoice = currentChoices[q.id];
+    if (viewType === 'extra') {
+      const weekData = window.COURSE_DATA.weeks[state.currentWeek];
+      if (!weekData || !weekData.extraMCQs) return [];
+      return weekData.extraMCQs.map((q, idx) => ({
+        ...q,
+        weekNum: state.currentWeek,
+        originalIndex: idx
+      }));
+    }
+
+    if (viewType === 'allQuizzes') {
+      const weeks = getWeekList();
+      const targetWeeks = state.filterWeek.allQuizzes === 'all'
+        ? weeks
+        : [parseInt(state.filterWeek.allQuizzes, 10)];
+
+      const list = [];
+      targetWeeks.forEach(w => {
+        const weekData = window.COURSE_DATA.weeks[w];
+        if (weekData && weekData.assignmentMCQs) {
+          weekData.assignmentMCQs.forEach((q, idx) => {
+            list.push({
+              ...q,
+              weekNum: w,
+              originalIndex: idx
+            });
+          });
+        }
+      });
+      return list;
+    }
+
+    if (viewType === 'allExtra') {
+      const weeks = getWeekList();
+      const targetWeeks = state.filterWeek.allExtra === 'all'
+        ? weeks
+        : [parseInt(state.filterWeek.allExtra, 10)];
+
+      const list = [];
+      targetWeeks.forEach(w => {
+        const weekData = window.COURSE_DATA.weeks[w];
+        if (weekData && weekData.extraMCQs) {
+          weekData.extraMCQs.forEach((q, idx) => {
+            list.push({
+              ...q,
+              weekNum: w,
+              originalIndex: idx
+            });
+          });
+        }
+      });
+      return list;
+    }
+
+    return [];
+  }
+
+  function getQuestionsForView(viewType) {
+    const base = getBaseQuestions(viewType);
+    if (state.shuffle[viewType]) {
+      if (!state.shuffledOrder[viewType] || state.shuffledOrder[viewType].length !== base.length) {
+        state.shuffledOrder[viewType] = shuffleArray(base);
+      }
+      return state.shuffledOrder[viewType];
+    }
+    return base;
+  }
+
+  // --- Shuffle Management ---
+  function toggleShuffle(viewType) {
+    state.shuffle[viewType] = !state.shuffle[viewType];
+    if (state.shuffle[viewType]) {
+      const base = getBaseQuestions(viewType);
+      state.shuffledOrder[viewType] = shuffleArray(base);
+    } else {
+      state.shuffledOrder[viewType] = null;
+    }
+    updateShuffleUI(viewType);
+    renderQuiz(viewType);
+  }
+
+  function reshuffle(viewType) {
+    const base = getBaseQuestions(viewType);
+    state.shuffledOrder[viewType] = shuffleArray(base);
+    renderQuiz(viewType);
+  }
+
+  function updateShuffleUI(viewType) {
+    const slug = getDomSlug(viewType);
+    const btnShuffle = document.getElementById(`btn-shuffle-${slug}`);
+    const btnReshuffle = document.getElementById(`btn-reshuffle-${slug}`);
+
+    if (btnShuffle) {
+      if (state.shuffle[viewType]) {
+        btnShuffle.textContent = 'Shuffle: ON';
+        btnShuffle.classList.add('active-shuffle');
+      } else {
+        btnShuffle.textContent = 'Shuffle: OFF';
+        btnShuffle.classList.remove('active-shuffle');
+      }
+    }
+
+    if (btnReshuffle) {
+      btnReshuffle.style.display = state.shuffle[viewType] ? 'inline-flex' : 'none';
+    }
+  }
+
+  // --- In-Panel Filter (Week-wise) ---
+  function setFilterWeek(viewType, filterVal) {
+    state.filterWeek[viewType] = filterVal.toString();
+
+    const slug = getDomSlug(viewType);
+    const filterContainer = document.getElementById(`${slug}-filters`);
+    if (filterContainer) {
+      filterContainer.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-filter') === filterVal.toString());
+      });
+    }
+
+    // Reset shuffle order so it shuffles the newly filtered set
+    if (state.shuffle[viewType]) {
+      const base = getBaseQuestions(viewType);
+      state.shuffledOrder[viewType] = shuffleArray(base);
+    } else {
+      state.shuffledOrder[viewType] = null;
+    }
+
+    renderQuiz(viewType);
+  }
+
+  function initFilters(viewType) {
+    const slug = getDomSlug(viewType);
+    const filterContainer = document.getElementById(`${slug}-filters`);
+    if (!filterContainer) return;
+
+    filterContainer.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterVal = btn.getAttribute('data-filter');
+        setFilterWeek(viewType, filterVal);
+      });
+    });
+  }
+
+  // --- Unified Quiz Renderer ---
+  function renderQuiz(viewType) {
+    const slug = getDomSlug(viewType);
+    const container = document.getElementById(`${slug}-questions-container`);
+    if (!container) return;
+
+    const questions = getQuestionsForView(viewType);
+    const showAll = state.answersShown[viewType];
+    const isAssignmentType = (viewType === 'assignment' || viewType === 'allQuizzes');
+    const storeKey = isAssignmentType ? 'assignment' : 'extra';
+
+    container.innerHTML = questions.map((q, qIdx) => {
+      const userChoice = (state.userChoices[storeKey][q.weekNum] &&
+        typeof state.userChoices[storeKey][q.weekNum][q.id] === 'number')
+        ? state.userChoices[storeKey][q.weekNum][q.id]
+        : null;
+
       const isAnswered = typeof userChoice === 'number';
       const isCorrect = userChoice === q.answer;
 
+      // Question header badge
+      let questionTitle = '';
+      if (viewType === 'allQuizzes') {
+        questionTitle = `<span class="week-tag">Week ${q.weekNum}</span> Question ${qIdx + 1} of ${questions.length}`;
+      } else if (viewType === 'allExtra') {
+        questionTitle = `<span class="week-tag">Week ${q.weekNum}</span> Practice Question ${qIdx + 1} of ${questions.length}`;
+      } else if (viewType === 'assignment') {
+        questionTitle = `Question ${qIdx + 1} of ${questions.length}`;
+      } else if (viewType === 'extra') {
+        questionTitle = `Practice Question ${qIdx + 1} of ${questions.length}`;
+      }
+
       return `
-        <div class="mcq-card" id="assignment-q-${q.id}">
+        <div class="mcq-card" id="${slug}-q-${q.weekNum}-${q.id}">
           <div class="mcq-header">
-            <span class="mcq-num">Question ${qIdx + 1}</span>
+            <span class="mcq-num">${questionTitle}</span>
             ${isAnswered ? `
               <span class="status-tag ${isCorrect ? 'correct' : 'incorrect'}">
                 ${isCorrect ? 'Correct' : 'Incorrect'}
@@ -194,7 +462,12 @@
               }
 
               return `
-                <button class="${optionClass}" data-q="${q.id}" data-opt="${optIdx}" ${showAll ? 'disabled' : ''}>
+                <button class="${optionClass}" 
+                  data-view="${viewType}" 
+                  data-week="${q.weekNum}" 
+                  data-q="${q.id}" 
+                  data-opt="${optIdx}" 
+                  ${showAll ? 'disabled' : ''}>
                   <span class="opt-letter">${letter}.</span>
                   <span class="opt-text">${opt}</span>
                 </button>
@@ -204,7 +477,7 @@
 
           ${(showAll || isAnswered) ? `
             <div class="mcq-solution">
-              <strong>Correct Answer: (${q.letter || String.fromCharCode(65 + q.answer)})</strong>
+              <strong>Correct Answer: (${q.letter ? q.letter.toUpperCase() : String.fromCharCode(65 + q.answer)})</strong>
               <p>${q.explanation || q.options[q.answer]}</p>
             </div>
           ` : ''}
@@ -214,157 +487,122 @@
 
     // Attach click handlers to options
     container.querySelectorAll('.mcq-opt').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const qId = parseInt(btn.getAttribute('data-q'), 10);
-        const optIdx = parseInt(btn.getAttribute('data-opt'), 10);
-        state.userChoices.assignment[state.currentWeek][qId] = optIdx;
-        renderAssignmentMCQs(weekData);
-        updateQuizHeader('assignment', weekData.assignmentMCQs);
-      });
-    });
-
-    updateQuizHeader('assignment', weekData.assignmentMCQs);
-  }
-
-  // --- 3. Render Extra Practice MCQs ---
-  function renderExtraMCQs(weekData) {
-    const container = document.getElementById('extra-questions-container');
-    if (!container || !weekData.extraMCQs) return;
-
-    if (!state.userChoices.extra[state.currentWeek]) {
-      state.userChoices.extra[state.currentWeek] = {};
-    }
-    const currentChoices = state.userChoices.extra[state.currentWeek];
-    const showAll = state.extraAnswersShown;
-
-    container.innerHTML = weekData.extraMCQs.map((q, qIdx) => {
-      const userChoice = currentChoices[q.id];
-      const isAnswered = typeof userChoice === 'number';
-      const isCorrect = userChoice === q.answer;
-
-      return `
-        <div class="mcq-card" id="extra-q-${q.id}">
-          <div class="mcq-header">
-            <span class="mcq-num">Practice Question ${qIdx + 1} of ${weekData.extraMCQs.length}</span>
-            ${isAnswered ? `
-              <span class="status-tag ${isCorrect ? 'correct' : 'incorrect'}">
-                ${isCorrect ? 'Correct' : 'Incorrect'}
-              </span>
-            ` : ''}
-          </div>
-          <div class="mcq-question">${q.question}</div>
-          <div class="mcq-options">
-            ${q.options.map((opt, optIdx) => {
-              const letter = String.fromCharCode(65 + optIdx);
-              let optionClass = 'mcq-opt';
-
-              if (showAll) {
-                if (optIdx === q.answer) optionClass += ' is-correct';
-              } else if (isAnswered) {
-                if (optIdx === q.answer) {
-                  optionClass += ' is-correct';
-                } else if (optIdx === userChoice) {
-                  optionClass += ' is-wrong';
-                }
-              }
-
-              return `
-                <button class="${optionClass}" data-q="${q.id}" data-opt="${optIdx}" ${showAll ? 'disabled' : ''}>
-                  <span class="opt-letter">${letter}.</span>
-                  <span class="opt-text">${opt}</span>
-                </button>
-              `;
-            }).join('')}
-          </div>
-
-          ${(showAll || isAnswered) ? `
-            <div class="mcq-solution">
-              <strong>Correct Answer: Option ${q.letter || String.fromCharCode(65 + q.answer)}</strong>
-              <p>${q.explanation}</p>
-            </div>
-          ` : ''}
-        </div>
-      `;
-    }).join('');
-
-    // Attach click handlers
-    container.querySelectorAll('.mcq-opt').forEach(btn => {
       btn.addEventListener('click', () => {
+        const weekNum = parseInt(btn.getAttribute('data-week'), 10);
         const qId = parseInt(btn.getAttribute('data-q'), 10);
         const optIdx = parseInt(btn.getAttribute('data-opt'), 10);
-        state.userChoices.extra[state.currentWeek][qId] = optIdx;
-        renderExtraMCQs(weekData);
-        updateQuizHeader('extra', weekData.extraMCQs);
+
+        if (!state.userChoices[storeKey][weekNum]) {
+          state.userChoices[storeKey][weekNum] = {};
+        }
+        state.userChoices[storeKey][weekNum][qId] = optIdx;
+
+        renderQuiz(viewType);
       });
     });
 
-    updateQuizHeader('extra', weekData.extraMCQs);
+    updateQuizHeader(viewType, questions);
+    updateShuffleUI(viewType);
   }
 
-  // --- Quiz Actions (Show Answers / Reset) ---
-  function updateQuizHeader(type, questions) {
-    const choices = state.userChoices[type][state.currentWeek] || {};
-    const answeredCount = Object.keys(choices).length;
+  // --- Quiz Header & Score Display ---
+  function updateQuizHeader(viewType, questions) {
+    const slug = getDomSlug(viewType);
+    const isAssignmentType = (viewType === 'assignment' || viewType === 'allQuizzes');
+    const storeKey = isAssignmentType ? 'assignment' : 'extra';
+    const store = state.userChoices[storeKey];
+
+    let answeredCount = 0;
     let correctCount = 0;
 
     questions.forEach(q => {
-      if (choices[q.id] === q.answer) correctCount++;
+      if (store[q.weekNum] && typeof store[q.weekNum][q.id] === 'number') {
+        answeredCount++;
+        if (store[q.weekNum][q.id] === q.answer) {
+          correctCount++;
+        }
+      }
     });
 
-    const displayEl = document.getElementById(`${type}-score-display`);
-    if (displayEl) {
-      if (answeredCount === 0) {
-        displayEl.textContent = type === 'assignment' 
-          ? `${questions.length} Questions from Official Assignment` 
-          : `${questions.length} Practice Exam-Style Questions with Explanations`;
-      } else {
-        displayEl.textContent = `Completed ${answeredCount} of ${questions.length} • Score: ${correctCount}/${answeredCount}`;
+    const displayEl = document.getElementById(`${slug}-score-display`);
+    if (!displayEl) return;
+
+    if (answeredCount === 0) {
+      if (viewType === 'assignment') {
+        displayEl.textContent = `${questions.length} Questions from Official Assignment`;
+      } else if (viewType === 'extra') {
+        displayEl.textContent = `${questions.length} Practice Exam-Style Questions with Explanations`;
+      } else if (viewType === 'allQuizzes') {
+        const filter = state.filterWeek.allQuizzes;
+        displayEl.textContent = filter === 'all'
+          ? `110 Questions from All Official Assignments`
+          : `Week ${filter}: ${questions.length} Official Assignment Questions`;
+      } else if (viewType === 'allExtra') {
+        const filter = state.filterWeek.allExtra;
+        displayEl.textContent = filter === 'all'
+          ? `220 Practice Exam-Style Questions with Explanations`
+          : `Week ${filter}: ${questions.length} Practice Questions with Explanations`;
       }
+    } else {
+      const pct = Math.round((correctCount / answeredCount) * 100);
+      displayEl.textContent = `Completed ${answeredCount} of ${questions.length} • Score: ${correctCount}/${answeredCount} (${pct}%)`;
     }
   }
 
-  function initQuizButtons() {
-    // Assignment buttons
-    const btnToggleAssign = document.getElementById('btn-toggle-assignment-answers');
-    if (btnToggleAssign) {
-      btnToggleAssign.addEventListener('click', () => {
-        state.assignmentAnswersShown = !state.assignmentAnswersShown;
-        btnToggleAssign.textContent = state.assignmentAnswersShown ? 'Hide Answers' : 'Show All Answers';
-        const weekData = window.COURSE_DATA.weeks[state.currentWeek];
-        renderAssignmentMCQs(weekData);
+  // --- Quiz Action Buttons Setup ---
+  function initQuizButtons(viewType) {
+    const slug = getDomSlug(viewType);
+
+    // Shuffle Toggle
+    const btnShuffle = document.getElementById(`btn-shuffle-${slug}`);
+    if (btnShuffle) {
+      btnShuffle.addEventListener('click', () => toggleShuffle(viewType));
+    }
+
+    // Reshuffle
+    const btnReshuffle = document.getElementById(`btn-reshuffle-${slug}`);
+    if (btnReshuffle) {
+      btnReshuffle.addEventListener('click', () => reshuffle(viewType));
+    }
+
+    // Toggle Show/Hide Answers
+    const btnToggle = document.getElementById(`btn-toggle-${slug}-answers`);
+    if (btnToggle) {
+      btnToggle.addEventListener('click', () => {
+        state.answersShown[viewType] = !state.answersShown[viewType];
+        btnToggle.textContent = state.answersShown[viewType] ? 'Hide Answers' : 'Show All Answers';
+        renderQuiz(viewType);
       });
     }
 
-    const btnResetAssign = document.getElementById('btn-reset-assignment');
-    if (btnResetAssign) {
-      btnResetAssign.addEventListener('click', () => {
-        state.userChoices.assignment[state.currentWeek] = {};
-        state.assignmentAnswersShown = false;
-        if (btnToggleAssign) btnToggleAssign.textContent = 'Show All Answers';
-        const weekData = window.COURSE_DATA.weeks[state.currentWeek];
-        renderAssignmentMCQs(weekData);
-      });
-    }
+    // Reset Quiz
+    const btnReset = document.getElementById(`btn-reset-${slug}`);
+    if (btnReset) {
+      btnReset.addEventListener('click', () => {
+        const isAssignmentType = (viewType === 'assignment' || viewType === 'allQuizzes');
+        const storeKey = isAssignmentType ? 'assignment' : 'extra';
 
-    // Extra practice buttons
-    const btnToggleExtra = document.getElementById('btn-toggle-extra-answers');
-    if (btnToggleExtra) {
-      btnToggleExtra.addEventListener('click', () => {
-        state.extraAnswersShown = !state.extraAnswersShown;
-        btnToggleExtra.textContent = state.extraAnswersShown ? 'Hide Answers' : 'Show All Answers';
-        const weekData = window.COURSE_DATA.weeks[state.currentWeek];
-        renderExtraMCQs(weekData);
-      });
-    }
+        if (viewType === 'assignment' || viewType === 'extra') {
+          state.userChoices[storeKey][state.currentWeek] = {};
+        } else if (viewType === 'allQuizzes') {
+          const filter = state.filterWeek.allQuizzes;
+          if (filter === 'all') {
+            state.userChoices.assignment = {};
+          } else {
+            state.userChoices.assignment[filter] = {};
+          }
+        } else if (viewType === 'allExtra') {
+          const filter = state.filterWeek.allExtra;
+          if (filter === 'all') {
+            state.userChoices.extra = {};
+          } else {
+            state.userChoices.extra[filter] = {};
+          }
+        }
 
-    const btnResetExtra = document.getElementById('btn-reset-extra');
-    if (btnResetExtra) {
-      btnResetExtra.addEventListener('click', () => {
-        state.userChoices.extra[state.currentWeek] = {};
-        state.extraAnswersShown = false;
-        if (btnToggleExtra) btnToggleExtra.textContent = 'Show All Answers';
-        const weekData = window.COURSE_DATA.weeks[state.currentWeek];
-        renderExtraMCQs(weekData);
+        state.answersShown[viewType] = false;
+        if (btnToggle) btnToggle.textContent = 'Show All Answers';
+        renderQuiz(viewType);
       });
     }
   }
@@ -374,7 +612,15 @@
     initTheme();
     initWeekSelector();
     initTabs();
-    initQuizButtons();
+
+    // Initialize all 4 quiz views
+    ['assignment', 'extra', 'allQuizzes', 'allExtra'].forEach(viewType => {
+      initQuizButtons(viewType);
+    });
+
+    // Initialize in-panel week filters for All Weeks Quiz and Extra Questions Practice
+    initFilters('allQuizzes');
+    initFilters('allExtra');
 
     // Default to Week 12 as latest
     selectWeek(12);

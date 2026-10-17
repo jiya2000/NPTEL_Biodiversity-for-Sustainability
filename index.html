@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <!-- Main Navigation: Strictly 3 Pages -->
+  <!-- Main Navigation Tabs -->
   <div class="tab-bar">
     <div class="container">
       <nav class="nav-tabs" aria-label="Course Learning Views">
@@ -54,6 +54,12 @@
         </button>
         <button class="nav-tab-btn" data-tab="extra" id="tab-extra">
           Extra Practice MCQs (<span id="count-extra">20</span>)
+        </button>
+        <button class="nav-tab-btn" data-tab="all-quizzes" id="tab-all-quizzes">
+          All Weeks Quiz (110)
+        </button>
+        <button class="nav-tab-btn" data-tab="all-extra" id="tab-all-extra">
+          Extra Questions (Week-wise)
         </button>
       </nav>
     </div>
@@ -114,6 +120,8 @@
           <span id="assignment-score-display">10 Questions from Official Assignment</span>
         </div>
         <div class="quiz-actions">
+          <button id="btn-shuffle-assignment" class="btn btn-outline btn-sm">Shuffle: OFF</button>
+          <button id="btn-reshuffle-assignment" class="btn btn-outline btn-sm" style="display: none;">Reshuffle</button>
           <button id="btn-toggle-assignment-answers" class="btn btn-outline btn-sm">Show All Answers</button>
           <button id="btn-reset-assignment" class="btn btn-outline btn-sm">Reset Quiz</button>
         </div>
@@ -130,11 +138,85 @@
           <span id="extra-score-display">20 Practice Exam-Style Questions with Explanations</span>
         </div>
         <div class="quiz-actions">
+          <button id="btn-shuffle-extra" class="btn btn-outline btn-sm">Shuffle: OFF</button>
+          <button id="btn-reshuffle-extra" class="btn btn-outline btn-sm" style="display: none;">Reshuffle</button>
           <button id="btn-toggle-extra-answers" class="btn btn-outline btn-sm">Show All Answers</button>
           <button id="btn-reset-extra" class="btn btn-outline btn-sm">Reset Quiz</button>
         </div>
       </div>
       <div class="questions-list" id="extra-questions-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- PAGE 4: ALL WEEKS QUIZ -->
+    <section class="view-panel" id="view-all-quizzes">
+      <div class="filter-bar">
+        <span class="filter-label">Filter Week:</span>
+        <div class="filter-buttons" id="all-quizzes-filters">
+          <button class="filter-btn active" data-filter="all">All Weeks (110)</button>
+          <button class="filter-btn" data-filter="1">W1</button>
+          <button class="filter-btn" data-filter="2">W2</button>
+          <button class="filter-btn" data-filter="3">W3</button>
+          <button class="filter-btn" data-filter="4">W4</button>
+          <button class="filter-btn" data-filter="5">W5</button>
+          <button class="filter-btn" data-filter="6">W6</button>
+          <button class="filter-btn" data-filter="8">W8</button>
+          <button class="filter-btn" data-filter="9">W9</button>
+          <button class="filter-btn" data-filter="10">W10</button>
+          <button class="filter-btn" data-filter="11">W11</button>
+          <button class="filter-btn" data-filter="12">W12</button>
+        </div>
+      </div>
+
+      <div class="quiz-controls-header">
+        <div class="quiz-status-text">
+          <span id="all-quizzes-score-display">110 Questions from All Official Assignments</span>
+        </div>
+        <div class="quiz-actions">
+          <button id="btn-shuffle-all-quizzes" class="btn btn-outline btn-sm">Shuffle: OFF</button>
+          <button id="btn-reshuffle-all-quizzes" class="btn btn-outline btn-sm" style="display: none;">Reshuffle</button>
+          <button id="btn-toggle-all-quizzes-answers" class="btn btn-outline btn-sm">Show All Answers</button>
+          <button id="btn-reset-all-quizzes" class="btn btn-outline btn-sm">Reset Quiz</button>
+        </div>
+      </div>
+      <div class="questions-list" id="all-quizzes-questions-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- PAGE 5: EXTRA QUESTIONS (WEEK-WISE & SHUFFLE) -->
+    <section class="view-panel" id="view-all-extra">
+      <div class="filter-bar">
+        <span class="filter-label">Select Week:</span>
+        <div class="filter-buttons" id="all-extra-filters">
+          <button class="filter-btn active" data-filter="all">All Weeks (220)</button>
+          <button class="filter-btn" data-filter="1">Week 1</button>
+          <button class="filter-btn" data-filter="2">Week 2</button>
+          <button class="filter-btn" data-filter="3">Week 3</button>
+          <button class="filter-btn" data-filter="4">Week 4</button>
+          <button class="filter-btn" data-filter="5">Week 5</button>
+          <button class="filter-btn" data-filter="6">Week 6</button>
+          <button class="filter-btn" data-filter="8">Week 8</button>
+          <button class="filter-btn" data-filter="9">Week 9</button>
+          <button class="filter-btn" data-filter="10">Week 10</button>
+          <button class="filter-btn" data-filter="11">Week 11</button>
+          <button class="filter-btn" data-filter="12">Week 12</button>
+        </div>
+      </div>
+
+      <div class="quiz-controls-header">
+        <div class="quiz-status-text">
+          <span id="all-extra-score-display">220 Practice Exam-Style Questions with Explanations</span>
+        </div>
+        <div class="quiz-actions">
+          <button id="btn-shuffle-all-extra" class="btn btn-outline btn-sm">Shuffle: OFF</button>
+          <button id="btn-reshuffle-all-extra" class="btn btn-outline btn-sm" style="display: none;">Reshuffle</button>
+          <button id="btn-toggle-all-extra-answers" class="btn btn-outline btn-sm">Show All Answers</button>
+          <button id="btn-reset-all-extra" class="btn btn-outline btn-sm">Reset Quiz</button>
+        </div>
+      </div>
+      <div class="questions-list" id="all-extra-questions-container">
         <!-- Rendered dynamically -->
       </div>
     </section>
