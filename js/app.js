@@ -1,7 +1,6 @@
 /**
- * NPTEL Biodiversity for Sustainability - Core Application Logic
- * Supports Multi-Week Navigation, Dynamic Tab Badges, Searchable Glossary,
- * 3D Flashcards, Exam & Study Quiz Engine, and LocalStorage Progress Tracker.
+ * NPTEL Biodiversity for Sustainability - Application Logic
+ * Clean, simple, distraction-free study and quiz engine without emojis.
  */
 
 (function () {
@@ -9,7 +8,7 @@
 
   // --- State Store ---
   const state = {
-    currentWeek: 1,
+    currentWeek: 2,
     activeTab: 'notes',
     searchTerm: '',
     selectedCategory: 'all',
@@ -18,12 +17,11 @@
     shuffledCards: [],
     masteredCards: new Set(),
     
-    // Multi-week quiz stores
+    // Per-week quiz stores
     practiceByWeek: {},
     assignmentByWeek: {}
   };
 
-  // Helper getters for per-week quiz state
   function getPracticeState(weekNum) {
     if (!state.practiceByWeek[weekNum]) {
       state.practiceByWeek[weekNum] = {
@@ -48,11 +46,9 @@
     return state.assignmentByWeek[weekNum];
   }
 
-  // --- LocalStorage Keys ---
-  const STORAGE_KEY_PROGRESS = 'nptel_bio_progress_v2';
+  const STORAGE_KEY_PROGRESS = 'nptel_bio_progress_v3';
   const STORAGE_KEY_THEME = 'color-scheme';
 
-  // --- Load Saved Progress ---
   function loadSavedProgress() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_PROGRESS);
@@ -148,7 +144,7 @@
       chip.innerHTML = `
         <div class="chip-header">
           <span class="chip-week">Week ${w}</span>
-          <span class="chip-status ${isAvailable ? 'ready' : 'locked'}">${isAvailable ? 'Active' : '🔒 Locked'}</span>
+          <span class="chip-status ${isAvailable ? 'ready' : 'locked'}">${isAvailable ? 'Active' : 'Locked'}</span>
         </div>
         <div class="chip-desc">${weekData ? weekData.title : 'Upcoming'}</div>
       `;
@@ -171,23 +167,21 @@
     state.flashcardIndex = 0;
     state.isCardFlipped = false;
 
-    // Update active week chip in the selector
     document.querySelectorAll('.week-chip').forEach(c => c.classList.remove('active'));
     const activeChip = document.getElementById(`week-chip-${weekNum}`);
     if (activeChip) activeChip.classList.add('active');
 
     const weekData = window.COURSE_DATA.weeks[weekNum];
     if (weekData) {
-      // Update Hero text
       const heroTag = document.getElementById('hero-week-tag');
       const heroTitle = document.getElementById('hero-title');
       const heroSubtitle = document.getElementById('hero-subtitle');
 
-      if (heroTag) heroTag.textContent = `Week ${weekNum} • ${weekData.badge || 'Ready'}`;
+      if (heroTag) heroTag.textContent = `Week ${weekNum} Available`;
       if (heroTitle) heroTitle.textContent = weekData.title;
       if (heroSubtitle) heroSubtitle.textContent = weekData.subtitle;
 
-      // Update Hero Stats numbers
+      // Stats counts
       const statDefs = document.getElementById('stat-defs-count');
       const statPractice = document.getElementById('stat-practice-count');
       const statAssignment = document.getElementById('stat-assignment-count');
@@ -198,34 +192,34 @@
       if (statAssignment && weekData.assignmentMCQs) statAssignment.textContent = weekData.assignmentMCQs.length;
       if (statFlashcards && weekData.flashcards) statFlashcards.textContent = weekData.flashcards.length;
 
-      // Update Tab Badges
+      // Tab Badges
       const tabGlossary = document.getElementById('tab-glossary');
       const tabFlashcards = document.getElementById('tab-flashcards');
       const tabPractice = document.getElementById('tab-practice');
       const tabAssignment = document.getElementById('tab-assignment');
 
       if (tabGlossary && weekData.definitions) {
-        tabGlossary.innerHTML = `📚 Definitions & Glossary <span class="badge-pill">${weekData.definitions.length}</span>`;
+        tabGlossary.innerHTML = `Definitions <span class="badge-pill">${weekData.definitions.length}</span>`;
       }
       if (tabFlashcards && weekData.flashcards) {
-        tabFlashcards.innerHTML = `🗂️ 3D Flashcards <span class="badge-pill" id="flashcard-badge-count">${weekData.flashcards.length}</span>`;
+        tabFlashcards.innerHTML = `Flashcards <span class="badge-pill">${weekData.flashcards.length}</span>`;
       }
       if (tabPractice && weekData.practiceMCQs) {
-        tabPractice.innerHTML = `🎯 Practice Quiz <span class="badge-pill">${weekData.practiceMCQs.length} Qs</span>`;
+        tabPractice.innerHTML = `Practice Quiz <span class="badge-pill">${weekData.practiceMCQs.length} Qs</span>`;
       }
       if (tabAssignment && weekData.assignmentMCQs) {
-        tabAssignment.innerHTML = `📝 Assignment ${weekNum} <span class="badge-pill">${weekData.assignmentMCQs.length} Qs</span>`;
+        tabAssignment.innerHTML = `Assignment ${weekNum} <span class="badge-pill">${weekData.assignmentMCQs.length} Qs</span>`;
       }
 
-      // Update Section Headings
+      // Headings
       const practiceHeading = document.getElementById('heading-practice-quiz');
       if (practiceHeading && weekData.practiceMCQs) {
-        practiceHeading.textContent = `${weekData.practiceMCQs.length} High-Yield Practice MCQs (Week ${weekNum})`;
+        practiceHeading.textContent = `${weekData.practiceMCQs.length} Practice MCQs (Week ${weekNum})`;
       }
 
       const assignmentHeading = document.getElementById('heading-assignment-quiz');
       if (assignmentHeading) {
-        assignmentHeading.textContent = `NPTEL Assignment ${weekNum} Solutions (2026)`;
+        assignmentHeading.textContent = `Assignment ${weekNum} Solutions (2026)`;
       }
     }
 
@@ -233,7 +227,6 @@
     updateProgressDashboard();
   }
 
-  // --- Modal Helpers ---
   function showUpcomingModal(weekNum, weekTitle) {
     const modal = document.getElementById('upcoming-modal');
     const modalTitle = document.getElementById('modal-week-title');
@@ -243,7 +236,7 @@
     if (modalDesc) {
       modalDesc.innerHTML = `
         <strong>Material for Week ${weekNum} is queued for upload.</strong><br>
-        As you study through the NPTEL semester, simply provide the lecture revision PDF or assignment for Week ${weekNum}, and it will instantly go live here with interactive quizzes, notes, and flashcards!
+        As you receive materials for Week ${weekNum}, provide the lecture notes and assignment to add them here.
       `;
     }
     if (modal) modal.classList.add('open');
@@ -253,7 +246,6 @@
     document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
   }
 
-  // --- Tab Navigation Logic ---
   function initTabs() {
     const tabs = document.querySelectorAll('.nav-tab-btn');
     tabs.forEach(tab => {
@@ -311,23 +303,36 @@
     }
   }
 
-  // --- 1. Render High-Yield Notes ---
+  // --- 1. Render High-Yield Notes (Simple, Clean, Scannable) ---
   function renderNotes(weekData) {
+    // Top Summary Box
+    const summaryContainer = document.getElementById('summary-container');
+    if (summaryContainer && weekData.keyPoints) {
+      summaryContainer.innerHTML = `
+        <div class="summary-card">
+          <h3 class="summary-title">High-Yield Concept Reminders</h3>
+          <ul class="summary-list">
+            ${weekData.keyPoints.map(point => `<li>${point}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
     // Hierarchy / Spectrum
     const hierarchyContainer = document.getElementById('hierarchy-container');
     const hierarchyHeading = document.getElementById('heading-hierarchy');
     if (hierarchyHeading) {
       hierarchyHeading.textContent = state.currentWeek === 1 
-        ? "1. The Ecological Hierarchy of Life" 
-        : "1. Core Dimensions of Natural Capital & Ecological Limits";
+        ? "1. Ecological Hierarchy of Life" 
+        : "1. Core Framework of Natural Capital & Limits";
     }
 
     if (hierarchyContainer && weekData.hierarchy) {
       hierarchyContainer.innerHTML = weekData.hierarchy.map(item => `
         <div class="hierarchy-step">
-          <div class="hierarchy-level-badge">${item.icon}</div>
+          <div class="hierarchy-level-badge">${item.level}</div>
           <div class="hierarchy-info">
-            <h3>Level ${item.level}: ${item.name}</h3>
+            <h3>${item.name}</h3>
             <p>${item.def}</p>
             <span class="hierarchy-example">Example: ${item.example}</span>
           </div>
@@ -339,10 +344,9 @@
     const pillarsContainer = document.getElementById('pillars-container');
     if (pillarsContainer && weekData.pillars) {
       pillarsContainer.innerHTML = weekData.pillars.map(p => `
-        <div class="glass-card" style="border-top: 4px solid ${p.color};">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">${p.icon}</div>
-          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: ${p.color};">${p.title}</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">${p.desc}</p>
+        <div class="glass-card">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem; color: var(--text-main); font-weight: 700;">${p.title}</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">${p.desc}</p>
         </div>
       `).join('');
     }
@@ -352,12 +356,9 @@
     if (servicesContainer && weekData.services) {
       servicesContainer.innerHTML = weekData.services.map(s => `
         <div class="glass-card">
-          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-            <span style="font-size: 1.75rem;">${s.icon}</span>
-            <div>
-              <h4 style="font-size: 1.05rem; margin: 0;">${s.name}</h4>
-              <span class="hierarchy-example">${s.benefit}</span>
-            </div>
+          <div style="margin-bottom: 0.5rem;">
+            <h4 style="font-size: 1.05rem; margin: 0 0 0.25rem;">${s.name}</h4>
+            <span class="hierarchy-example">${s.benefit}</span>
           </div>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">${s.desc}</p>
         </div>
@@ -369,18 +370,15 @@
     if (trapsContainer && weekData.traps) {
       trapsContainer.innerHTML = weekData.traps.map(t => `
         <div class="trap-card">
-          <div class="trap-header">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>
-            ${t.concept}
-          </div>
-          <div class="trap-warning"><strong>Common Trap:</strong> ${t.trap}</div>
+          <div class="trap-header">${t.concept}</div>
+          <div class="trap-warning"><strong>Common Confusion:</strong> ${t.trap}</div>
           <div class="trap-rule"><strong>Exam Rule:</strong> ${t.rule}</div>
         </div>
       `).join('');
     }
   }
 
-  // --- 2. Render Glossary / Searchable Definitions ---
+  // --- 2. Render Glossary (Simple Definitions) ---
   function renderGlossary(weekData) {
     const listContainer = document.getElementById('definitions-grid');
     const countBadge = document.getElementById('glossary-count-badge');
@@ -407,9 +405,9 @@
 
     if (items.length === 0) {
       listContainer.innerHTML = `
-        <div style="grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--text-dim);">
-          <p style="font-size: 1.1rem; font-weight: 600;">No terms found matching "${state.searchTerm}"</p>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">Try clearing your search query or switching categories.</p>
+        <div style="grid-column: 1/-1; text-align: center; padding: 2.5rem 1rem; color: var(--text-dim);">
+          <p style="font-size: 1rem; font-weight: 600;">No terms matching "${state.searchTerm}"</p>
+          <p style="font-size: 0.85rem; margin-top: 0.35rem;">Try searching another keyword or selecting "All".</p>
         </div>
       `;
       return;
@@ -424,9 +422,9 @@
           </div>
           <p class="def-body">${d.definition}</p>
         </div>
-        <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
+        <div style="margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
           <button class="btn-pill btn-pill-ghost btn-copy-def" data-text="${d.term}: ${d.definition}" style="padding: 0.25rem 0.65rem; font-size: 0.75rem;">
-            📋 Copy Term
+            Copy
           </button>
         </div>
       </div>
@@ -437,7 +435,7 @@
         const text = btn.dataset.text;
         navigator.clipboard.writeText(text).then(() => {
           const original = btn.innerHTML;
-          btn.innerHTML = '✅ Copied!';
+          btn.innerHTML = 'Copied';
           setTimeout(() => { btn.innerHTML = original; }, 1500);
         });
       });
@@ -486,7 +484,6 @@
     const flashcardEl = document.getElementById('active-flashcard');
     const masteredBadge = document.getElementById('mastered-counter-badge');
 
-    // Count how many cards of the current week's deck are mastered
     const currentWeekMastered = state.shuffledCards.filter(c => state.masteredCards.has(c.id)).length;
 
     if (counter) counter.textContent = `Card ${state.flashcardIndex + 1} of ${total}`;
@@ -499,9 +496,9 @@
 
       document.getElementById('card-front-tag').textContent = card.category;
       document.getElementById('card-front-prompt').textContent = card.front;
-      document.getElementById('card-front-hint').textContent = `💡 Hint: ${card.hint || 'Tap card to reveal answer'}`;
+      document.getElementById('card-front-hint').textContent = card.hint ? `Hint: ${card.hint}` : 'Click card to reveal answer';
 
-      document.getElementById('card-back-tag').textContent = `${card.category} • Solution`;
+      document.getElementById('card-back-tag').textContent = `${card.category} - Answer`;
       document.getElementById('card-back-answer').textContent = card.back;
     }
   }
@@ -624,8 +621,7 @@
           ${showFeedback ? `
             <div class="explanation-box">
               <div class="explanation-title">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                Correct Answer: Option ${q.letter} • Why this is correct:
+                Correct Answer: Option ${q.letter} - Explanation:
               </div>
               <div class="explanation-text">${q.explanation}</div>
             </div>
@@ -730,7 +726,7 @@
       return `
         <div class="question-card" id="assignment-q-${q.id}">
           <div class="question-meta">
-            <span class="q-number">Assignment ${state.currentWeek} • Question ${idx + 1}</span>
+            <span class="q-number">Assignment ${state.currentWeek} - Question ${idx + 1}</span>
             <span class="q-status-badge ${isAnswered ? 'chip-status ready' : 'chip-status locked'}">
               ${isAnswered ? 'Done' : 'Pending'}
             </span>
@@ -756,8 +752,7 @@
           ${showFeedback ? `
             <div class="explanation-box">
               <div class="explanation-title">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                Correct Official Answer: (${q.letter}) • Verified Solution:
+                Correct Answer: (${q.letter}) - Explanation:
               </div>
               <div class="explanation-text">${q.explanation}</div>
             </div>
@@ -814,7 +809,7 @@
         const weekData = window.COURSE_DATA.weeks[state.currentWeek];
         quizState.isSubmitted = true;
         renderAssignmentQuiz(weekData);
-        showScoreModal(`Assignment ${state.currentWeek} Official Score`, quizState.score, weekData.assignmentMCQs.length);
+        showScoreModal(`Assignment ${state.currentWeek} Score`, quizState.score, weekData.assignmentMCQs.length);
       });
     }
 
@@ -840,38 +835,31 @@
     const percentage = Math.round((score / total) * 100);
 
     let badgeText = 'Participation';
-    let icon = '📚';
     if (percentage >= 90) {
-      badgeText = '🏆 NPTEL Elite + Gold (90%+)';
-      icon = '🥇';
+      badgeText = 'Score: 90%+ (Elite + Gold)';
     } else if (percentage >= 75) {
-      badgeText = '🥈 NPTEL Elite + Silver (75% - 89%)';
-      icon = '🥈';
+      badgeText = 'Score: 75% - 89% (Elite + Silver)';
     } else if (percentage >= 60) {
-      badgeText = '🥉 NPTEL Elite (60% - 74%)';
-      icon = '🥉';
+      badgeText = 'Score: 60% - 74% (Elite)';
     } else if (percentage >= 40) {
-      badgeText = '✅ Passing Certificate (40% - 59%)';
-      icon = '📜';
+      badgeText = 'Score: 40% - 59% (Passing Certificate)';
     } else {
-      badgeText = '⚠️ Needs Revision (< 40%)';
-      icon = '🔄';
+      badgeText = 'Score: Under 40% (Needs Revision)';
     }
 
     if (titleEl) titleEl.textContent = title;
     if (bodyEl) {
       bodyEl.innerHTML = `
-        <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">${icon}</div>
-        <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--primary-light); margin-bottom: 0.25rem;">
+        <h3 style="font-size: 2.2rem; font-weight: 800; color: var(--primary-light); margin-bottom: 0.25rem;">
           ${score} / ${total} (${percentage}%)
         </h3>
-        <p style="font-weight: 700; color: var(--text-main); font-size: 1.05rem; margin-bottom: 1rem;">
+        <p style="font-weight: 700; color: var(--text-main); font-size: 1rem; margin-bottom: 1rem;">
           ${badgeText}
         </p>
         <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
           ${percentage >= 75 
-            ? 'Outstanding performance! You have grasped the concepts, indicators, and tricky traps thoroughly.' 
-            : 'Good effort! Review the explanations marked in green and red to lock down your high-yield memory before the exam.'}
+            ? 'Great job! You have grasped the key concepts and traps accurately.' 
+            : 'Review the explanations shown in the quiz to lock down your understanding before the final exam.'}
         </p>
       `;
     }
@@ -887,27 +875,22 @@
     const quizPractice = getPracticeState(state.currentWeek);
     const quizAssignment = getAssignmentState(state.currentWeek);
 
-    // Flashcard Progress for current week
     const totalCards = weekData.flashcards ? weekData.flashcards.length : 16;
     const currentWeekMastered = weekData.flashcards ? weekData.flashcards.filter(c => state.masteredCards.has(c.id)).length : 0;
     const flashcardPct = Math.min(100, Math.round((currentWeekMastered / totalCards) * 100));
 
-    // Practice Quiz Progress for current week
     const totalPractice = weekData.practiceMCQs ? weekData.practiceMCQs.length : 20;
     const practiceScore = quizPractice.score;
     const practicePct = Math.round((practiceScore / totalPractice) * 100);
 
-    // Assignment Progress for current week
     const totalAssignment = weekData.assignmentMCQs ? weekData.assignmentMCQs.length : 10;
     const assignmentScore = quizAssignment.score;
     const assignmentPct = Math.round((assignmentScore / totalAssignment) * 100);
 
-    // Update Circle Meters
     updateSvgCircle('circle-flashcards', flashcardPct);
     updateSvgCircle('circle-practice', practicePct);
     updateSvgCircle('circle-assignment', assignmentPct);
 
-    // Update Text Values
     const fcText = document.getElementById('text-progress-flashcards');
     if (fcText) fcText.textContent = `${flashcardPct}%`;
 
@@ -932,20 +915,19 @@
     const resetAllBtn = document.getElementById('btn-reset-all-progress');
     if (resetAllBtn) {
       resetAllBtn.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset all your study progress, quiz scores, and flashcard mastery?')) {
+        if (confirm('Reset all saved quiz scores and flashcard progress?')) {
           localStorage.removeItem(STORAGE_KEY_PROGRESS);
           state.masteredCards.clear();
           state.practiceByWeek = {};
           state.assignmentByWeek = {};
           updateProgressDashboard();
           selectWeek(state.currentWeek);
-          alert('All progress has been reset.');
+          alert('Progress has been reset.');
         }
       });
     }
   }
 
-  // --- Global Listeners & Modals ---
   function initModals() {
     document.querySelectorAll('.modal-close-btn').forEach(btn => {
       btn.addEventListener('click', closeModal);
@@ -981,7 +963,6 @@
     }
   }
 
-  // --- App Initialization ---
   function init() {
     loadSavedProgress();
     initTheme();
@@ -995,7 +976,7 @@
     initModals();
     initPrintAndScroll();
 
-    selectWeek(2); // Automatically open Week 2 as latest added!
+    selectWeek(2);
   }
 
   if (document.readyState === 'loading') {

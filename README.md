@@ -1,4 +1,4 @@
-# 🌿 NPTEL: Biodiversity for Sustainability - Master Revision & Practice Portal
+# NPTEL: Biodiversity for Sustainability - Revision and Practice Portal
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-emerald?style=for-the-badge&logo=github)](https://jiya2000.github.io/NPTEL_Biodiversity-for-Sustainability/)
 [![NPTEL Course](https://img.shields.io/badge/NPTEL-SWAYAM%202026-blue?style=for-the-badge)](https://swayam.gov.in)
@@ -8,47 +8,48 @@ An interactive, week-wise study and exam practice web application built specific
 
 ---
 
-## 🚀 Live Access
-Once GitHub Pages is enabled on this repo, access the portal anywhere on desktop, tablet, or phone at:  
-👉 **[https://jiya2000.github.io/NPTEL_Biodiversity-for-Sustainability/](https://jiya2000.github.io/NPTEL_Biodiversity-for-Sustainability/)**
+## Live Access
+Access the live portal on desktop, tablet, or mobile at:  
+**[https://jiya2000.github.io/NPTEL_Biodiversity-for-Sustainability/](https://jiya2000.github.io/NPTEL_Biodiversity-for-Sustainability/)**
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 📖 **High-Yield Revision Notes:**
-  - Interactive visual walkthrough of the **Ecological Hierarchy** (Organism → Population → Community → Ecosystem → Biosphere).
-  - The **Three Pillars of Sustainability** (Environmental, Social, Economic).
-  - Core **Ecosystem Services** with real-world examples (Pollination, Wetlands, Forest Carbon, Soil Microbes).
-  - **Last-Minute MCQ Traps & Pitfalls** highlighting the exact wording tricks used in exams.
+- **High-Yield Revision Notes:**
+  - High-yield concept reminders and key takeaways for each week.
+  - Core concepts and ecological hierarchy (Organism -> Population -> Community -> Ecosystem -> Biosphere).
+  - The Three Pillars of Sustainability (Environmental, Social, Economic).
+  - Key Ecosystem Services with clear practical examples (Pollination, Wetlands, Forest Carbon, Soil Microbes).
+  - Common Exam Confusions and Traps highlighting common mistakes in exam questions.
 
-- 📚 **Searchable 32-Term Glossary:**
-  - Instant live keyword search and category filtering across all official terms.
-  - One-click "Copy Term" feature to quickly paste into your notes or flashcard apps.
+- **Searchable Definitions & Glossary:**
+  - Instant keyword search and category filtering across core definitions.
+  - One-click copy term feature to paste into notes.
 
-- 🗂️ **Interactive 3D Flashcards:**
-  - Active-recall memorization with realistic 3D flipping animation (`Spacebar` or tap).
-  - "Mark as Mastered" and shuffle modes to accelerate long-term retention.
+- **Interactive Flashcards:**
+  - Active-recall memorization with 3D card flip.
+  - Mark as Mastered tracking and shuffle options.
 
-- 🎯 **20 Practice MCQs (Study & Exam Modes):**
-  - Instant study feedback with verified pedagogical explanations ("Why this is correct").
-  - Test simulation mode with scoring, passing badges, and incorrect answer review.
+- **Practice MCQs (Study & Exam Modes):**
+  - Instant study feedback with clear explanations for correct options.
+  - Test simulation mode with scoring and review of incorrect answers.
 
-- 📝 **Official Assignment 1 Solutions:**
-  - All 10 questions with verified correct answers and step-by-step explanations.
+- **Weekly Assignment Solutions:**
+  - Official assignment questions with verified answers and explanations.
 
-- 📊 **Local Progress Dashboard:**
-  - Automatically saves quiz attempts, scores, and flashcard mastery in your browser's `localStorage`—no login needed!
+- **Local Progress Tracking:**
+  - Saves quiz scores and flashcard progress in your browser's localStorage (no sign-in required).
 
-- 🌓 **Dark / Light Mode:**
-  - Smooth glassmorphism aesthetic with zero flash of unstyled content (FOUC).
+- **Dark / Light Mode:**
+  - Clean, eye-friendly theme toggle with persisted user preference.
 
-- 🖨️ **Printable Cheat Sheets:**
-  - Built-in print stylesheet to generate clean, paper or PDF revision handouts before entering the exam center.
+- **Printable Study Sheets:**
+  - Built-in print stylesheet to generate clean paper or PDF revision handouts.
 
 ---
 
-## 📅 Course Roadmap (12 Weeks)
+## Course Roadmap (12 Weeks)
 
 | Week | Status | Topics Covered | Material |
 | :---: | :---: | :--- | :---: |
@@ -67,55 +68,37 @@ Once GitHub Pages is enabled on this repo, access the portal anywhere on desktop
 
 ---
 
-## ⚡ How to Make this Website Live on GitHub Pages (1-Minute Guide)
+## How This Project Helps You
 
-1. Open this repository on GitHub: [`https://github.com/jiya2000/NPTEL_Biodiversity-for-Sustainability`](https://github.com/jiya2000/NPTEL_Biodiversity-for-Sustainability)
-2. Click on **Settings** (top right tab of the repo).
-3. On the left sidebar, click on **Pages**.
-4. Under **"Build and deployment"**:
-   - **Source**: Select `Deploy from a branch`.
-   - **Branch**: Select `main`, folder `/ (root)`.
-   - Click **Save**.
-5. Within ~60 seconds, GitHub will generate your live URL:  
-   `https://jiya2000.github.io/NPTEL_Biodiversity-for-Sustainability/`
+### 1. Resume and Portfolio Project
+Under your Projects section on your CV or resume:
+> **NPTEL Biodiversity for Sustainability Portal** | *HTML5, Vanilla CSS3, JavaScript (ES6+), GitHub Pages*  
+> - Built an open-access exam revision platform featuring interactive flashcards, searchable glossaries, and automated MCQ practice modules.  
+> - Designed clean study materials for students preparing for SWAYAM / NPTEL certifications.
 
----
+### 2. LinkedIn & Personal Branding
+- Sharing educational tools that simplify coursework for fellow students demonstrates initiative, coding skill, and domain understanding.
 
-## 🌟 How This Project Helps You & Where You Can Use It
-
-### 1. 💼 Standout Resume / Portfolio Project
-- Under your **Projects** section on your CV/Resume, list:
-  > **NPTEL Biodiversity for Sustainability Portal** | *HTML5, Vanilla CSS3, JavaScript (ES6+), GitHub Pages*  
-  > - Architected and launched an open-access exam revision platform featuring 3D flashcards, searchable glossaries, and automated MCQ engines.  
-  > - Provided structured, interactive curriculum for university students preparing for SWAYAM / NPTEL certifications.
-
-### 2. 🔗 LinkedIn Post & Personal Branding
-- Share the live link on LinkedIn! Educational tools that solve real student pain points generate high engagement, reshares, and recruiter attention.
-- Tag relevant topics: `#NPTEL #SWAYAM #Biodiversity #Sustainability #WebDevelopment #OpenSource`.
-
-### 3. ⭐ GitHub Stars & Open Source Reputation
-- As fellow NPTEL students star and bookmark your repository to prepare for their exams, it grows your GitHub developer profile and activity graph.
-
-### 4. 🥇 Academic & Certification Excellence
-- By structuring, reviewing, and testing these questions weekly, you are using the gold standard of learning: **Active Recall & Spaced Repetition**. This strongly positions you for the **NPTEL Elite + Gold Medal** (>90%).
+### 3. Exam Preparation Excellence
+- Active recall and spaced repetition via practice quizzes and flashcards help reinforce memory for the NPTEL certification exam.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Semantic HTML5**: Native semantic layout with accessible ARIA tags.
-- **Vanilla CSS3**: Design system with CSS custom properties, glassmorphism, responsive CSS Grid/Flexbox, and native `light-dark()` color schemes.
-- **Modern Vanilla JavaScript**: Zero external bloatware/dependencies, instant load speed, modular data architecture.
-- **LocalStorage API**: Seamless client-side state persistence.
-
----
-
-## 🤝 Contributing & Adding New Weeks
-To add notes or assignments for Week 2 through Week 12:
-1. Open [`js/course-data.js`](js/course-data.js)
-2. Fill in the `weeks[2]` object with your definitions, flashcards, practice questions, and assignment solutions.
-3. Commit and push to `main`—the site will update automatically!
+- **HTML5**: Semantic layout with accessible ARIA tags.
+- **Vanilla CSS3**: Design system with CSS custom properties, responsive Grid/Flexbox, and light/dark modes.
+- **Vanilla JavaScript**: Lightweight, modular architecture without external dependencies.
+- **LocalStorage API**: Client-side state persistence.
 
 ---
 
-*Disclaimer: This portal is an educational study aid created by students for revision and self-assessment based on NPTEL course topics. Please refer to official NPTEL/SWAYAM portals for official exam dates, proctoring guidelines, and certified grade sheets.*
+## Adding New Weeks
+To add notes or assignments for upcoming weeks:
+1. Open `js/course-data.js`
+2. Add your definitions, flashcards, practice questions, and assignment solutions under the corresponding week number.
+3. Commit and push to `main`—the site updates automatically.
+
+---
+
+*Disclaimer: This portal is an educational study aid created for revision and self-assessment based on NPTEL course topics. Please refer to official NPTEL/SWAYAM portals for official exam dates, proctoring guidelines, and certified grade sheets.*

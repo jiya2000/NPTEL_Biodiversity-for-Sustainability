@@ -1,62 +1,64 @@
 /**
  * NPTEL: Biodiversity for Sustainability
- * Comprehensive Course Data Store
- * Structured for Week-by-Week Modular Expansion
+ * Clean, Simple, Exam-Oriented Course Data Store
+ * No emojis, clear bullet points, concise definitions
  */
 
 window.COURSE_DATA = {
   meta: {
     courseName: "Biodiversity for Sustainability",
-    tagline: "NPTEL Master Revision & Interactive Practice Portal",
+    tagline: "NPTEL Revision & Practice Portal",
     instructor: "NPTEL / SWAYAM",
     repoUrl: "https://github.com/jiya2000/NPTEL_Biodiversity-for-Sustainability",
     totalWeeks: 12,
-    activeWeek: 1
+    activeWeek: 2
   },
   weeks: {
     1: {
       weekNumber: 1,
-      title: "Ecology, Biodiversity & Sustainability Foundations",
-      subtitle: "Exam Revision Notes, 32 Key Definitions, 20 Practice MCQs & Assignment 1 Solutions",
+      title: "Ecology, Biodiversity and Sustainability Foundations",
+      subtitle: "Week 1 Revision Notes, 32 Core Definitions, Practice MCQs and Assignment 1 Solutions",
       status: "available",
-      badge: "Week 1 Ready",
-      summary: "Foundational concepts covering the hierarchy of ecology (Organism to Biosphere), the three levels of biodiversity, invisible microbial life, crucial ecosystem services, pillars of sustainability, and environmental justice.",
+      badge: "Week 1",
       
+      keyPoints: [
+        "Ecological hierarchy: Organism -> Population -> Community -> Ecosystem -> Biosphere.",
+        "Three levels of biodiversity: Genetic diversity, species diversity, and ecosystem diversity.",
+        "Three pillars of sustainability: Environmental, social, and economic.",
+        "Ecosystem services: Benefits people obtain from ecosystems (e.g., pollination for food security, wetlands for water filtration, forests for carbon storage, soil microbes for nutrient cycling).",
+        "Ecology is an objective natural science; environmental concern is a social and ethical response."
+      ],
+
       hierarchy: [
         {
           level: 1,
           name: "Organism",
-          def: "An individual living being that interacts directly with abiotic and biotic surroundings.",
-          icon: "🌱",
-          example: "A single Oak tree or one Bengal tiger"
+          def: "An individual living being.",
+          example: "A single tree or single deer"
         },
         {
           level: 2,
           name: "Population",
-          def: "Individuals belonging to the same species living together in a defined geographical area.",
-          icon: "👥",
-          example: "All spotted deer in Kaziranga National Park"
+          def: "Individuals of the same species living in a particular area.",
+          example: "All spotted deer in a forest"
         },
         {
           level: 3,
           name: "Community",
           def: "Populations of different species living and interacting together in an area.",
-          icon: "🐾",
-          example: "Tigers, deer, grasses, and soil bacteria interacting in a forest"
+          example: "Deer, tigers, trees, and soil bacteria interacting"
         },
         {
           level: 4,
           name: "Ecosystem",
-          def: "A biological community of interacting organisms plus their physical abiotic environment acting as a system.",
-          icon: "🏞️",
-          example: "The entire Sundarbans mangrove swamp (biotic + water, salinity, soil)"
+          def: "A biological community of organisms plus their non-living (abiotic) physical environment acting as a system.",
+          example: "A forest community plus its soil, sunlight, water, and climate"
         },
         {
           level: 5,
           name: "Biosphere",
-          def: "The global sum of all Earth's ecosystems and zones where life exists.",
-          icon: "🌍",
-          example: "The entire global zone of air, water, and soil supporting life"
+          def: "The global sum of all Earth's ecosystems where life exists.",
+          example: "The entire zone on Earth supporting life"
         }
       ],
 
@@ -64,23 +66,17 @@ window.COURSE_DATA = {
         {
           id: "environmental",
           title: "Environmental Sustainability",
-          icon: "🌿",
-          color: "#10b981",
-          desc: "Maintaining healthy ecological systems, protecting natural resources, preserving biodiversity, and respecting ecological carrying capacity."
+          desc: "Maintaining ecological systems, protecting natural resources, preserving biodiversity, and respecting ecological limits."
         },
         {
           id: "social",
           title: "Social Sustainability",
-          icon: "🤝",
-          color: "#3b82f6",
-          desc: "Supporting equity, well-being, community inclusion, human rights, social stability, and intergenerational fairness."
+          desc: "Supporting equity, well-being, inclusion, human rights, and fairness between present and future generations."
         },
         {
           id: "economic",
           title: "Economic Sustainability",
-          icon: "📈",
-          color: "#f59e0b",
-          desc: "Maintaining viable, responsible economic activity and livelihoods over the long term without depleting nature."
+          desc: "Maintaining viable economic activity and livelihoods over the long term without depleting nature."
         }
       ],
 
@@ -88,59 +84,55 @@ window.COURSE_DATA = {
         {
           name: "Pollination",
           benefit: "Food Security",
-          icon: "🐝",
-          desc: "Bees, insects, and birds pollinate over 75% of leading food crops, directly sustaining global agricultural food security."
+          desc: "Bees, insects, and birds pollinate food crops, directly supporting agricultural yields and human nutrition."
         },
         {
-          name: "Wetlands Filtration",
-          benefit: "Water Security & Flood Control",
-          icon: "💧",
-          desc: "Wetlands naturally filter pollutants, recharge groundwater aquifers, and buffer against devastating floods and storm surges."
+          name: "Wetland Water Filtration",
+          benefit: "Water Security",
+          desc: "Wetlands store water, slow down storm flows, filter contaminants, and recharge groundwater aquifers."
         },
         {
           name: "Forest Carbon Storage",
           benefit: "Climate Regulation",
-          icon: "🌲",
-          desc: "Forests sequester atmospheric carbon and regulate microclimates, maintaining stable local humidity and temperature regimes."
+          desc: "Forests absorb and store atmospheric carbon, while moderating local humidity and temperature."
         },
         {
           name: "Soil Microorganisms",
-          benefit: "Nutrient Cycling & Decomposition",
-          icon: "🔬",
-          desc: "Invisible bacteria, mycorrhizal fungi, and nematodes break down organic detritus, recycling nitrogen, phosphorus, and essential minerals."
+          benefit: "Decomposition and Nutrient Cycling",
+          desc: "Invisible bacteria, fungi, and worms break down organic matter and recycle essential soil nutrients."
         }
       ],
 
       traps: [
         {
-          concept: "Genetic vs Species Diversity",
-          trap: "Confusing variation WITHIN a species with variety of DIFFERENT species.",
-          rule: "Genetic diversity = variation within ONE species/population (e.g., thousands of rice varieties). Species diversity = count & relative abundance of different species in a community."
+          concept: "Genetic Diversity vs Species Diversity",
+          trap: "Confusing variation within one species with variety among different species.",
+          rule: "Genetic diversity = variation within a species or population (e.g., rice varieties). Species diversity = number and relative abundance of different species."
         },
         {
           concept: "Species Richness vs Species Evenness",
-          trap: "Thinking richness means how balanced the population numbers are.",
-          rule: "Richness is strictly the total NUMBER of distinct species. Evenness describes HOW EQUALLY individuals are distributed among those species."
+          trap: "Thinking richness measures population balance.",
+          rule: "Species richness is strictly the number of different species. Species evenness is how evenly individuals are distributed among those species."
         },
         {
           concept: "Distribution vs Habitat",
-          trap: "Treating where an organism lives and its geographical range as synonyms.",
-          rule: "Distribution = the geographical area/region where a species occurs on a map. Habitat = the specific physical & functional environment where it obtains survival conditions."
+          trap: "Confusing where an organism occurs with where it lives.",
+          rule: "Distribution = the geographical area or places where an organism occurs. Habitat = the specific environment providing conditions for an organism to live."
         },
         {
           concept: "Community vs Ecosystem",
-          trap: "Forgetting the abiotic components in an ecosystem.",
-          rule: "Community is purely BIOTIC (all interacting populations of different species). Ecosystem = Community + ABIOTIC environment (soil, water, climate) interacting as a unified system."
+          trap: "Forgetting the abiotic (non-living) components in an ecosystem.",
+          rule: "Community is living populations of different species. Ecosystem = Community plus its abiotic environment (temperature, soil, water)."
         },
         {
           concept: "Ecological Resilience",
-          trap: "Believing resilience means an ecosystem never experiences any disturbance.",
-          rule: "Resilience is the dynamic capacity to withstand disturbance, absorb shock, and recover or maintain essential functions."
+          trap: "Assuming resilience means an ecosystem experiences zero disturbance.",
+          rule: "Resilience is the capacity of a system to withstand disturbance and recover or maintain its essential functions."
         },
         {
           concept: "Ecology vs Environmental Concern",
-          trap: "Assuming ecology and environmental activism are the identical concept.",
-          rule: "Ecology is an objective scientific discipline that generates empirical evidence and explanations. Environmental concern is a moral, social, or ethical response based on human values."
+          trap: "Assuming science and environmental concern are the exact same thing.",
+          rule: "Ecology provides scientific evidence and explanations. Environmental concern is a social, moral, or ethical response."
         }
       ],
 
@@ -148,277 +140,277 @@ window.COURSE_DATA = {
         {
           term: "Biodiversity",
           category: "Biodiversity",
-          definition: "The variety of life on Earth, encompassing genetic diversity, species diversity, and ecosystem diversity."
+          definition: "The variety of life, including genetic, species, and ecosystem diversity."
         },
         {
-          term: "Genetic Diversity",
+          term: "Genetic diversity",
           category: "Biodiversity",
-          definition: "Variation in genes, alleles, and hereditary traits within a single species or population (e.g. wild vs cultivated rice varieties)."
+          definition: "Variation in genes within a species or population."
         },
         {
-          term: "Species Diversity",
+          term: "Species diversity",
           category: "Biodiversity",
-          definition: "The variety of species in an area, considering both species richness (variety) and relative abundance (evenness)."
+          definition: "The variety of species in an area, considering both variety and relative abundance."
         },
         {
-          term: "Ecosystem Diversity",
+          term: "Ecosystem diversity",
           category: "Biodiversity",
-          definition: "The variety of ecosystems, habitats, landscapes, and ecological communities across a geographical territory."
+          definition: "The variety of ecosystems, habitats, and ecological communities."
         },
         {
-          term: "Invisible Biodiversity",
+          term: "Invisible biodiversity",
           category: "Biodiversity",
-          definition: "Less-visible but critical components such as microbes, mycorrhizal fungi, soil nematodes, micro-crustaceans, genetic variations, and invisible ecological processes."
+          definition: "Less-visible components such as microbes, fungi, soil organisms, genetic variation, and ecological processes."
         },
         {
-          term: "Ecosystem Services",
+          term: "Ecosystem services",
           category: "Ecosystem Services",
-          definition: "Direct and indirect benefits that human beings obtain from healthy natural ecosystems (provisioning, regulating, supporting, and cultural)."
+          definition: "Benefits people obtain from ecosystems."
         },
         {
           term: "Resilience",
           category: "Ecology",
-          definition: "The capacity of an ecological system to withstand external disturbances, recover from shocks, or maintain vital structural functions."
+          definition: "The capacity of a system to withstand disturbance, recover, or maintain essential functions."
         },
         {
-          term: "Food Security",
+          term: "Food security",
           category: "Sustainability",
-          definition: "Reliable, uninterrupted access to sufficient, safe, nutritious, and culturally acceptable food for an active and healthy life."
+          definition: "Reliable access to sufficient, safe, and nutritious food."
         },
         {
-          term: "Water Security",
+          term: "Water security",
           category: "Sustainability",
-          definition: "Reliable access to adequate quantities of acceptable quality water for sustaining livelihoods, human well-being, and socio-economic development."
+          definition: "Reliable access to adequate, safe water."
         },
         {
-          term: "Ecological Simplification",
+          term: "Ecological simplification",
           category: "Ecology",
-          definition: "The reduction in ecological complexity, such as conversion of biodiverse rainforests or grasslands into monoculture plantations or simpler habitats."
+          definition: "Reduction in ecological complexity, such as fewer species or simpler habitats."
         },
         {
           term: "Ecology",
           category: "Ecology",
-          definition: "The rigorous scientific study of interactions between living organisms and their biotic and abiotic environment."
+          definition: "The scientific study of interactions between organisms and their environment."
         },
         {
           term: "Organism",
           category: "Ecological Hierarchy",
-          definition: "An individual living being that possesses all characteristics of life and functions independently."
+          definition: "An individual living being."
         },
         {
           term: "Population",
           category: "Ecological Hierarchy",
-          definition: "A group of individuals belonging to the same species living and interbreeding in a particular geographical area."
+          definition: "Individuals of the same species living in a particular area."
         },
         {
           term: "Community",
           category: "Ecological Hierarchy",
-          definition: "All populations of different species coexisting, interacting, and sharing resources within a common geographic area."
+          definition: "Populations of different species living and interacting in an area."
         },
         {
           term: "Ecosystem",
           category: "Ecological Hierarchy",
-          definition: "A dynamic biological community of organisms interacting with each other and their abiotic physical environment as an integrated unit."
+          definition: "A community of organisms and its abiotic environment interacting as a system."
         },
         {
           term: "Biosphere",
           category: "Ecological Hierarchy",
-          definition: "The global ecological system integrating all living beings and their relationships; the planetary zone where life flourishes."
+          definition: "The global sum of Earth's ecosystems and regions where life exists."
         },
         {
           term: "Habitat",
           category: "Ecology",
-          definition: "The specific physical place or environment in which an organism normally lives and obtains the resources, shelter, and conditions it requires."
+          definition: "The place or environment where an organism lives and obtains the conditions it needs."
         },
         {
           term: "Distribution",
           category: "Ecology",
-          definition: "The geographical area, range, or spatial locations across which an organism or species naturally occurs."
+          definition: "The geographical area or places in which an organism occurs."
         },
         {
-          term: "Biotic Factors",
+          term: "Biotic factors",
           category: "Ecology",
-          definition: "The living or once-living components of an ecosystem that influence other organisms (plants, animals, fungi, bacteria)."
+          definition: "Living components, such as plants, animals, and microorganisms."
         },
         {
-          term: "Abiotic Factors",
+          term: "Abiotic factors",
           category: "Ecology",
-          definition: "The non-living physical and chemical components of the environment, such as ambient temperature, sunlight, moisture, minerals, and soil pH."
+          definition: "Non-living environmental factors, such as temperature, water, light, and soil."
         },
         {
           term: "Predation",
           category: "Ecology",
-          definition: "A biological interaction in which one organism (the predator) hunts, captures, kills, and consumes another organism (the prey)."
+          definition: "An interaction in which one organism kills and consumes another."
         },
         {
           term: "Competition",
           category: "Ecology",
-          definition: "An ecological interaction between organisms or species in which both are harmed while vying for the same limited resource (food, light, space)."
+          definition: "An interaction in which organisms compete for limited resources."
         },
         {
-          term: "Species Richness",
+          term: "Species richness",
           category: "Biodiversity",
-          definition: "The total number of different distinct species represented in an ecological community, landscape, or region."
+          definition: "The number of different species in an area."
         },
         {
-          term: "Species Evenness",
+          term: "Species evenness",
           category: "Biodiversity",
-          definition: "A measure of how evenly the total individual organisms in a community are apportioned among the different coexisting species."
+          definition: "How evenly individuals are distributed among species."
         },
         {
-          term: "Functional Diversity",
+          term: "Functional diversity",
           category: "Biodiversity",
-          definition: "The variety of biological traits, roles, and ecological functions that organisms perform within an ecosystem (e.g. nitrogen fixing, scavengers, apex predators)."
+          definition: "The variety of ecological roles and traits."
         },
         {
           term: "Sustainability",
           category: "Sustainability",
-          definition: "Maintaining the integrity of natural and socio-economic systems over time without undermining the fundamental resources and conditions on which they depend."
+          definition: "Maintaining systems and well-being over time without undermining the resources and conditions on which they depend."
         },
         {
-          term: "Sustainable Development",
+          term: "Sustainable development",
           category: "Sustainability",
-          definition: "Development that meets the needs of the present without compromising the ability of future generations to meet their own needs (Brundtland Commission, 1987)."
+          definition: "Development that meets present needs without compromising future generations' ability to meet their own needs."
         },
         {
-          term: "Environmental Sustainability",
+          term: "Environmental sustainability",
           category: "Sustainability",
-          definition: "Conserving ecological integrity, preserving natural resources, and maintaining biodiversity for indefinite ecological equilibrium."
+          definition: "Maintaining ecological systems and natural resources."
         },
         {
-          term: "Social Sustainability",
+          term: "Social sustainability",
           category: "Sustainability",
-          definition: "Fostering social equity, well-being, community cohesion, basic human rights, inclusion, and societal stability over generations."
+          definition: "Supporting equity, well-being, inclusion, and social stability."
         },
         {
-          term: "Economic Sustainability",
+          term: "Economic sustainability",
           category: "Sustainability",
-          definition: "Practicing viable, resilient economic activities that generate prosperity without triggering irreversible resource depletion or environmental degradation."
+          definition: "Maintaining viable economic activity over the long term."
         },
         {
-          term: "Intergenerational Equity",
+          term: "Intergenerational equity",
           category: "Sustainability",
-          definition: "The moral and ethical principle of fairness and balance in the distribution of resources and environmental health between current and future human generations."
+          definition: "Fairness between present and future generations."
         },
         {
-          term: "Environmental Injustice",
+          term: "Environmental injustice",
           category: "Sustainability",
-          definition: "The disproportionate exposure of marginalized, low-income, or vulnerable communities to environmental risks, pollution, and resource extraction harms."
+          definition: "Unequal distribution of environmental harms and benefits, often disproportionately affecting vulnerable communities."
         }
       ],
 
       flashcards: [
         {
           id: 1,
-          category: "Core Definition",
-          front: "What is the precise definition of 'Ecology'?",
-          back: "The scientific study of interactions between organisms and their environment (both biotic living factors and abiotic non-living physical factors).",
-          hint: "Focus on both living and non-living interactions."
+          category: "Definition",
+          front: "What is ecology?",
+          back: "The scientific study of interactions between organisms and their environment (both living biotic and non-living abiotic components).",
+          hint: "Interactions between organisms and their surroundings."
         },
         {
           id: 2,
-          category: "Biodiversity Levels",
-          front: "Name the three foundational levels of Biodiversity.",
-          back: "1. Genetic Diversity (within species)\n2. Species Diversity (between species)\n3. Ecosystem Diversity (habitats & biomes)",
-          hint: "From genes up to planetary biomes."
+          category: "Biodiversity",
+          front: "What are the three levels of biodiversity?",
+          back: "1. Genetic diversity (within a species)\n2. Species diversity (between different species)\n3. Ecosystem diversity (habitats and communities)",
+          hint: "From genes to habitats."
         },
         {
           id: 3,
           category: "Ecological Hierarchy",
-          front: "What is the correct sequence of increasing ecological organization?",
-          back: "Organism → Population → Community → Ecosystem → Biosphere",
-          hint: "From single being to global planetary scale."
+          front: "What is the sequence of increasing ecological organization?",
+          back: "Organism -> Population -> Community -> Ecosystem -> Biosphere",
+          hint: "Individual to global planetary level."
         },
         {
           id: 4,
-          category: "Invisible Biodiversity",
-          front: "What constitutes 'Invisible Biodiversity' and why does it matter?",
-          back: "Microbes, mycorrhizal fungi, soil nematodes, genetic variation, and microscopic nutrient-cycling processes that sustain life unseen.",
-          hint: "Think below ground and at the microscopic scale."
+          category: "Biodiversity",
+          front: "What is invisible biodiversity?",
+          back: "Less-visible components such as microbes, fungi, soil organisms, genetic variation, and microscopic ecological processes.",
+          hint: "Small and below-ground components."
         },
         {
           id: 5,
           category: "Ecosystem Services",
-          front: "How do wetlands specifically contribute to human water security?",
-          back: "By natural hydrological storage, biological filtration of contaminants, groundwater recharge, and flood shock buffering.",
-          hint: "Nature's kidneys and shock absorbers."
+          front: "How do wetlands contribute to water security?",
+          back: "By storing water, slowing down runoff flows, filtering out contaminants, and recharging groundwater.",
+          hint: "Water storage and purification."
         },
         {
           id: 6,
-          category: "Distinction Trap",
-          front: "What is the difference between Species Richness and Species Evenness?",
-          back: "Richness is the raw COUNT of different species. Evenness is HOW EQUALLY individuals are numerically distributed among those species.",
-          hint: "Count vs Balance."
+          category: "Distinction",
+          front: "What is the difference between species richness and species evenness?",
+          back: "Species richness is the count of different species. Species evenness is how equally individuals are distributed among those species.",
+          hint: "Count versus balance."
         },
         {
           id: 7,
-          category: "Distinction Trap",
-          front: "Distinguish between 'Distribution' and 'Habitat' in ecology.",
-          back: "Distribution is the GEOGRAPHICAL AREA/RANGE where a species occurs. Habitat is the LOCAL ENVIRONMENT providing the necessary survival conditions.",
-          hint: "Macro map area vs Micro living conditions."
+          category: "Distinction",
+          front: "What is the difference between distribution and habitat?",
+          back: "Distribution is the geographical area where an organism occurs. Habitat is the place or environment providing the conditions it needs to live.",
+          hint: "Geographical area versus living conditions."
         },
         {
           id: 8,
-          category: "Sustainability Pillars",
-          front: "What are the three pillars of Sustainability?",
-          back: "1. Environmental (ecological integrity)\n2. Social (equity & human well-being)\n3. Economic (long-term viable prosperity)",
-          hint: "Planet, People, Prosperity."
+          category: "Sustainability",
+          front: "What are the three pillars of sustainability?",
+          back: "Environmental, social, and economic sustainability.",
+          hint: "Environment, society, and economy."
         },
         {
           id: 9,
-          category: "Sustainability Definition",
-          front: "What is the standard Brundtland definition of Sustainable Development?",
-          back: "'Development that meets the needs of the present without compromising the ability of future generations to meet their own needs.'",
-          hint: "Our needs now without robbing our grandchildren."
+          category: "Sustainability",
+          front: "What is sustainable development?",
+          back: "Development that meets present needs without compromising future generations' ability to meet their own needs.",
+          hint: "Brundtland Commission definition."
         },
         {
           id: 10,
           category: "Resilience",
-          front: "What is Ecological Resilience? Does it mean zero disturbance?",
-          back: "NO, disturbance still happens! Resilience is the ability to ABSORB disturbance, recover, and preserve core functions, structure, and feedbacks.",
-          hint: "Bouncing back, not immunity to change."
+          front: "What is ecological resilience? Does it mean no disturbance?",
+          back: "No. Resilience is the capacity of a system to withstand disturbance, recover, or maintain essential functions.",
+          hint: "Ability to withstand and recover."
         },
         {
           id: 11,
-          category: "Distinction Trap",
-          front: "Why is Ecology not identical to Environmental Concern?",
-          back: "Ecology is an objective natural science delivering empirical data; Environmental Concern is a human value-laden social or ethical response.",
-          hint: "Science vs Ethics."
+          category: "Distinction",
+          front: "Why is ecology not identical to environmental concern?",
+          back: "Ecology provides scientific evidence and explanation, while environmental concern is a social or ethical response.",
+          hint: "Science versus ethical response."
         },
         {
           id: 12,
-          category: "Ethics & Justice",
-          front: "What is 'Environmental Injustice'?",
-          back: "When poor, vulnerable, or marginalized communities bear a disproportionate burden of environmental hazards, pollution, and climate damage.",
-          hint: "Unequal distribution of ecological harms."
+          category: "Sustainability",
+          front: "What is environmental injustice?",
+          back: "When vulnerable communities disproportionately experience environmental harms and unequal distribution of environmental benefits.",
+          hint: "Unequal burden of environmental harms."
         },
         {
           id: 13,
-          category: "Community Interactions",
-          front: "Why is Predation classified as a Community Interaction?",
-          back: "Because predation involves an interaction between populations of TWO DIFFERENT SPECIES (biotic to biotic), which defines a community.",
+          category: "Interactions",
+          front: "Why is predation an example of a community interaction?",
+          back: "Because predation involves an interaction between two different species living in the same area.",
           hint: "Two species interacting."
         },
         {
           id: 14,
-          category: "Climate Regulation",
-          front: "How do forests regulate climate as an ecosystem service?",
-          back: "By sequestering atmospheric carbon in biomass and soil, and moderating regional moisture, transpiration, and microclimate temperatures.",
-          hint: "Carbon sink + evapotranspiration cooling."
+          category: "Services",
+          front: "Why do forests contribute to climate regulation?",
+          back: "Forests store carbon and influence local temperature and moisture through shade and moisture exchange.",
+          hint: "Carbon storage and local climate."
         },
         {
           id: 15,
-          category: "Functional Diversity",
-          front: "What does 'Functional Diversity' capture in an ecosystem?",
-          back: "The variety of ecological roles, biochemical processes, and functional traits organisms possess (e.g., pollinators, decomposers, nitrogen fixers).",
-          hint: "What organisms DO, not just their names."
+          category: "Biodiversity",
+          front: "What does functional diversity refer to?",
+          back: "The variety of ecological roles and traits performed by species in an ecosystem.",
+          hint: "Ecological roles and traits."
         },
         {
           id: 16,
-          category: "Ecosystem Definition",
-          front: "What transforms a biological Community into an Ecosystem?",
-          back: "The addition and continuous interaction with the ABIOTIC environment (sunlight, soil, water, atmosphere, nutrient cycles).",
-          hint: "Living community + physical chemical surroundings."
+          category: "Ecosystem",
+          front: "What turns a biological community into an ecosystem?",
+          back: "The addition and interaction with the non-living (abiotic) environment (soil, water, temperature, air).",
+          hint: "Living community plus non-living environment."
         }
       ],
 
@@ -434,7 +426,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Ecology is the scientific discipline dedicated to examining how organisms interact with one another and with both the biotic (living) and abiotic (physical/chemical) components of their environment."
+          explanation: "Ecology studies interactions between organisms and both biotic and abiotic components."
         },
         {
           id: 2,
@@ -447,7 +439,7 @@ window.COURSE_DATA = {
           ],
           correct: 2,
           letter: "C",
-          explanation: "Genetic diversity explicitly refers to genetic variation within a single species or population. Different agricultural varieties of Oryza sativa (rice) demonstrate variation at the gene level within one species."
+          explanation: "Genetic diversity refers to genetic variation within a species or population."
         },
         {
           id: 3,
@@ -460,20 +452,20 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Distribution describes the geographic locations, ranges, or spatial areas across which an organism or species occurs in nature."
+          explanation: "Distribution describes where an organism or species occurs geographically."
         },
         {
           id: 4,
           question: "Which sequence correctly represents increasing ecological organization?",
           options: [
-            "Community → organism → ecosystem → population",
-            "Organism → population → community → ecosystem",
-            "Population → organism → biosphere → community",
-            "Ecosystem → population → organism → community"
+            "Community -> organism -> ecosystem -> population",
+            "Organism -> population -> community -> ecosystem",
+            "Population -> organism -> biosphere -> community",
+            "Ecosystem -> population -> organism -> community"
           ],
           correct: 1,
           letter: "B",
-          explanation: "The standard ecological organizational hierarchy proceeds from the individual Organism → Population (same species) → Community (different species interacting) → Ecosystem (community + abiotic factors) → Biosphere."
+          explanation: "The usual hierarchy proceeds from organism to population, community, ecosystem, and biosphere."
         },
         {
           id: 5,
@@ -486,7 +478,7 @@ window.COURSE_DATA = {
           ],
           correct: 2,
           letter: "C",
-          explanation: "Abiotic factors are non-living physical or chemical factors (e.g., temperature, water, light, rocks, soil minerals). Fungi, bacteria, and grasses are living (biotic) organisms."
+          explanation: "Temperature is non-living; fungi, bacteria, and grass are living (biotic) components."
         },
         {
           id: 6,
@@ -499,7 +491,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "A community interaction occurs between organisms of different co-occurring species. Predation (e.g. an owl preying on a field mouse) is a classic interspecific biological interaction."
+          explanation: "Predation is a biological interaction between organisms of different species."
         },
         {
           id: 7,
@@ -512,7 +504,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "A habitat is the specific physical and functional setting or environment that provides an organism with the requisite conditions (shelter, water, food, climate) to survive and reproduce."
+          explanation: "A habitat is the environment in which an organism lives."
         },
         {
           id: 8,
@@ -525,7 +517,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Invisible biodiversity consists of components that escape casual human observation: genes, microbes, mycorrhizae, bacteria, soil microfauna, and microscopic ecological processes."
+          explanation: "Biodiversity includes less-visible genetic and microbial components and ecological processes."
         },
         {
           id: 9,
@@ -538,7 +530,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Species richness is strictly the total count of different distinct species inhabiting a given geographic area or community."
+          explanation: "Species richness counts distinct species, not the total number of individuals."
         },
         {
           id: 10,
@@ -551,7 +543,7 @@ window.COURSE_DATA = {
           ],
           correct: 2,
           letter: "C",
-          explanation: "Species evenness quantifies the relative numerical abundance of individuals across all the coexisting species in a community."
+          explanation: "Evenness concerns the relative abundance of species in a community."
         },
         {
           id: 11,
@@ -564,7 +556,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "Functional diversity accounts for the diversity of biological functions, functional traits, and ecological niches fulfilled by organisms in an ecosystem (e.g. primary producers, decomposers, seed dispersers)."
+          explanation: "Functional diversity captures differences in traits and ecological functions."
         },
         {
           id: 12,
@@ -577,7 +569,7 @@ window.COURSE_DATA = {
           ],
           correct: 2,
           letter: "C",
-          explanation: "Ecosystem diversity refers to the presence of multiple different ecosystems, habitats, and ecological communities distributed across a landscape or region."
+          explanation: "Ecosystem diversity concerns the variety of habitats and ecological systems."
         },
         {
           id: 13,
@@ -590,7 +582,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "Ecosystem services are formally defined as the myriad beneficial goods and ecological processes that human societies derive from healthy, functional ecosystems."
+          explanation: "Ecosystem services are the benefits people receive from ecosystems."
         },
         {
           id: 14,
@@ -603,7 +595,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Wetlands act as natural sponge buffers: they store surplus hydrological flows, naturally filter out sediments and toxins, recharge underground aquifers, and stabilize clean water availability."
+          explanation: "Wetlands can store water, improve water quality, and moderate water flows."
         },
         {
           id: 15,
@@ -616,7 +608,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Forest ecosystems sequester massive amounts of atmospheric carbon dioxide in woody biomass and forest soils, while transpiration regulates regional humidity and thermal microclimates."
+          explanation: "Forest vegetation stores carbon and affects local energy and water exchanges."
         },
         {
           id: 16,
@@ -629,7 +621,7 @@ window.COURSE_DATA = {
           ],
           correct: 2,
           letter: "C",
-          explanation: "The universally recognized triple bottom line / three pillars of sustainability are Environmental integrity, Social equity, and Economic viability."
+          explanation: "The three widely used pillars are environmental, social, and economic sustainability."
         },
         {
           id: 17,
@@ -642,7 +634,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "According to the landmark 1987 Brundtland Commission, sustainable development is meeting the needs of the present without compromising the ability of future generations to meet their own needs."
+          explanation: "This is the widely used Brundtland definition of sustainable development."
         },
         {
           id: 18,
@@ -655,7 +647,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Environmental injustice takes place when marginalized or underprivileged groups suffer disproportionate exposure to ecological degradations, polluting industries, toxics, and climate hazards."
+          explanation: "Environmental injustice involves unequal environmental burdens and access to benefits."
         },
         {
           id: 19,
@@ -668,7 +660,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Resilience is defined by an ecosystem's capacity to absorb disturbance, cope with environmental fluctuations, and reorganize while retaining essentially the same function, structure, and identity."
+          explanation: "Resilience concerns how systems respond to disturbance and maintain or recover functions."
         },
         {
           id: 20,
@@ -681,7 +673,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Ecology investigates the interactions between organisms and environments; biodiversity represents the varied richness of life forms; sustainability is about organizing human actions to allow life's systems to persist indefinitely."
+          explanation: "Ecology studies interactions, biodiversity describes life's variety, and sustainability concerns long-term persistence."
         }
       ],
 
@@ -697,7 +689,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "b",
-          explanation: "Invisible biodiversity incorporates the microscopic, genetic, and below-ground life forms such as genes, beneficial microbes, fungi, soil detritivores, and ecological processes that drive ecosystem functioning unseen."
+          explanation: "Invisible biodiversity includes less-visible components like microbes, soil organisms, genes, and ecological processes."
         },
         {
           id: 2,
@@ -710,7 +702,7 @@ window.COURSE_DATA = {
           ],
           correct: 2,
           letter: "c",
-          explanation: "Distribution in ecology designates the spatial locations, geographical expanse, and mapped ranges where a particular species or population occurs."
+          explanation: "Distribution describes the geographic locations where an organism or species occurs."
         },
         {
           id: 3,
@@ -723,7 +715,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "b",
-          explanation: "Wetlands capture surface water runoff, slow flood velocity, absorb toxic pollutants through aquatic vegetation, and slowly replenish clean groundwater aquifers."
+          explanation: "Wetlands store water, filter contaminants, and moderate water flows."
         },
         {
           id: 4,
@@ -736,7 +728,7 @@ window.COURSE_DATA = {
           ],
           correct: 3,
           letter: "d",
-          explanation: "A habitat is not just a place on a map; it is a functionally suitable environmental setting providing the necessary resources, shelter, and conditions an organism requires to survive and reproduce."
+          explanation: "A habitat is a functionally suitable environment in which an organism lives and gets what it needs to survive."
         },
         {
           id: 5,
@@ -749,7 +741,7 @@ window.COURSE_DATA = {
           ],
           correct: 3,
           letter: "d",
-          explanation: "Ecology is an objective natural science that generates testable hypotheses and empirical explanations. Environmental concern is a value-driven social, moral, or philosophical response regarding human impact on nature."
+          explanation: "Ecology is an objective science, while environmental concern is a value-driven social or ethical response."
         },
         {
           id: 6,
@@ -762,7 +754,7 @@ window.COURSE_DATA = {
           ],
           correct: 2,
           letter: "c",
-          explanation: "An ecological community is composed of interacting populations of different species. Predation involves individuals of one species killing and consuming individuals of another species."
+          explanation: "Predation is an interaction between individuals of two different living species."
         },
         {
           id: 7,
@@ -775,7 +767,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "b",
-          explanation: "The biosphere is the highest level of ecological organization: the global sum of all Earth's ecosystems and living systems where life can survive."
+          explanation: "The biosphere is the global sum of all life, ecosystems, and regions where life exists."
         },
         {
           id: 8,
@@ -788,7 +780,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "a",
-          explanation: "A community is strictly defined as an assemblage of populations of different species coexisting and interacting with each other within a designated spatial boundary."
+          explanation: "A community is all the populations of different species coexisting and interacting in an area."
         },
         {
           id: 9,
@@ -801,7 +793,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "a",
-          explanation: "Ecosystem services are the direct and indirect benefits, goods, and ecological conditions that human societies obtain from naturally functioning ecosystems."
+          explanation: "Ecosystem services are the direct and indirect benefits people receive from healthy ecosystems."
         },
         {
           id: 10,
@@ -814,55 +806,59 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "a",
-          explanation: "Organismal ecology investigates how an individual organism's morphological, physiological, and behavioral adaptations enable it to meet environmental challenges."
+          explanation: "Organismal ecology studies the individual living being and its survival adaptations."
         }
       ]
     },
 
-    // Placeholders for subsequent weeks (2-12) to demonstrate scalability:
     2: {
       weekNumber: 2,
-      title: "Functional Diversity, Trade-Offs & Natural Capital",
-      subtitle: "Exam Revision Notes, 16 Key Concepts, 20 Practice MCQs & Assignment 2 Solutions",
+      title: "Functional Diversity, Trade-Offs and Natural Capital",
+      subtitle: "Week 2 Revision Notes, 16 Core Definitions, Practice MCQs and Assignment 2 Solutions",
       status: "available",
-      badge: "Week 2 Ready",
-      summary: "Comprehensive study of functional diversity (distinct ecological roles), evaluating unavoidable sustainability trade-offs between coexisting benefits and harms, recognizing wetlands as irreplaceable natural infrastructure, decoding how industrialization obscured direct ecological feedback, respecting non-linear ecological thresholds, and incorporating natural capital accounting into economic planning.",
+      badge: "Week 2",
+      
+      keyPoints: [
+        "Functional diversity: Different species perform different ecological roles.",
+        "Sustainability trade-off: A situation where real benefits and real harms occur together; assess both rather than assuming a win-win outcome.",
+        "Regulating services: Ecological processes that reduce risks and stabilise environmental conditions.",
+        "Wetlands as natural infrastructure: Wetlands store water, slow flows, filter contaminants, and support habitat (drainage channels cannot fully replace them).",
+        "Ecological feedback: Direct information from land, water, seasons, and resource use that helped early societies understand environmental limits.",
+        "Industrialization impact: Increased speed, scale, and distance of production, making environmental damage easier to hide.",
+        "Ecological threshold: A limit beyond which ecological change may become unsafe or difficult to reverse.",
+        "Natural capital accounting: Recognising that forests, soils, water systems, wetlands, and biodiversity have real value, even when market prices do not capture it fully."
+      ],
 
       hierarchy: [
         {
           level: 1,
           name: "Functional Diversity",
-          def: "The variety of species performing distinct ecological roles, traits, and biochemical tasks in an ecosystem.",
-          icon: "🧬",
-          example: "Pollinators, decomposers, nitrogen fixers, and top predators working in concert"
+          def: "Different species performing different ecological roles (such as pollinators, decomposers, and predators).",
+          example: "Bees pollinating crops while worms cycle soil nutrients"
         },
         {
           level: 2,
-          name: "Regulating Services & Natural Infrastructure",
-          def: "Ecosystem processes that reduce risks, moderate hazards, and stabilise physical conditions.",
-          icon: "🌊",
-          example: "Wetlands acting as natural infrastructure by storing floodwaters, slowing flows, and biofiltering toxics"
+          name: "Regulating Services",
+          def: "Processes that reduce risks and stabilise conditions through natural ecology.",
+          example: "Wetlands moderating floods and filtering runoff water"
         },
         {
           level: 3,
           name: "Ecological Thresholds",
-          def: "Critical boundary limits beyond which ecological change becomes abrupt, unsafe, or difficult to reverse.",
-          icon: "⚠️",
-          example: "Lake eutrophication or coral reef bleaching tipping points"
+          def: "Limits beyond which ecological change can become unsafe or hard to reverse.",
+          example: "Water pollution causing a lake to turn toxic or lose its fish"
         },
         {
           level: 4,
-          name: "Ecological Feedback & Industrial Disconnect",
-          def: "Direct environmental feedback in traditional societies versus industrial systems where distance, scale, and speed hide damage.",
-          icon: "🏭",
-          example: "Urban consumers separated by thousands of miles from the deforestation creating their goods"
+          name: "Ecological Feedback",
+          def: "Direct signals from land, water, and resources showing environmental limits.",
+          example: "Traditional farmers observing seasonal water levels to adjust planting"
         },
         {
           level: 5,
-          name: "Natural Capital Accounting",
-          def: "Recognizing that nature's assets (forests, soils, water systems, wetlands) have real economic and ecological value beyond market prices.",
-          icon: "💎",
-          example: "Valuing clean watershed filtration instead of only logging revenue"
+          name: "Natural Capital",
+          def: "Nature's assets (forests, soils, water, wetlands, biodiversity) that provide real value to humanity.",
+          example: "Clean water and fertile soil treated as valuable economic wealth"
         }
       ],
 
@@ -870,281 +866,271 @@ window.COURSE_DATA = {
         {
           id: "environmental",
           title: "Environmental Sustainability",
-          icon: "🌿",
-          color: "#10b981",
-          desc: "Protecting ecological processes, biodiversity, natural resources, and systemic resilience from crossing irreversible tipping points."
+          desc: "Protecting ecological processes, biodiversity, natural resources, and resilience from crossing unsafe thresholds."
         },
         {
           id: "social",
-          title: "Social Sustainability & Feedback",
-          icon: "👥",
-          color: "#3b82f6",
-          desc: "Developing meaningful sustainability indicators that represent important realities, foster public understanding, and support action."
+          title: "Social Sustainability and Indicators",
+          desc: "Using indicators that represent important realities, are easy to understand, and support constructive action."
         },
         {
           id: "economic",
-          title: "Economic Natural Capital",
-          icon: "📊",
-          color: "#f59e0b",
-          desc: "Natural capital accounting that makes nature's assets visible in decision-making, acknowledging market prices fail to capture total value."
+          title: "Natural Capital in Economics",
+          desc: "Making the value of nature's assets visible in decision-making, acknowledging that market prices fail to reflect full value."
         }
       ],
 
       services: [
         {
           name: "Wetlands as Natural Infrastructure",
-          benefit: "Water Filtration, Flow Moderation & Habitat",
-          icon: "💧",
-          desc: "Wetlands store water, slow runoff flows, filter out contaminants, recharge groundwater aquifers, and provide vital biodiversity habitat."
+          benefit: "Water Storage and Filtration",
+          desc: "Wetlands store water, slow flood runoff, filter contaminants, and provide vital habitat."
         },
         {
           name: "Regulating Ecosystem Services",
-          benefit: "Risk Reduction & Hazard Mitigation",
-          icon: "🛡️",
-          desc: "Ecosystem processes that stabilize climate, moderate extreme weather events, regulate water cycles, and reduce epidemic risks."
+          benefit: "Risk Reduction and Stabilization",
+          desc: "Processes that stabilize climate, moderate floods, and clean air and water."
         },
         {
           name: "Direct Ecological Feedback",
-          benefit: "Early Warning & Environmental Limits",
-          icon: "🔄",
-          desc: "Direct observational signals from changing soils, streams, and seasonal cycles that helped historical societies respect natural carrying capacities."
+          benefit: "Understanding Natural Limits",
+          desc: "Observing changes in soil, water, and seasons to avoid overexploiting natural resources."
         },
         {
-          name: "Natural Capital Assets",
-          benefit: "Long-term Wealth of Nations",
-          icon: "🌲",
-          desc: "Stocks of forests, fertile soils, water basins, and species diversity that generate sustainable flows of vital services for humanity."
+          name: "Natural Capital Accounting",
+          benefit: "Real Value Visibility",
+          desc: "Recognizing that unpriced natural assets like clean water and forests have essential economic value."
         }
       ],
 
       traps: [
         {
-          concept: "The 'Win-Win' Assumption Trap",
-          trap: "Assuming every sustainability intervention produces only positive outcomes without any sacrifice.",
-          rule: "A trade-off occurs when real benefits and real harms occur together. Genuine sustainability analysis assesses competing outcomes rather than assuming an easy win-win."
+          concept: "The Win-Win Trap",
+          trap: "Assuming every sustainability decision is a win-win with no downside.",
+          rule: "Trade-offs involve both real benefits and real harms occurring together. Decisions require evaluating both sides honestly."
         },
         {
-          concept: "The Wetland Replacement Fallacy",
-          trap: "Believing that artificial concrete drainage systems can fully replace natural wetlands.",
-          rule: "Wetland services CANNOT always be fully replaced by engineered drainage systems. Wetlands provide simultaneous flow buffering, biofiltration, carbon storage, and living habitat."
+          concept: "Wetland Replacement Fallacy",
+          trap: "Assuming artificial drainage channels can fully replace natural wetlands.",
+          rule: "Wetlands store water, filter contaminants, and provide habitat. Their services cannot always be fully replaced by engineered drainage systems."
         },
         {
-          concept: "The Market Price Illusion",
-          trap: "Assuming that market prices accurately reflect the true value of ecological systems.",
-          rule: "Market prices frequently fail to capture the full value of ecological functions. Clean air, water filtration, and pollination have enormous value even if they have zero market price tag."
+          concept: "Market Price Assumption",
+          trap: "Assuming market price captures the complete value of an ecosystem.",
+          rule: "Market prices frequently fail to capture the full value of ecological functions (like pollination or water filtration)."
         },
         {
-          concept: "The Industrial Distance Shield",
-          trap: "Assuming modern consumers easily see the ecological impact of their purchases.",
-          rule: "Industrialization increased speed, scale, and geographic distance of production, effectively separating consumers from resources and making environmental damage easier to hide."
+          concept: "Industrial Disconnect",
+          trap: "Thinking modern consumers can easily see the damage caused by products.",
+          rule: "Industrialization increased speed, scale, and distance, making environmental damage easier to hide from distant consumers."
         },
         {
-          concept: "Indicator Decontextualization",
-          trap: "Believing a single number or composite indicator provides complete certainty without context.",
-          rule: "Indicators must always be interpreted in context: the exact same numerical score can signify completely different realities and require different actions in different settings."
+          concept: "Indicators Without Context",
+          trap: "Assuming an indicator number means the exact same thing everywhere.",
+          rule: "Indicators must be interpreted in context: the same number can mean completely different things in different settings."
         },
         {
-          concept: "Ecological Thresholds vs Linear Change",
-          trap: "Assuming ecological degradation is always gradual and easily reversible.",
-          rule: "An ecological threshold is a critical limit beyond which ecological change may become abrupt, unsafe, or practically impossible to reverse."
+          concept: "Ecological Thresholds",
+          trap: "Assuming environmental damage is always gradual and easy to fix.",
+          rule: "An ecological threshold is a critical limit beyond which change can become unsafe or difficult to reverse."
         }
       ],
 
       definitions: [
         {
-          term: "Functional Diversity",
+          term: "Functional diversity",
           category: "Biodiversity",
-          definition: "The variety of species performing different ecological roles, biochemical processes, and functional traits within an ecosystem."
+          definition: "The variety of species performing different ecological roles."
         },
         {
-          term: "Sustainability Trade-off",
+          term: "Sustainability trade-off",
           category: "Sustainability",
-          definition: "A decision situation where real benefits and real harms occur together, requiring rigorous evaluation of competing outcomes rather than assuming win-win solutions."
+          definition: "A situation where real benefits and real harms occur together, requiring evaluation of competing outcomes."
         },
         {
-          term: "Regulating Services",
+          term: "Regulating services",
           category: "Ecosystem Services",
-          definition: "Ecosystem services that reduce risks, moderate natural hazards, and stabilise environmental conditions through natural ecological processes."
+          definition: "Ecosystem services that reduce risks and stabilise conditions through ecological processes."
         },
         {
-          term: "Environmental Sustainability",
+          term: "Environmental sustainability",
           category: "Sustainability",
-          definition: "The ongoing protection and stewardship of ecological processes, biodiversity, natural resource stocks, and systemic resilience over time."
+          definition: "Protecting ecological processes, biodiversity, resources, and resilience."
         },
         {
-          term: "Wetlands as Natural Infrastructure",
+          term: "Wetlands as natural infrastructure",
           category: "Ecosystem Services",
-          definition: "Natural wetland systems that perform essential infrastructure services: storing excess floodwater, slowing hydrological velocity, filtering contaminants, and supporting wildlife habitat."
+          definition: "Wetlands store water, slow flows, filter contaminants, and support habitat."
         },
         {
-          term: "Ecological Feedback",
+          term: "Ecological feedback",
           category: "Ecology",
-          definition: "Direct information, observations, or consequences from changes in land, water, seasons, and resource availability that help societies perceive and respect environmental limits."
+          definition: "Information or consequences from changes in land, water, seasons, and resource use that help people understand environmental limits."
         },
         {
-          term: "Sustainability Indicator",
+          term: "Sustainability indicator",
           category: "Sustainability",
-          definition: "A quantitative or qualitative measure that represents important real-world conditions, is readily understandable, and directly supports evidence-based action."
+          definition: "A measure that represents important realities, is understandable, and supports action."
         },
         {
-          term: "Composite Indicator",
+          term: "Composite indicator",
           category: "Sustainability",
-          definition: "A single aggregate metric formulated by mathematically combining multiple individual indicators into one score (can simplify reporting, but risks obscuring crucial local context)."
+          definition: "A measure made by combining multiple indicators into one score."
         },
         {
-          term: "Industrialization Impact",
+          term: "Industrialization and environmental impact",
           category: "Ecology",
-          definition: "The historical shift that exponentially increased the speed, scale, and geographical distance of production and consumption, making some environmental damage easier to hide from consumers."
+          definition: "Industrialization increased the speed, scale, and distance of production and consumption, making some environmental damage easier to hide."
         },
         {
-          term: "Ecological Threshold",
+          term: "Ecological threshold",
           category: "Ecology",
-          definition: "A critical tipping point or boundary beyond which ecological change may accelerate abruptly, become unsafe, or become practically impossible to reverse."
+          definition: "A limit beyond which ecological change may become unsafe or difficult to reverse."
         },
         {
-          term: "Natural Capital",
+          term: "Natural capital",
           category: "Sustainability",
-          definition: "Earth's collective assets—including forests, soils, freshwater systems, wetlands, clean air, and biodiversity—which hold intrinsic and indispensable real economic value."
+          definition: "Nature's assets, including forests, soils, water systems, wetlands, and biodiversity, which have real value."
         },
         {
-          term: "Natural Capital Accounting",
+          term: "Natural capital accounting",
           category: "Sustainability",
-          definition: "An environmental-economic accounting approach that makes the value, depreciation, and service flows of natural assets visible in financial accounts, policy, and decision-making."
+          definition: "An approach that makes the value of natural assets more visible in accounting and decision-making."
         },
         {
-          term: "Ecosystem Services",
+          term: "Ecosystem services",
           category: "Ecosystem Services",
-          definition: "The multitude of benefits people obtain from ecosystems, systematically categorized into provisioning, regulating, cultural, and supporting functions."
+          definition: "Benefits people obtain from ecosystems; they can include provisioning, regulating, cultural, and supporting functions."
         },
         {
-          term: "Ecological Resilience",
+          term: "Ecological resilience",
           category: "Ecology",
-          definition: "The capacity of an ecological system to absorb shocks, withstand disturbance, and maintain or recover critical structures, feedbacks, and functions."
+          definition: "The capacity of an ecological system to withstand disturbance and maintain or recover important functions."
         },
         {
           term: "Biodiversity",
           category: "Biodiversity",
-          definition: "The full variety of life on Earth across all organizational levels, encompassing genetic diversity, species diversity, and ecosystem diversity."
+          definition: "The variety of life, including genetic, species, and ecosystem diversity."
         },
         {
           term: "Sustainability",
           category: "Sustainability",
-          definition: "Prioritizing and maintaining long-term environmental, social, and economic well-being across generations, rather than extracting only short-term economic gains."
+          definition: "Considering long-term environmental, social, and economic well-being rather than only short-term gains."
         }
       ],
 
       flashcards: [
         {
           id: 201,
-          category: "Core Definition",
-          front: "What does 'Functional Diversity' refer to?",
-          back: "Different species performing different ecological roles and biological traits in an ecosystem (e.g., pollinators, decomposers, apex predators).",
-          hint: "Focus on what species DO, not just market prices or headcount."
+          category: "Definition",
+          front: "What does functional diversity refer to?",
+          back: "Different species performing different ecological roles (such as pollinators, decomposers, and soil aerators).",
+          hint: "Different species doing different jobs."
         },
         {
           id: 202,
-          category: "Sustainability Decision",
-          front: "What is a 'Trade-Off' in sustainability analysis?",
-          back: "A decision situation where real benefits and real harms occur together, requiring deliberate evaluation of competing outcomes rather than assuming an easy win-win.",
-          hint: "Benefits and costs coexist."
+          category: "Sustainability",
+          front: "What is a trade-off in sustainability analysis?",
+          back: "A situation where real benefits and real harms occur together, requiring evaluation of competing outcomes rather than assuming an automatic win-win.",
+          hint: "Benefits and harms happen together."
         },
         {
           id: 203,
           category: "Ecosystem Services",
-          front: "What is the primary role of 'Regulating Services'?",
-          back: "Reducing risks and stabilising environmental conditions through natural ecological processes (e.g., flood control, water purification, climate regulation).",
-          hint: "Stabilizing and protecting."
+          front: "What is the main role of regulating services?",
+          back: "Reducing risks and stabilising conditions through ecological processes (such as wetlands filtering water or buffering floods).",
+          hint: "Reducing risks and stabilizing conditions."
         },
         {
           id: 204,
-          category: "Environmental Sustainability",
-          front: "What does Environmental Sustainability primarily involve?",
-          back: "Protecting ecological processes, biodiversity, natural resources, and system resilience over time.",
+          category: "Sustainability",
+          front: "What does environmental sustainability primarily involve?",
+          back: "Protecting ecological processes, biodiversity, resources, and resilience.",
           hint: "Processes, biodiversity, resources, and resilience."
         },
         {
           id: 205,
           category: "Natural Infrastructure",
-          front: "Why are Wetlands understood as 'Natural Infrastructure'?",
-          back: "They store water, slow down runoff flows, filter toxic contaminants, and support critical biodiversity habitat naturally.",
-          hint: "Think: nature's water treatment plant and storm buffer."
+          front: "Why can wetlands be understood as natural infrastructure?",
+          back: "They store water, slow flows, filter contaminants, and support habitat.",
+          hint: "Four key wetland functions."
         },
         {
           id: 206,
           category: "Exam Trap Alert",
-          front: "Can wetland services always be fully replaced by engineered drainage systems?",
-          back: "NO! The official NPTEL answer explicitly rejects this assumption. Engineered pipes cannot replicate the multi-benefit biofiltration, habitat, and hydrological recharge of wetlands.",
-          hint: "Never assume complete replacement."
+          front: "Can wetland services always be fully replaced by drainage systems?",
+          back: "No. Drainage systems cannot fully replace the water storage, biofiltration, and wildlife habitat that wetlands provide.",
+          hint: "Drainage systems cannot fully replace wetlands."
         },
         {
           id: 207,
-          category: "Ecological Feedback",
-          front: "What helped early human societies understand environmental limits?",
-          back: "Direct ecological feedback from land, water, seasons, and local resource use.",
-          hint: "Direct, immediate observational feedback."
+          category: "Feedback",
+          front: "What helped early societies understand environmental limits?",
+          back: "Direct ecological feedback from land, water, seasons, and resource use.",
+          hint: "Direct feedback from their surroundings."
         },
         {
           id: 208,
-          category: "Sustainability Indicators",
-          front: "What three essential qualities define a good sustainability indicator?",
-          back: "1. Represents important realities\n2. Is understandable\n3. Supports action",
+          category: "Indicators",
+          front: "What three things should a good sustainability indicator do?",
+          back: "1. Represent important realities\n2. Be understandable\n3. Support action",
           hint: "Meaningful, clear, and actionable."
         },
         {
           id: 209,
           category: "Industrialization",
-          front: "What made industrialization fundamentally different from earlier development?",
-          back: "It exponentially increased speed, scale, and geographic distance of production and consumption, making ecological damage easier to hide.",
+          front: "What made industrialization different from earlier forms of development?",
+          back: "It increased the speed, scale, and distance of production and consumption, making damage easier to hide.",
           hint: "Speed, scale, and distance."
         },
         {
           id: 210,
-          category: "Ecological Thresholds",
-          front: "What is an 'Ecological Threshold'?",
-          back: "A critical limit or tipping point beyond which ecological change may become unsafe, abrupt, or practically impossible to reverse.",
-          hint: "Points of no return or unsafe shifts."
+          category: "Thresholds",
+          front: "What does an ecological threshold indicate?",
+          back: "A limit beyond which ecological change may become unsafe or difficult to reverse.",
+          hint: "Unsafe or hard-to-reverse limit."
         },
         {
           id: 211,
           category: "Natural Capital",
-          front: "What assets are included in 'Natural Capital'?",
-          back: "Nature's living and physical assets: forests, soils, freshwater systems, wetlands, clean atmosphere, and biodiversity.",
-          hint: "Nature's balance sheet."
+          front: "What does natural capital include?",
+          back: "Nature's assets: forests, soils, water systems, wetlands, and biodiversity.",
+          hint: "Living and natural physical assets."
         },
         {
           id: 212,
-          category: "Natural Capital Accounting",
-          front: "What is the purpose of Natural Capital Accounting?",
-          back: "To make the real value of natural assets and ecological functions visible in economic accounts, public balance sheets, and policy decisions.",
-          hint: "Putting nature on the balance sheet."
+          category: "Economics",
+          front: "What does natural capital accounting emphasize?",
+          back: "That forests, soils, water systems, wetlands, and biodiversity have real value, even when market prices do not capture it fully.",
+          hint: "Making nature's real value visible."
         },
         {
           id: 213,
-          category: "Economic Fallacy",
-          front: "Why does Market Price fail as an indicator of ecosystem value?",
-          back: "Market prices frequently fail to capture the full value of vital ecological functions (e.g. pollination, groundwater recharge, clean air have no market sticker price).",
-          hint: "Price does not equal value."
+          category: "Economics",
+          front: "Does market price capture the full value of ecosystems?",
+          back: "No. Market price may fail to capture the full value of ecological functions like water filtration and climate regulation.",
+          hint: "Market price often leaves out ecological value."
         },
         {
           id: 214,
-          category: "Trade-off Example",
-          front: "Give a concrete example of a sustainability trade-off.",
-          back: "An industrial/highway project that creates economic revenue and jobs, but destroys a vital natural wetland and degrades downstream water security.",
-          hint: "Economic gain paired with ecological loss."
+          category: "Trade-off",
+          front: "Give an example of a sustainability trade-off.",
+          back: "A development project creates economic benefits but damages a natural wetland.",
+          hint: "Benefits combined with environmental harm."
         },
         {
           id: 215,
-          category: "Indicators & Context",
-          front: "Why must sustainability indicators always be interpreted in context?",
-          back: "Because the exact same numerical score can mean completely different things in different geographic or social settings.",
-          hint: "A number without context is meaningless."
+          category: "Indicators",
+          front: "Why should indicators be interpreted in context?",
+          back: "Because the exact same number can mean different things in different settings.",
+          hint: "Numbers depend on local conditions."
         },
         {
           id: 216,
-          category: "Composite Indicators",
-          front: "What is a 'Composite Indicator' and what is its main drawback?",
-          back: "A single score made by combining multiple indicators. Drawback: it can mask or obscure critical local context and trade-offs behind a single averaged number.",
-          hint: "Aggregated score vs hidden realities."
+          category: "Indicators",
+          front: "What is a composite indicator?",
+          back: "A measure made by combining multiple indicators into one score.",
+          hint: "Combining multiple measures into one."
         }
       ],
 
@@ -1160,7 +1146,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Functional diversity focuses on ecological roles, biological traits, and ecosystem tasks performed by different species, rather than prices or human population figures."
+          explanation: "Functional diversity focuses on ecological roles and traits, not prices or human population."
         },
         {
           id: 202,
@@ -1173,7 +1159,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Trade-offs involve competing outcomes where real benefits (e.g. food production, infrastructure) and real harms (e.g. habitat destruction, emissions) coexist and must be evaluated together."
+          explanation: "Trade-offs involve competing outcomes, so benefits and harms must be considered together."
         },
         {
           id: 203,
@@ -1186,7 +1172,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Regulating services reduce risks and stabilize environmental conditions. Timber and minerals are provisioning goods, while wetland filtration regulates water purity and flood risk."
+          explanation: "Regulating services reduce risks or stabilise environmental conditions."
         },
         {
           id: 204,
@@ -1199,7 +1185,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Environmental sustainability centers on maintaining ecological processes, safeguarding biological diversity, conserving natural resources, and sustaining system resilience."
+          explanation: "Environmental sustainability includes ecological processes and the capacity of systems to persist."
         },
         {
           id: 205,
@@ -1212,7 +1198,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Wetlands perform multiple critical infrastructure functions: they store surplus water, slow rapid flood runoff, biologically filter contaminants, and provide essential wildlife habitat."
+          explanation: "Wetlands perform several functions that support water management and biodiversity."
         },
         {
           id: 206,
@@ -1225,7 +1211,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "Direct ecological feedback from changing crop yields, water availability, seasonal shifts, and resource scarcity made environmental boundaries directly observable to early communities."
+          explanation: "Direct ecological feedback makes resource constraints and environmental changes observable."
         },
         {
           id: 207,
@@ -1238,7 +1224,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Useful indicators are meaningful and actionable: they capture critical real-world realities, can be understood by stakeholders, and support sound decision-making."
+          explanation: "Useful indicators are meaningful and actionable, not merely easy to count."
         },
         {
           id: 208,
@@ -1251,7 +1237,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Industrialization greatly expanded the speed, scale, and geographic distance of supply chains, creating an ecological disconnect where consumers rarely witness the distant extraction or damage."
+          explanation: "Greater speed, scale, and distance could separate consumers from environmental consequences."
         },
         {
           id: 209,
@@ -1264,7 +1250,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "An ecological threshold represents a critical tipping point in an ecosystem beyond which further change can trigger abrupt, dangerous, or irreversible system degradation."
+          explanation: "Thresholds can mark critical limits in ecological systems."
         },
         {
           id: 210,
@@ -1277,7 +1263,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Natural capital encompasses all of Earth's natural stocks and assets—including forests, fertile soils, water basins, wetlands, and biodiversity—whether or not markets price them."
+          explanation: "Natural capital includes natural assets, whether or not their full value is reflected in market prices."
         },
         {
           id: 211,
@@ -1290,7 +1276,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Natural capital accounting integrates the depreciation and value of ecosystem assets into national and corporate accounts so decision-makers can protect foundational wealth."
+          explanation: "It helps decision-makers account for natural assets and ecological functions."
         },
         {
           id: 212,
@@ -1303,7 +1289,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Markets routinely fail to place monetary prices on essential public ecosystem functions (such as climate regulation, groundwater recharge, and oxygen production)."
+          explanation: "Many ecosystem benefits are not fully reflected in market prices."
         },
         {
           id: 213,
@@ -1316,7 +1302,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Crossing thresholds can push ecosystems into alternative stable states (e.g. desertification, lake dead zones) that are exceedingly difficult, expensive, or impossible to reverse."
+          explanation: "Thresholds can mark points after which impacts become severe or hard to reverse."
         },
         {
           id: 214,
@@ -1329,7 +1315,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "A classic sustainability trade-off emerges when an infrastructure or development initiative delivers economic benefits while simultaneously degrading a natural ecosystem."
+          explanation: "A trade-off arises when benefits and harms coexist."
         },
         {
           id: 215,
@@ -1342,7 +1328,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "A composite indicator mathematically aggregates multiple individual metrics into a single index (such as the Human Development Index), which provides high-level overviews but may hide trade-offs."
+          explanation: "Composite indicators combine multiple measures, but they can obscure important context if used carelessly."
         },
         {
           id: 216,
@@ -1355,7 +1341,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "B",
-          explanation: "Context is vital because identical quantitative values can signify vastly different ecological health or social vulnerability across different geographies and cultural baselines."
+          explanation: "Context helps explain what a measure means and whether it supports an appropriate action."
         },
         {
           id: 217,
@@ -1368,7 +1354,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "Environmental sustainability involves actively safeguarding biodiversity and core ecological processes while managing natural resource harvesting responsibly within planetary limits."
+          explanation: "Environmental sustainability considers biodiversity, ecological processes, resources, and resilience."
         },
         {
           id: 218,
@@ -1381,7 +1367,7 @@ window.COURSE_DATA = {
           ],
           correct: 3,
           letter: "D",
-          explanation: "Assuming that artificial drainage systems can always replace wetland functions is false. Engineered channels cannot replicate the biological purification and habitat complexity of wetlands."
+          explanation: "The official solutions explicitly reject the assumption that drainage can always fully replace wetland services."
         },
         {
           id: 219,
@@ -1394,7 +1380,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "In modern globalized industrial networks, production occurs far away from consumption centers, geographically separating consumers from the immediate consequences of extraction."
+          explanation: "Greater scale, speed, and distance can hide environmental consequences from consumers."
         },
         {
           id: 220,
@@ -1407,7 +1393,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "A",
-          explanation: "True sustainability requires recognizing that natural capital assets possess profound intrinsic, ecological, and economic value that must guide policy and planning decisions."
+          explanation: "Natural capital accounting emphasises the real value of forests, soils, water, wetlands, and biodiversity."
         }
       ],
 
@@ -1423,7 +1409,7 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "b",
-          explanation: "Functional diversity is defined as the variety of distinct ecological roles, traits, and functions carried out by different species in an ecosystem."
+          explanation: "Functional diversity refers to different species performing different ecological roles."
         },
         {
           id: 202,
@@ -1436,7 +1422,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "a",
-          explanation: "A sustainability trade-off describes circumstances where genuine benefits and real harms co-occur, demanding careful evaluation of competing trade-offs rather than simplistic win-win assumptions."
+          explanation: "A trade-off is a situation where real benefits and real harms occur together, requiring evaluation of competing outcomes."
         },
         {
           id: 203,
@@ -1449,7 +1435,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "a",
-          explanation: "Regulating services act to reduce natural risks and stabilise environmental conditions via ecological processes (such as storm buffering, water filtration, and temperature moderation)."
+          explanation: "Regulating services reduce risks and stabilise environmental conditions through ecological processes."
         },
         {
           id: 204,
@@ -1462,7 +1448,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "a",
-          explanation: "Environmental sustainability primarily focuses on the proactive protection of ecological processes, biodiversity, natural resource stocks, and systemic resilience."
+          explanation: "Environmental sustainability primarily involves protecting ecological processes, biodiversity, resources, and resilience."
         },
         {
           id: 205,
@@ -1475,7 +1461,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "a",
-          explanation: "Wetlands serve as vital natural infrastructure because they naturally store floodwaters, slow velocity, biofilter pollutants, and sustain critical ecological habitats."
+          explanation: "Wetlands store water, slow flows, filter contaminants, and support habitat."
         },
         {
           id: 206,
@@ -1488,7 +1474,7 @@ window.COURSE_DATA = {
           ],
           correct: 0,
           letter: "a",
-          explanation: "Early societies relied on direct ecological feedback—observing firsthand the constraints of local soil fertility, seasonal weather patterns, and freshwater supply."
+          explanation: "Direct ecological feedback from land, water, seasons, and resource use made environmental limits observable to early societies."
         },
         {
           id: 207,
@@ -1501,7 +1487,7 @@ window.COURSE_DATA = {
           ],
           correct: 3,
           letter: "d",
-          explanation: "An effective sustainability indicator must faithfully reflect important real-world conditions, remain transparent and understandable, and directly empower decision-makers to take action."
+          explanation: "A good sustainability indicator represents important realities, is understandable, and supports action."
         },
         {
           id: 208,
@@ -1514,7 +1500,7 @@ window.COURSE_DATA = {
           ],
           correct: 3,
           letter: "d",
-          explanation: "Industrialization fundamentally altered human development by massively magnifying speed, scale, and geographic distance—thereby severing consumers from direct resource feedback and obscuring environmental harms."
+          explanation: "Industrialization increased speed, scale, and distance, which made environmental damage easier to hide."
         },
         {
           id: 209,
@@ -1527,7 +1513,7 @@ window.COURSE_DATA = {
           ],
           correct: 2,
           letter: "c",
-          explanation: "An ecological threshold denotes a critical limit or boundary beyond which ecological alterations can trigger unsafe, non-linear, and irreversible damage."
+          explanation: "An ecological threshold indicates a limit beyond which ecological change may become unsafe or difficult to reverse."
         },
         {
           id: 210,
@@ -1540,86 +1526,87 @@ window.COURSE_DATA = {
           ],
           correct: 1,
           letter: "b",
-          explanation: "Natural capital accounting underscores that natural assets—including forests, soils, water basins, wetlands, and biodiversity—possess profound, tangible value that must be included in decision-making."
+          explanation: "Natural capital accounting emphasises that forests, soils, water systems, wetlands, and biodiversity have real value."
         }
       ]
     },
+
     3: {
       weekNumber: 3,
-      title: "Ecosystem Goods, Services & Valuation",
-      subtitle: "Upcoming Lectures & Assignment 3",
+      title: "Ecosystem Goods, Services and Valuation",
+      subtitle: "Upcoming Lectures and Assignment 3",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 3 will be populated upon receipt of lecture content."
     },
     4: {
       weekNumber: 4,
-      title: "Threats to Biodiversity: Habitat Loss & Invasions",
-      subtitle: "Upcoming Lectures & Assignment 4",
+      title: "Threats to Biodiversity: Habitat Loss and Invasions",
+      subtitle: "Upcoming Lectures and Assignment 4",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 4 will be populated upon receipt of lecture content."
     },
     5: {
       weekNumber: 5,
-      title: "Climate Change & Ecological Resilience",
-      subtitle: "Upcoming Lectures & Assignment 5",
+      title: "Climate Change and Ecological Resilience",
+      subtitle: "Upcoming Lectures and Assignment 5",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 5 will be populated upon receipt of lecture content."
     },
     6: {
       weekNumber: 6,
-      title: "Conservation Biology & Protected Areas",
-      subtitle: "Upcoming Lectures & Assignment 6",
+      title: "Conservation Biology and Protected Areas",
+      subtitle: "Upcoming Lectures and Assignment 6",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 6 will be populated upon receipt of lecture content."
     },
     7: {
       weekNumber: 7,
-      title: "Sustainable Agriculture & Forest Management",
-      subtitle: "Upcoming Lectures & Assignment 7",
+      title: "Sustainable Agriculture and Forest Management",
+      subtitle: "Upcoming Lectures and Assignment 7",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 7 will be populated upon receipt of lecture content."
     },
     8: {
       weekNumber: 8,
-      title: "Urban Ecology & Green Infrastructure",
-      subtitle: "Upcoming Lectures & Assignment 8",
+      title: "Urban Ecology and Green Infrastructure",
+      subtitle: "Upcoming Lectures and Assignment 8",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 8 will be populated upon receipt of lecture content."
     },
     9: {
       weekNumber: 9,
-      title: "Circular Economy & Resource Sustainability",
-      subtitle: "Upcoming Lectures & Assignment 9",
+      title: "Circular Economy and Resource Sustainability",
+      subtitle: "Upcoming Lectures and Assignment 9",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 9 will be populated upon receipt of lecture content."
     },
     10: {
       weekNumber: 10,
-      title: "Environmental Policy, Law & Global Treaties",
-      subtitle: "Upcoming Lectures & Assignment 10",
+      title: "Environmental Policy, Law and Global Treaties",
+      subtitle: "Upcoming Lectures and Assignment 10",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 10 will be populated upon receipt of lecture content."
     },
     11: {
       weekNumber: 11,
-      title: "Community-Based Conservation & Indigenous Knowledge",
-      subtitle: "Upcoming Lectures & Assignment 11",
+      title: "Community-Based Conservation and Indigenous Knowledge",
+      subtitle: "Upcoming Lectures and Assignment 11",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Material for Week 11 will be populated upon receipt of lecture content."
     },
     12: {
       weekNumber: 12,
-      title: "Comprehensive Final Exam Prep & Grand Mock Tests",
-      subtitle: "Final Revision, Mock Exams & Complete Syllabus Wrap",
+      title: "Comprehensive Final Exam Prep and Grand Mock Tests",
+      subtitle: "Final Revision, Mock Exams and Complete Syllabus Review",
       status: "upcoming",
       badge: "Coming Soon",
       summary: "Final exam revision tests and comprehensive multi-week review drills."
