@@ -14,38 +14,27 @@ Access the live portal on desktop, tablet, or mobile:
 
 ---
 
-## Portal Sections
+## Portal Structure
 
-The portal provides 5 focused learning and practice modes:
+The application separates weekly study from comprehensive mock testing via top-level mode navigation:
 
-1. **Study Notes:**
-   - High-yield concept reminders.
-   - Core definitions and concepts table directly from course notes.
-   - Last-minute checklists and traps.
+1. **Week-by-Week Portal:**
+   - Dedicated week switcher (Weeks 1–6 and 8–12).
+   - Strictly 3 focused pages per week:
+     - **Study Notes:** High-yield concept reminders, core definitions table, and last-minute checklists.
+     - **Assignment MCQs:** 10 official assignment questions with instant feedback and shuffle option.
+     - **Extra Practice MCQs:** 20 practice questions with full explanations and shuffle option.
 
-2. **Assignment MCQs (Week-wise):**
-   - 10 official assignment questions for each week.
-   - Interactive option selection with instant feedback and verified answers.
-   - Shuffle mode toggle (`Shuffle: ON / OFF`) and Reshuffle button.
-   - "Show All Answers" toggle and Reset Quiz button.
+2. **All-Weeks Quiz (Separate Standalone Mode):**
+   - Independent full-course assignment quiz mode (completely separated from weekly navigation).
+   - Contains all official assignment questions across all available weeks (110 questions across 11 uploaded weeks; will become 120 once Week 7 is added).
+   - Shuffle mode toggle (`Shuffle: ON / OFF`) and `Reshuffle` button for simulated exam conditions.
+   - Live score counter, instant feedback, and answer reveals.
 
-3. **Extra Practice MCQs (Week-wise):**
-   - 20 exam-style practice MCQs per week with detailed explanations.
-   - Interactive option selection with instant feedback.
-   - Shuffle mode toggle (`Shuffle: ON / OFF`) and Reshuffle button.
-   - Score tracking, answer reveal, and quiz reset.
-
-4. **All Weeks Quiz (All Assignments Combined):**
-   - All 110 official assignment questions across all weeks (Weeks 1–6 & 8–12).
-   - In-panel week filter buttons (`All Weeks (110)` or filter to any specific week).
-   - Shuffle mode toggle (`Shuffle: ON / OFF`) and Reshuffle button for randomized mock tests.
-   - Synchronized answers and comprehensive score counter.
-
-5. **Extra Questions Practice (Week-wise & All Weeks):**
-   - All 220 practice exam-style questions with full explanations.
-   - Week selector buttons (`All Weeks (220)` or practice any week individually).
-   - Shuffle mode toggle (`Shuffle: ON / OFF`) and Reshuffle button.
-   - Full answer reveal and reset options.
+3. **Extra Questions Practice (Separate Standalone Mode):**
+   - Full bank of 220 exam-style practice questions with detailed explanations.
+   - Week-wise filter selector (`All Weeks (220)` or individual weeks).
+   - Shuffle mode toggle (`Shuffle: ON / OFF`) and `Reshuffle` button.
 
 ---
 

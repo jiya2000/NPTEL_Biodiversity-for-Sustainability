@@ -2,14 +2,11 @@
  * Biodiversity for Sustainability
  * Clean, Simple, Single-Page App Logic
  * Strictly handles:
- * 1. Week Switching (Weeks 1-6, 8-12)
- * 2. Five Focused Views:
- *    - Study Notes (High-yield reminders & definitions)
- *    - Assignment MCQs (Week-wise official assignment questions with shuffle)
- *    - Extra Practice MCQs (Week-wise practice questions with shuffle)
- *    - All Weeks Quiz (All official assignment quizzes combined with/without shuffle & filter)
- *    - Extra Questions Practice (Extra questions week-wise or all weeks with/without shuffle)
- * 3. Interactive Quiz Feedback & Answer Reveals
+ * 1. Top-Level Modes:
+ *    - "Week-by-Week Portal" (Week selector + strictly 3 tabs: Study Notes, Assignment MCQs, Extra MCQs)
+ *    - "All-Weeks Quiz" (Completely separate mock exam across all weeks with/without shuffle)
+ *    - "Extra Questions Practice" (Dedicated practice section with week-wise & shuffle options)
+ * 2. Interactive Quiz Feedback & Answer Reveals
  */
 
 (function () {
@@ -17,8 +14,9 @@
 
   // Application State
   const state = {
+    currentMode: 'weekwise', // 'weekwise' | 'all-quizzes' | 'all-extra'
     currentWeek: 12,
-    currentTab: 'study', // 'study' | 'assignment' | 'extra' | 'all-quizzes' | 'all-extra'
+    currentTab: 'study',     // 'study' | 'assignment' | 'extra'
     shuffle: {
       assignment: false,
       extra: false,
@@ -89,7 +87,90 @@
     }
   }
 
-  // --- Week Selector (Top Bar) ---
+  // --- Mode Navigation (Separates All-Weeks Quiz from Week-wise Portal) ---
+  function initModeNavigation() {
+    const modeBtns = document.querySelectorAll('.mode-btn');
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-mode');
+        switchMode(mode);
+      });
+    });
+  }
+
+  function switchMode(modeName) {
+    state.currentMode = modeName;
+
+    // Update active mode buttons
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-mode') === modeName);
+    });
+
+    const weekBarContainer = document.getElementById('week-bar-container');
+    const tabBarContainer = document.getElementById('tab-bar-container');
+
+    // Hide all view panels first
+    document.querySelectorAll('.view-panel').forEach(panel => {
+      panel.classList.remove('active');
+    });
+
+    if (modeName === 'weekwise') {
+      // Show week bar and tab bar
+      if (weekBarContainer) weekBarContainer.style.display = '';
+      if (tabBarContainer) tabBarContainer.style.display = '';
+
+      // Activate current tab panel
+      const targetPanel = document.getElementById(`view-${state.currentTab}`);
+      if (targetPanel) targetPanel.classList.add('active');
+
+      const weekData = window.COURSE_DATA.weeks[state.currentWeek];
+      if (weekData) {
+        updateBannerTitle(weekData.title, weekData.subtitle);
+        if (state.currentTab === 'study') {
+          renderStudyNotes(weekData);
+        } else {
+          renderQuiz(state.currentTab);
+        }
+      }
+    } else if (modeName === 'all-quizzes') {
+      // Hide week-specific bars entirely
+      if (weekBarContainer) weekBarContainer.style.display = 'none';
+      if (tabBarContainer) tabBarContainer.style.display = 'none';
+
+      const panel = document.getElementById('view-all-quizzes');
+      if (panel) panel.classList.add('active');
+
+      updateBannerTitle(
+        'All-Weeks Assignment Quiz',
+        '110 Official Assignment Questions across all 11 available weeks (Weeks 1–6 & 8–12)'
+      );
+      renderQuiz('allQuizzes');
+    } else if (modeName === 'all-extra') {
+      // Hide week-specific bars entirely
+      if (weekBarContainer) weekBarContainer.style.display = 'none';
+      if (tabBarContainer) tabBarContainer.style.display = 'none';
+
+      const panel = document.getElementById('view-all-extra');
+      if (panel) panel.classList.add('active');
+
+      updateBannerTitle(
+        'Extra Questions Practice',
+        '220 Practice Exam-Style Questions with Explanations • Week-wise & Shuffle Modes'
+      );
+      renderQuiz('allExtra');
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateBannerTitle(title, subtitle) {
+    const titleEl = document.getElementById('current-week-title');
+    const subEl = document.getElementById('current-week-subtitle');
+    if (titleEl) titleEl.textContent = title;
+    if (subEl) subEl.textContent = subtitle;
+  }
+
+  // --- Week Selector (Within Week-by-Week Mode) ---
   function initWeekSelector() {
     const buttons = document.querySelectorAll('.week-btn');
     buttons.forEach(btn => {
@@ -104,11 +185,11 @@
     if (!window.COURSE_DATA || !window.COURSE_DATA.weeks[weekNum]) return;
     state.currentWeek = weekNum;
 
-    // Invalidate cached single-week shuffle when week changes
+    // Reset single-week shuffle cache
     state.shuffledOrder.assignment = null;
     state.shuffledOrder.extra = null;
 
-    // Update top week buttons
+    // Update buttons
     document.querySelectorAll('.week-btn').forEach(btn => {
       const w = parseInt(btn.getAttribute('data-week'), 10);
       btn.classList.toggle('active', w === weekNum);
@@ -116,51 +197,24 @@
 
     const weekData = window.COURSE_DATA.weeks[weekNum];
 
-    // Update counts in tabs
+    // Update counts
     const countAssign = document.getElementById('count-assignment');
     const countExtra = document.getElementById('count-extra');
     if (countAssign) countAssign.textContent = weekData.assignmentMCQs ? weekData.assignmentMCQs.length : 10;
     if (countExtra) countExtra.textContent = weekData.extraMCQs ? weekData.extraMCQs.length : 20;
 
-    // Update banner
-    updateBannerForTab(state.currentTab);
-
-    // If currently on study, assignment, or extra, render them
-    renderStudyNotes(weekData);
-    if (state.currentTab === 'assignment') {
-      renderQuiz('assignment');
-    } else if (state.currentTab === 'extra') {
-      renderQuiz('extra');
-    } else if (state.currentTab === 'all-quizzes') {
-      // Also update in-panel filter to match selected week if desired
-      setFilterWeek('allQuizzes', weekNum);
-    } else if (state.currentTab === 'all-extra') {
-      setFilterWeek('allExtra', weekNum);
-    }
-  }
-
-  // --- Banner Updates ---
-  function updateBannerForTab(tabName) {
-    const titleEl = document.getElementById('current-week-title');
-    const subEl = document.getElementById('current-week-subtitle');
-    if (!titleEl || !subEl) return;
-
-    if (tabName === 'all-quizzes') {
-      titleEl.textContent = 'All Weeks Assignment Quiz';
-      subEl.textContent = '110 Official Assignment Questions (Weeks 1–6 & 8–12) with Shuffle & Filter Options';
-    } else if (tabName === 'all-extra') {
-      titleEl.textContent = 'Extra Questions Practice';
-      subEl.textContent = '220 Practice Exam-Style Questions with Explanations • Week-wise & Shuffle Modes';
-    } else {
-      const weekData = window.COURSE_DATA.weeks[state.currentWeek];
-      if (weekData) {
-        titleEl.textContent = weekData.title;
-        subEl.textContent = weekData.subtitle;
+    if (state.currentMode === 'weekwise') {
+      updateBannerTitle(weekData.title, weekData.subtitle);
+      renderStudyNotes(weekData);
+      if (state.currentTab === 'assignment') {
+        renderQuiz('assignment');
+      } else if (state.currentTab === 'extra') {
+        renderQuiz('extra');
       }
     }
   }
 
-  // --- Tab Navigation ---
+  // --- Week-wise Tab Navigation (Strictly 3 Tabs) ---
   function initTabs() {
     const tabBtns = document.querySelectorAll('.nav-tab-btn');
     tabBtns.forEach(btn => {
@@ -189,20 +243,16 @@
       targetPanel.classList.add('active');
     }
 
-    updateBannerForTab(tabName);
-
-    // Render active panel
-    if (tabName === 'study') {
-      const weekData = window.COURSE_DATA.weeks[state.currentWeek];
-      if (weekData) renderStudyNotes(weekData);
-    } else if (tabName === 'assignment') {
-      renderQuiz('assignment');
-    } else if (tabName === 'extra') {
-      renderQuiz('extra');
-    } else if (tabName === 'all-quizzes') {
-      renderQuiz('allQuizzes');
-    } else if (tabName === 'all-extra') {
-      renderQuiz('allExtra');
+    const weekData = window.COURSE_DATA.weeks[state.currentWeek];
+    if (weekData) {
+      updateBannerTitle(weekData.title, weekData.subtitle);
+      if (tabName === 'study') {
+        renderStudyNotes(weekData);
+      } else if (tabName === 'assignment') {
+        renderQuiz('assignment');
+      } else if (tabName === 'extra') {
+        renderQuiz('extra');
+      }
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -367,7 +417,7 @@
     }
   }
 
-  // --- In-Panel Filter (Week-wise) ---
+  // --- In-Panel Filter (Week-wise) for All-Quizzes & All-Extra ---
   function setFilterWeek(viewType, filterVal) {
     state.filterWeek[viewType] = filterVal.toString();
 
@@ -379,7 +429,6 @@
       });
     }
 
-    // Reset shuffle order so it shuffles the newly filtered set
     if (state.shuffle[viewType]) {
       const base = getBaseQuestions(viewType);
       state.shuffledOrder[viewType] = shuffleArray(base);
@@ -610,6 +659,7 @@
   // --- App Initialization ---
   function init() {
     initTheme();
+    initModeNavigation();
     initWeekSelector();
     initTabs();
 
@@ -622,7 +672,7 @@
     initFilters('allQuizzes');
     initFilters('allExtra');
 
-    // Default to Week 12 as latest
+    // Default to Week 12 as latest in weekwise mode
     selectWeek(12);
   }
 

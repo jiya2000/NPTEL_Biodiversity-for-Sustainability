@@ -154,6 +154,45 @@ body {
   color: var(--text-muted);
 }
 
+/* --- Mode Navigation Bar (Top-Level Separation) --- */
+.mode-bar {
+  background: var(--bg-surface);
+  border-bottom: 2px solid var(--border-color);
+  padding: 0.65rem 0;
+}
+
+.mode-switcher {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.mode-btn:hover {
+  color: var(--text-main);
+  border-color: var(--primary);
+}
+
+.mode-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
 /* --- Week Bar --- */
 .week-bar {
   background: var(--bg-subtle);

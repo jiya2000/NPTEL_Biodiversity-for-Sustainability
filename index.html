@@ -22,8 +22,25 @@
     </div>
   </header>
 
-  <!-- Week Selection Bar -->
-  <div class="week-bar">
+  <!-- Top-Level Portal Navigation -->
+  <nav class="mode-bar" aria-label="Portal Mode Navigation">
+    <div class="container">
+      <div class="mode-switcher">
+        <button class="mode-btn active" data-mode="weekwise" id="mode-weekwise">
+          Week-by-Week Portal
+        </button>
+        <button class="mode-btn" data-mode="all-quizzes" id="mode-all-quizzes">
+          All-Weeks Quiz (110 Qs)
+        </button>
+        <button class="mode-btn" data-mode="all-extra" id="mode-all-extra">
+          Extra Questions Practice
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Week Selection Bar (Only in Week-by-Week mode) -->
+  <div class="week-bar" id="week-bar-container">
     <div class="container week-bar-inner">
       <span class="bar-label">Select Week:</span>
       <div class="week-buttons" id="week-selector">
@@ -42,8 +59,8 @@
     </div>
   </div>
 
-  <!-- Main Navigation Tabs -->
-  <div class="tab-bar">
+  <!-- Main Navigation Tabs (Only in Week-by-Week mode: Strictly 3 Pages) -->
+  <div class="tab-bar" id="tab-bar-container">
     <div class="container">
       <nav class="nav-tabs" aria-label="Course Learning Views">
         <button class="nav-tab-btn active" data-tab="study" id="tab-study">
@@ -54,12 +71,6 @@
         </button>
         <button class="nav-tab-btn" data-tab="extra" id="tab-extra">
           Extra Practice MCQs (<span id="count-extra">20</span>)
-        </button>
-        <button class="nav-tab-btn" data-tab="all-quizzes" id="tab-all-quizzes">
-          All Weeks Quiz (110)
-        </button>
-        <button class="nav-tab-btn" data-tab="all-extra" id="tab-all-extra">
-          Extra Questions (Week-wise)
         </button>
       </nav>
     </div>
