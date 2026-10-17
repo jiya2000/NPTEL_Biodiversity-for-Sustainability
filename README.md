@@ -53,7 +53,7 @@ Once GitHub Pages is enabled on this repo, access the portal anywhere on desktop
 | Week | Status | Topics Covered | Material |
 | :---: | :---: | :--- | :---: |
 | **Week 1** | **Active & Ready** | Ecology hierarchy, 3 levels of biodiversity, invisible life, ecosystem services, sustainability pillars, traps | [Explore Notes & MCQs](#) |
-| **Week 2** | *Upcoming* | Biodiversity Patterns & Ecosystem Functions | Queued |
+| **Week 2** | **Active & Ready** | Functional diversity, sustainability trade-offs, regulating services, wetlands as natural infrastructure, ecological feedback, industrial disconnect, ecological thresholds, natural capital accounting | [Explore Notes & MCQs](#) |
 | **Week 3** | *Upcoming* | Ecosystem Goods, Services & Valuation | Queued |
 | **Week 4** | *Upcoming* | Threats to Biodiversity: Habitat Loss & Invasions | Queued |
 | **Week 5** | *Upcoming* | Climate Change & Ecological Resilience | Queued |

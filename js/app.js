@@ -1,6 +1,6 @@
 /**
  * NPTEL Biodiversity for Sustainability - Core Application Logic
- * Implements Week switcher, Tab navigation, Searchable Glossary,
+ * Supports Multi-Week Navigation, Dynamic Tab Badges, Searchable Glossary,
  * 3D Flashcards, Exam & Study Quiz Engine, and LocalStorage Progress Tracker.
  */
 
@@ -18,27 +18,38 @@
     shuffledCards: [],
     masteredCards: new Set(),
     
-    // Practice Quiz (20 Qs)
-    practice: {
-      mode: 'study', // 'study' or 'exam'
-      answers: {},
-      isSubmitted: false,
-      score: 0,
-      timeRemaining: 20 * 60,
-      timerId: null
-    },
-
-    // Assignment 1 (10 Qs)
-    assignment: {
-      mode: 'study',
-      answers: {},
-      isSubmitted: false,
-      score: 0
-    }
+    // Multi-week quiz stores
+    practiceByWeek: {},
+    assignmentByWeek: {}
   };
 
+  // Helper getters for per-week quiz state
+  function getPracticeState(weekNum) {
+    if (!state.practiceByWeek[weekNum]) {
+      state.practiceByWeek[weekNum] = {
+        mode: 'study',
+        answers: {},
+        isSubmitted: false,
+        score: 0
+      };
+    }
+    return state.practiceByWeek[weekNum];
+  }
+
+  function getAssignmentState(weekNum) {
+    if (!state.assignmentByWeek[weekNum]) {
+      state.assignmentByWeek[weekNum] = {
+        mode: 'study',
+        answers: {},
+        isSubmitted: false,
+        score: 0
+      };
+    }
+    return state.assignmentByWeek[weekNum];
+  }
+
   // --- LocalStorage Keys ---
-  const STORAGE_KEY_PROGRESS = 'nptel_bio_progress_v1';
+  const STORAGE_KEY_PROGRESS = 'nptel_bio_progress_v2';
   const STORAGE_KEY_THEME = 'color-scheme';
 
   // --- Load Saved Progress ---
@@ -48,8 +59,8 @@
       if (saved) {
         const data = JSON.parse(saved);
         if (data.masteredCards) state.masteredCards = new Set(data.masteredCards);
-        if (data.practiceScore !== undefined) state.practice.score = data.practiceScore;
-        if (data.assignmentScore !== undefined) state.assignment.score = data.assignmentScore;
+        if (data.practiceByWeek) state.practiceByWeek = data.practiceByWeek;
+        if (data.assignmentByWeek) state.assignmentByWeek = data.assignmentByWeek;
       }
     } catch (e) {
       console.warn('Could not load saved progress', e);
@@ -60,8 +71,8 @@
     try {
       const data = {
         masteredCards: Array.from(state.masteredCards),
-        practiceScore: state.practice.score,
-        assignmentScore: state.assignment.score,
+        practiceByWeek: state.practiceByWeek,
+        assignmentByWeek: state.assignmentByWeek,
         lastUpdated: new Date().toISOString()
       };
       localStorage.setItem(STORAGE_KEY_PROGRESS, JSON.stringify(data));
@@ -111,7 +122,6 @@
       });
     }
 
-    // Listen to system scheme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
       if (!localStorage.getItem(STORAGE_KEY_THEME)) {
         updateThemeButtonIcon('light dark');
@@ -157,19 +167,70 @@
 
   function selectWeek(weekNum) {
     state.currentWeek = weekNum;
+    state.shuffledCards = [];
+    state.flashcardIndex = 0;
+    state.isCardFlipped = false;
+
+    // Update active week chip in the selector
     document.querySelectorAll('.week-chip').forEach(c => c.classList.remove('active'));
     const activeChip = document.getElementById(`week-chip-${weekNum}`);
     if (activeChip) activeChip.classList.add('active');
 
-    // Update Hero text
     const weekData = window.COURSE_DATA.weeks[weekNum];
     if (weekData) {
-      document.getElementById('hero-week-tag').textContent = `Week ${weekNum} • ${weekData.badge || 'Ready'}`;
-      document.getElementById('hero-title').textContent = weekData.title;
-      document.getElementById('hero-subtitle').textContent = weekData.subtitle;
+      // Update Hero text
+      const heroTag = document.getElementById('hero-week-tag');
+      const heroTitle = document.getElementById('hero-title');
+      const heroSubtitle = document.getElementById('hero-subtitle');
+
+      if (heroTag) heroTag.textContent = `Week ${weekNum} • ${weekData.badge || 'Ready'}`;
+      if (heroTitle) heroTitle.textContent = weekData.title;
+      if (heroSubtitle) heroSubtitle.textContent = weekData.subtitle;
+
+      // Update Hero Stats numbers
+      const statDefs = document.getElementById('stat-defs-count');
+      const statPractice = document.getElementById('stat-practice-count');
+      const statAssignment = document.getElementById('stat-assignment-count');
+      const statFlashcards = document.getElementById('stat-flashcards-count');
+
+      if (statDefs && weekData.definitions) statDefs.textContent = weekData.definitions.length;
+      if (statPractice && weekData.practiceMCQs) statPractice.textContent = weekData.practiceMCQs.length;
+      if (statAssignment && weekData.assignmentMCQs) statAssignment.textContent = weekData.assignmentMCQs.length;
+      if (statFlashcards && weekData.flashcards) statFlashcards.textContent = weekData.flashcards.length;
+
+      // Update Tab Badges
+      const tabGlossary = document.getElementById('tab-glossary');
+      const tabFlashcards = document.getElementById('tab-flashcards');
+      const tabPractice = document.getElementById('tab-practice');
+      const tabAssignment = document.getElementById('tab-assignment');
+
+      if (tabGlossary && weekData.definitions) {
+        tabGlossary.innerHTML = `📚 Definitions & Glossary <span class="badge-pill">${weekData.definitions.length}</span>`;
+      }
+      if (tabFlashcards && weekData.flashcards) {
+        tabFlashcards.innerHTML = `🗂️ 3D Flashcards <span class="badge-pill" id="flashcard-badge-count">${weekData.flashcards.length}</span>`;
+      }
+      if (tabPractice && weekData.practiceMCQs) {
+        tabPractice.innerHTML = `🎯 Practice Quiz <span class="badge-pill">${weekData.practiceMCQs.length} Qs</span>`;
+      }
+      if (tabAssignment && weekData.assignmentMCQs) {
+        tabAssignment.innerHTML = `📝 Assignment ${weekNum} <span class="badge-pill">${weekData.assignmentMCQs.length} Qs</span>`;
+      }
+
+      // Update Section Headings
+      const practiceHeading = document.getElementById('heading-practice-quiz');
+      if (practiceHeading && weekData.practiceMCQs) {
+        practiceHeading.textContent = `${weekData.practiceMCQs.length} High-Yield Practice MCQs (Week ${weekNum})`;
+      }
+
+      const assignmentHeading = document.getElementById('heading-assignment-quiz');
+      if (assignmentHeading) {
+        assignmentHeading.textContent = `NPTEL Assignment ${weekNum} Solutions (2026)`;
+      }
     }
 
     renderActiveView();
+    updateProgressDashboard();
   }
 
   // --- Modal Helpers ---
@@ -202,7 +263,6 @@
       });
     });
 
-    // Check URL Hash on load
     const hash = window.location.hash.replace('#', '');
     if (hash && ['notes', 'glossary', 'flashcards', 'practice-quiz', 'assignment-quiz', 'progress'].includes(hash)) {
       switchTab(hash);
@@ -253,8 +313,15 @@
 
   // --- 1. Render High-Yield Notes ---
   function renderNotes(weekData) {
-    // Hierarchy
+    // Hierarchy / Spectrum
     const hierarchyContainer = document.getElementById('hierarchy-container');
+    const hierarchyHeading = document.getElementById('heading-hierarchy');
+    if (hierarchyHeading) {
+      hierarchyHeading.textContent = state.currentWeek === 1 
+        ? "1. The Ecological Hierarchy of Life" 
+        : "1. Core Dimensions of Natural Capital & Ecological Limits";
+    }
+
     if (hierarchyContainer && weekData.hierarchy) {
       hierarchyContainer.innerHTML = weekData.hierarchy.map(item => `
         <div class="hierarchy-step">
@@ -280,7 +347,7 @@
       `).join('');
     }
 
-    // Ecosystem Services
+    // Services
     const servicesContainer = document.getElementById('services-container');
     if (servicesContainer && weekData.services) {
       servicesContainer.innerHTML = weekData.services.map(s => `
@@ -321,12 +388,10 @@
 
     let items = weekData.definitions;
 
-    // Filter by Category
     if (state.selectedCategory !== 'all') {
       items = items.filter(d => d.category.toLowerCase() === state.selectedCategory.toLowerCase());
     }
 
-    // Filter by Search Query
     if (state.searchTerm.trim() !== '') {
       const q = state.searchTerm.toLowerCase();
       items = items.filter(d => 
@@ -367,9 +432,8 @@
       </div>
     `).join('');
 
-    // Attach copy handlers
     listContainer.querySelectorAll('.btn-copy-def').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
         const text = btn.dataset.text;
         navigator.clipboard.writeText(text).then(() => {
           const original = btn.innerHTML;
@@ -410,6 +474,10 @@
       state.shuffledCards = [...weekData.flashcards];
     }
 
+    if (state.flashcardIndex >= state.shuffledCards.length) {
+      state.flashcardIndex = 0;
+    }
+
     const card = state.shuffledCards[state.flashcardIndex];
     const total = state.shuffledCards.length;
 
@@ -418,12 +486,14 @@
     const flashcardEl = document.getElementById('active-flashcard');
     const masteredBadge = document.getElementById('mastered-counter-badge');
 
+    // Count how many cards of the current week's deck are mastered
+    const currentWeekMastered = state.shuffledCards.filter(c => state.masteredCards.has(c.id)).length;
+
     if (counter) counter.textContent = `Card ${state.flashcardIndex + 1} of ${total}`;
     if (fill) fill.style.width = `${((state.flashcardIndex + 1) / total) * 100}%`;
-    if (masteredBadge) masteredBadge.textContent = `${state.masteredCards.size} / ${total} Mastered`;
+    if (masteredBadge) masteredBadge.textContent = `${currentWeekMastered} / ${total} Mastered`;
 
     if (flashcardEl && card) {
-      // Reset flip
       flashcardEl.classList.remove('flipped');
       state.isCardFlipped = false;
 
@@ -480,21 +550,17 @@
     }
 
     if (masterBtn) {
-      masterBtn.addEventListener('click', () => {
-        const currentCard = state.shuffledCards[state.flashcardIndex];
-        if (currentCard) {
-          state.masteredCards.add(currentCard.id);
-          saveProgress();
-          // Advance to next card if available
-          if (state.flashcardIndex < state.shuffledCards.length - 1) {
-            state.flashcardIndex++;
-          }
-          renderFlashcards(window.COURSE_DATA.weeks[state.currentWeek]);
+      const currentCard = state.shuffledCards[state.flashcardIndex];
+      if (currentCard) {
+        state.masteredCards.add(currentCard.id);
+        saveProgress();
+        if (state.flashcardIndex < state.shuffledCards.length - 1) {
+          state.flashcardIndex++;
         }
-      });
+        renderFlashcards(window.COURSE_DATA.weeks[state.currentWeek]);
+      }
     }
 
-    // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
       if (state.activeTab !== 'flashcards') return;
       if (e.code === 'Space') {
@@ -508,24 +574,26 @@
     });
   }
 
-  // --- 4. Practice Quiz Engine (20 Questions) ---
+  // --- 4. Practice Quiz Engine ---
   function renderPracticeQuiz(weekData) {
     const container = document.getElementById('practice-questions-list');
     if (!container || !weekData.practiceMCQs) return;
 
+    const quizState = getPracticeState(state.currentWeek);
     const questions = weekData.practiceMCQs;
-    const answeredCount = Object.keys(state.practice.answers).length;
+    const answeredCount = Object.keys(quizState.answers).length;
     const scoreBadge = document.getElementById('practice-score-badge');
+
     if (scoreBadge) {
-      scoreBadge.textContent = state.practice.isSubmitted 
-        ? `Score: ${state.practice.score} / ${questions.length} (${Math.round((state.practice.score / questions.length) * 100)}%)`
+      scoreBadge.textContent = quizState.isSubmitted 
+        ? `Score: ${quizState.score} / ${questions.length} (${Math.round((quizState.score / questions.length) * 100)}%)`
         : `Answered: ${answeredCount} / ${questions.length}`;
     }
 
     container.innerHTML = questions.map((q, idx) => {
-      const selected = state.practice.answers[q.id];
+      const selected = quizState.answers[q.id];
       const isAnswered = selected !== undefined;
-      const showFeedback = state.practice.mode === 'study' ? isAnswered : state.practice.isSubmitted;
+      const showFeedback = quizState.mode === 'study' ? isAnswered : quizState.isSubmitted;
 
       return `
         <div class="question-card" id="practice-q-${q.id}">
@@ -546,7 +614,7 @@
                 else if (selected === optIdx) optionClass += ' incorrect';
               }
               return `
-                <button class="${optionClass}" data-qid="${q.id}" data-opt="${optIdx}" ${showFeedback && state.practice.mode === 'study' ? 'disabled' : ''}>
+                <button class="${optionClass}" data-qid="${q.id}" data-opt="${optIdx}" ${showFeedback && quizState.mode === 'study' ? 'disabled' : ''}>
                   <span class="option-letter">${letter}</span>
                   <span>${opt}</span>
                 </button>
@@ -566,7 +634,6 @@
       `;
     }).join('');
 
-    // Attach click events to options
     container.querySelectorAll('.option-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const qid = parseInt(btn.dataset.qid, 10);
@@ -577,15 +644,15 @@
   }
 
   function handlePracticeAnswer(qid, optIdx) {
-    state.practice.answers[qid] = optIdx;
+    const quizState = getPracticeState(state.currentWeek);
+    quizState.answers[qid] = optIdx;
     
-    // Recalculate score
     const weekData = window.COURSE_DATA.weeks[state.currentWeek];
     let correctCount = 0;
     weekData.practiceMCQs.forEach(q => {
-      if (state.practice.answers[q.id] === q.correct) correctCount++;
+      if (quizState.answers[q.id] === q.correct) correctCount++;
     });
-    state.practice.score = correctCount;
+    quizState.score = correctCount;
     saveProgress();
 
     renderPracticeQuiz(weekData);
@@ -599,14 +666,16 @@
 
     if (studyModeBtn && examModeBtn) {
       studyModeBtn.addEventListener('click', () => {
-        state.practice.mode = 'study';
+        const quizState = getPracticeState(state.currentWeek);
+        quizState.mode = 'study';
         studyModeBtn.classList.add('active');
         examModeBtn.classList.remove('active');
         renderPracticeQuiz(window.COURSE_DATA.weeks[state.currentWeek]);
       });
 
       examModeBtn.addEventListener('click', () => {
-        state.practice.mode = 'exam';
+        const quizState = getPracticeState(state.currentWeek);
+        quizState.mode = 'exam';
         examModeBtn.classList.add('active');
         studyModeBtn.classList.remove('active');
         renderPracticeQuiz(window.COURSE_DATA.weeks[state.currentWeek]);
@@ -615,48 +684,53 @@
 
     if (submitBtn) {
       submitBtn.addEventListener('click', () => {
+        const quizState = getPracticeState(state.currentWeek);
         const weekData = window.COURSE_DATA.weeks[state.currentWeek];
-        state.practice.isSubmitted = true;
+        quizState.isSubmitted = true;
         renderPracticeQuiz(weekData);
-        showScoreModal('Practice Quiz Results', state.practice.score, weekData.practiceMCQs.length);
+        showScoreModal(`Week ${state.currentWeek} Practice Quiz Results`, quizState.score, weekData.practiceMCQs.length);
       });
     }
 
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset this quiz and retake it?')) {
-          state.practice.answers = {};
-          state.practice.isSubmitted = false;
-          state.practice.score = 0;
+        if (confirm(`Reset practice quiz for Week ${state.currentWeek}?`)) {
+          const quizState = getPracticeState(state.currentWeek);
+          quizState.answers = {};
+          quizState.isSubmitted = false;
+          quizState.score = 0;
           renderPracticeQuiz(window.COURSE_DATA.weeks[state.currentWeek]);
+          saveProgress();
         }
       });
     }
   }
 
-  // --- 5. Assignment 1 Quiz & Solutions (10 Questions) ---
+  // --- 5. Assignment Quiz & Solutions ---
   function renderAssignmentQuiz(weekData) {
     const container = document.getElementById('assignment-questions-list');
     if (!container || !weekData.assignmentMCQs) return;
 
+    const quizState = getAssignmentState(state.currentWeek);
     const questions = weekData.assignmentMCQs;
-    const answeredCount = Object.keys(state.assignment.answers).length;
+    const answeredCount = Object.keys(quizState.answers).length;
     const badge = document.getElementById('assignment-score-badge');
+
     if (badge) {
-      badge.textContent = state.assignment.isSubmitted 
-        ? `Score: ${state.assignment.score} / ${questions.length} (${Math.round((state.assignment.score / questions.length) * 100)}%)`
+      badge.textContent = quizState.isSubmitted 
+        ? `Score: ${quizState.score} / ${questions.length} (${Math.round((quizState.score / questions.length) * 100)}%)`
         : `Answered: ${answeredCount} / ${questions.length}`;
     }
 
     container.innerHTML = questions.map((q, idx) => {
-      const selected = state.assignment.answers[q.id];
+      const selected = quizState.answers[q.id];
       const isAnswered = selected !== undefined;
-      const showFeedback = state.assignment.mode === 'study' ? isAnswered : state.assignment.isSubmitted;
+      const showFeedback = quizState.mode === 'study' ? isAnswered : quizState.isSubmitted;
 
       return `
         <div class="question-card" id="assignment-q-${q.id}">
           <div class="question-meta">
-            <span class="q-number">Assignment 1 • Question ${idx + 1}</span>
+            <span class="q-number">Assignment ${state.currentWeek} • Question ${idx + 1}</span>
             <span class="q-status-badge ${isAnswered ? 'chip-status ready' : 'chip-status locked'}">
               ${isAnswered ? 'Done' : 'Pending'}
             </span>
@@ -664,7 +738,7 @@
           <h3 class="q-title">${q.question}</h3>
           <div class="options-list">
             ${q.options.map((opt, optIdx) => {
-              const letter = String.fromCharCode(97 + optIdx); // a, b, c, d
+              const letter = String.fromCharCode(97 + optIdx);
               let optionClass = 'option-btn';
               if (selected === optIdx) optionClass += ' selected';
               if (showFeedback) {
@@ -672,7 +746,7 @@
                 else if (selected === optIdx) optionClass += ' incorrect';
               }
               return `
-                <button class="${optionClass}" data-qid="${q.id}" data-opt="${optIdx}" ${showFeedback && state.assignment.mode === 'study' ? 'disabled' : ''}>
+                <button class="${optionClass}" data-qid="${q.id}" data-opt="${optIdx}" ${showFeedback && quizState.mode === 'study' ? 'disabled' : ''}>
                   <span class="option-letter">(${letter})</span>
                   <span>${opt}</span>
                 </button>
@@ -696,13 +770,14 @@
       btn.addEventListener('click', () => {
         const qid = parseInt(btn.dataset.qid, 10);
         const opt = parseInt(btn.dataset.opt, 10);
-        state.assignment.answers[qid] = opt;
+        const quizState = getAssignmentState(state.currentWeek);
+        quizState.answers[qid] = opt;
 
         let correctCount = 0;
         weekData.assignmentMCQs.forEach(q => {
-          if (state.assignment.answers[q.id] === q.correct) correctCount++;
+          if (quizState.answers[q.id] === q.correct) correctCount++;
         });
-        state.assignment.score = correctCount;
+        quizState.score = correctCount;
         saveProgress();
         renderAssignmentQuiz(weekData);
       });
@@ -717,14 +792,16 @@
 
     if (studyModeBtn && examModeBtn) {
       studyModeBtn.addEventListener('click', () => {
-        state.assignment.mode = 'study';
+        const quizState = getAssignmentState(state.currentWeek);
+        quizState.mode = 'study';
         studyModeBtn.classList.add('active');
         examModeBtn.classList.remove('active');
         renderAssignmentQuiz(window.COURSE_DATA.weeks[state.currentWeek]);
       });
 
       examModeBtn.addEventListener('click', () => {
-        state.assignment.mode = 'exam';
+        const quizState = getAssignmentState(state.currentWeek);
+        quizState.mode = 'exam';
         examModeBtn.classList.add('active');
         studyModeBtn.classList.remove('active');
         renderAssignmentQuiz(window.COURSE_DATA.weeks[state.currentWeek]);
@@ -733,20 +810,23 @@
 
     if (submitBtn) {
       submitBtn.addEventListener('click', () => {
+        const quizState = getAssignmentState(state.currentWeek);
         const weekData = window.COURSE_DATA.weeks[state.currentWeek];
-        state.assignment.isSubmitted = true;
+        quizState.isSubmitted = true;
         renderAssignmentQuiz(weekData);
-        showScoreModal('Assignment 1 Official Score', state.assignment.score, weekData.assignmentMCQs.length);
+        showScoreModal(`Assignment ${state.currentWeek} Official Score`, quizState.score, weekData.assignmentMCQs.length);
       });
     }
 
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
-        if (confirm('Reset assignment practice?')) {
-          state.assignment.answers = {};
-          state.assignment.isSubmitted = false;
-          state.assignment.score = 0;
+        if (confirm(`Reset assignment practice for Week ${state.currentWeek}?`)) {
+          const quizState = getAssignmentState(state.currentWeek);
+          quizState.answers = {};
+          quizState.isSubmitted = false;
+          quizState.score = 0;
           renderAssignmentQuiz(window.COURSE_DATA.weeks[state.currentWeek]);
+          saveProgress();
         }
       });
     }
@@ -790,7 +870,7 @@
         </p>
         <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
           ${percentage >= 75 
-            ? 'Outstanding performance! You have grasped the ecological hierarchies, pillars, and tricky traps thoroughly.' 
+            ? 'Outstanding performance! You have grasped the concepts, indicators, and tricky traps thoroughly.' 
             : 'Good effort! Review the explanations marked in green and red to lock down your high-yield memory before the exam.'}
         </p>
       `;
@@ -804,19 +884,22 @@
     const weekData = window.COURSE_DATA.weeks[state.currentWeek];
     if (!weekData) return;
 
-    // Flashcard Progress
-    const totalCards = weekData.flashcards ? weekData.flashcards.length : 16;
-    const masteredCount = state.masteredCards.size;
-    const flashcardPct = Math.min(100, Math.round((masteredCount / totalCards) * 100));
+    const quizPractice = getPracticeState(state.currentWeek);
+    const quizAssignment = getAssignmentState(state.currentWeek);
 
-    // Practice Quiz Progress
+    // Flashcard Progress for current week
+    const totalCards = weekData.flashcards ? weekData.flashcards.length : 16;
+    const currentWeekMastered = weekData.flashcards ? weekData.flashcards.filter(c => state.masteredCards.has(c.id)).length : 0;
+    const flashcardPct = Math.min(100, Math.round((currentWeekMastered / totalCards) * 100));
+
+    // Practice Quiz Progress for current week
     const totalPractice = weekData.practiceMCQs ? weekData.practiceMCQs.length : 20;
-    const practiceScore = state.practice.score;
+    const practiceScore = quizPractice.score;
     const practicePct = Math.round((practiceScore / totalPractice) * 100);
 
-    // Assignment Progress
+    // Assignment Progress for current week
     const totalAssignment = weekData.assignmentMCQs ? weekData.assignmentMCQs.length : 10;
-    const assignmentScore = state.assignment.score;
+    const assignmentScore = quizAssignment.score;
     const assignmentPct = Math.round((assignmentScore / totalAssignment) * 100);
 
     // Update Circle Meters
@@ -852,13 +935,10 @@
         if (confirm('Are you sure you want to reset all your study progress, quiz scores, and flashcard mastery?')) {
           localStorage.removeItem(STORAGE_KEY_PROGRESS);
           state.masteredCards.clear();
-          state.practice.score = 0;
-          state.practice.answers = {};
-          state.practice.isSubmitted = false;
-          state.assignment.score = 0;
-          state.assignment.answers = {};
-          state.assignment.isSubmitted = false;
+          state.practiceByWeek = {};
+          state.assignmentByWeek = {};
           updateProgressDashboard();
+          selectWeek(state.currentWeek);
           alert('All progress has been reset.');
         }
       });
@@ -915,12 +995,9 @@
     initModals();
     initPrintAndScroll();
 
-    // Default view
-    selectWeek(1);
-    updateProgressDashboard();
+    selectWeek(2); // Automatically open Week 2 as latest added!
   }
 
-  // Run on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
