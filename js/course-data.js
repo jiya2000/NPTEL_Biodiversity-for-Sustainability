@@ -5,7 +5,7 @@
  */
 
 window.COURSE_DATA = {
-  "activeWeek": 6,
+  "activeWeek": 10,
   "weeks": {
     "1": {
       "weekNumber": 1,
@@ -2907,6 +2907,1372 @@ window.COURSE_DATA = {
           "answer": 1,
           "letter": "B",
           "explanation": "Why: The ecological species concept focuses on niche and resource use."
+        }
+      ]
+    },
+    "8": {
+      "weekNumber": 8,
+      "title": "Week 8: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 8 Solutions & Practice MCQs",
+      "source": "Based on uploaded Week 8 Solutions PDF and revision material",
+      "reminders": [
+        "Conservation genetics = applying genetic tools to biodiversity protection.",
+        "Allele frequency = proportion of a particular allele among all copies of that gene.",
+        "Chromosomes = long DNA-protein structures carrying many genes.",
+        "Evolutionary fitness = relative reproductive success across generations.",
+        "Founder effect = a new population founded by a few individuals carries only part of original genetic diversity.",
+        "Declining population paradigm asks what external pressures made a population small; small population paradigm focuses on problems of small size.",
+        "Codominance = both alleles fully expressed; incomplete dominance = intermediate phenotype.",
+        "Phenotype = observable expression of traits; genotype = genetic constitution.",
+        "Allee effect = lower survival or reproduction at very low population density.",
+        "Genetic rescue = introducing new variation to reduce inbreeding depression and potentially increase fitness."
+      ],
+      "definitions": [
+        {
+          "term": "Conservation genetics",
+          "definition": "Applies genetic tools to biodiversity protection. It can help assess genetic variation, inbreeding risk, population connectivity, and options for maintaining viable populations."
+        },
+        {
+          "term": "Alleles and allele frequency",
+          "definition": "An allele is a version of a gene. Allele frequency is the proportion of all copies of a gene in a population that are a particular allele."
+        },
+        {
+          "term": "Chromosomes",
+          "definition": "Long DNA–protein structures that carry many genes. They package genetic material and transmit hereditary information across cell divisions and generations."
+        },
+        {
+          "term": "Evolutionary fitness",
+          "definition": "Relative reproductive success across generations: how successfully an organism contributes genes to subsequent generations (not simply physical strength, speed, or territory size)."
+        },
+        {
+          "term": "Founder effect",
+          "definition": "A new population starts from a small number of individuals and therefore carries only part of the original population's genetic diversity."
+        },
+        {
+          "term": "Small population and declining population perspectives",
+          "definition": "The small population paradigm focuses on problems of small size (inbreeding, drift, Allee effect). The declining population paradigm asks what external pressures caused the population to become small."
+        },
+        {
+          "term": "Inheritance patterns",
+          "definition": "In codominance, both alleles are fully expressed in a heterozygote. In incomplete dominance, the heterozygote has an intermediate phenotype. In complete dominance, one allele masks another."
+        },
+        {
+          "term": "Genotype and phenotype",
+          "definition": "Genotype is an organism's genetic constitution; phenotype is the observable expression of traits, influenced by genotype and environment."
+        },
+        {
+          "term": "Allee effect",
+          "definition": "Survival or reproduction can fall at very low population density (e.g. individuals struggle to find mates or cooperate)."
+        },
+        {
+          "term": "Genetic rescue",
+          "definition": "Introducing new genetic variation into a small, isolated population can reduce inbreeding depression and potentially improve fitness."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "Which statement best describes conservation genetics?",
+          "options": [
+            "It studies only visible animal behaviour in protected areas",
+            "It replaces habitat management with captive breeding",
+            "It applies genetic tools to biodiversity protection",
+            "It measures only the age structure of populations"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Conservation genetics applies genetic tools to biodiversity protection."
+        },
+        {
+          "id": 2,
+          "question": "What is allele frequency?",
+          "options": [
+            "A fixed number of individuals in a population",
+            "A measure of animal movement across habitats",
+            "A record of all chromosomes in one cell",
+            "The proportion of a particular allele among all copies of that gene"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Allele frequency is the proportion of copies of a gene represented by a particular allele."
+        },
+        {
+          "id": 3,
+          "question": "What are chromosomes?",
+          "options": [
+            "Short-term environmental pressures on wildlife",
+            "Long DNA-protein structures carrying many genes",
+            "Behavioural adaptations learned during life",
+            "Statistical outputs of viability models"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Chromosomes are DNA-protein structures that carry genes."
+        },
+        {
+          "id": 4,
+          "question": "What does fitness mean in evolutionary terms?",
+          "options": [
+            "Physical strength or speed alone",
+            "Relative reproductive success across generations",
+            "Ability to occupy the largest territory",
+            "Ability to avoid all competition"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Evolutionary fitness is defined by relative reproductive success."
+        },
+        {
+          "id": 5,
+          "question": "What is the founder effect?",
+          "options": [
+            "A selection process where predators remove weak individuals",
+            "A condition where all individuals have identical chromosomes",
+            "A disease caused by increased heterozygosity",
+            "A new population starting from a few individuals and carrying only part of the original genetic diversity"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "A small founding group carries only a subset of source-population variation."
+        },
+        {
+          "id": 6,
+          "question": "Which perspective asks what external pressures made a population small?",
+          "options": [
+            "Small population paradigm",
+            "Genetic rescue model",
+            "Declining population paradigm",
+            "Outbreeding enhancement model"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "The declining population paradigm asks what caused the decline."
+        },
+        {
+          "id": 7,
+          "question": "Which inheritance pattern occurs when both alleles are fully expressed?",
+          "options": [
+            "Complete dominance",
+            "Incomplete dominance",
+            "Codominance",
+            "Segregation"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Codominance means both alleles are fully expressed."
+        },
+        {
+          "id": 8,
+          "question": "Which statement correctly describes phenotype?",
+          "options": [
+            "It is the hidden genetic constitution of an organism",
+            "It is the observable expression of traits",
+            "It is the total genetic variation of a population",
+            "It is the location of a gene on a chromosome"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Phenotype means observable traits or their expression."
+        },
+        {
+          "id": 9,
+          "question": "What is the Allee effect?",
+          "options": [
+            "A condition where large populations always decline",
+            "A process where all mutations improve fitness",
+            "A method for calculating allele frequency",
+            "Lower survival or reproduction in very small populations because density is too low"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "At very low density, survival or reproduction can decline."
+        },
+        {
+          "id": 10,
+          "question": "What is genetic rescue?",
+          "options": [
+            "A method of counting chromosomes under a microscope",
+            "Introduction of new genetic variation into small, isolated populations to reduce inbreeding depression and increase fitness",
+            "Removal of all predators from a protected area",
+            "Use of only visually rare animals for captive breeding"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Genetic rescue introduces genetic variation to reduce inbreeding problems and potentially improve fitness."
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "Conservation genetics primarily applies genetic tools to:",
+          "options": [
+            "Biodiversity protection",
+            "Weather forecasting",
+            "Road construction",
+            "Measuring only animal age"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Its purpose is to use genetic information in conservation."
+        },
+        {
+          "id": 2,
+          "question": "An allele is best described as:",
+          "options": [
+            "A version of a gene",
+            "A whole ecosystem",
+            "A habitat corridor",
+            "A type of sampling unit"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Alleles are alternative versions of a gene."
+        },
+        {
+          "id": 3,
+          "question": "If 30 out of 100 copies of a gene are allele a, its frequency is:",
+          "options": [
+            "0.03",
+            "0.30",
+            "0.70",
+            "3.0"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: 30 / 100 = 0.30."
+        },
+        {
+          "id": 4,
+          "question": "Which structure carries many genes in long DNA-protein structures?",
+          "options": [
+            "Chromosome",
+            "Phenotype",
+            "Allele frequency",
+            "Population census"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Chromosomes package DNA and carry genes."
+        },
+        {
+          "id": 5,
+          "question": "Evolutionary fitness is most directly measured by:",
+          "options": [
+            "Body size alone",
+            "Relative reproductive contribution to later generations",
+            "Ability to win every fight",
+            "Territory size alone"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Fitness concerns reproductive success across generations."
+        },
+        {
+          "id": 6,
+          "question": "A new island population begins with four individuals from a much larger source population. This can cause:",
+          "options": [
+            "Founder effect",
+            "Codominance",
+            "Sampling intensity",
+            "Temporal isolation"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: A small founding group carries only part of the source variation."
+        },
+        {
+          "id": 7,
+          "question": "Which perspective focuses on threats that caused a population to decline?",
+          "options": [
+            "Declining population paradigm",
+            "Small population paradigm only",
+            "Phenotype model",
+            "Founder effect"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: It asks what external pressures caused the decline."
+        },
+        {
+          "id": 8,
+          "question": "Both alleles are expressed in a heterozygote. This is:",
+          "options": [
+            "Complete dominance",
+            "Incomplete dominance",
+            "Codominance",
+            "Mutation loss"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Both alleles are expressed under codominance."
+        },
+        {
+          "id": 9,
+          "question": "A heterozygote has an intermediate trait value between the two homozygotes. This is:",
+          "options": [
+            "Incomplete dominance",
+            "Codominance",
+            "Founder effect",
+            "Genetic rescue"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Incomplete dominance produces an intermediate phenotype."
+        },
+        {
+          "id": 10,
+          "question": "The observable expression of traits is the:",
+          "options": [
+            "Genotype",
+            "Phenotype",
+            "Allele",
+            "Chromosome count"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Phenotype refers to observable traits."
+        },
+        {
+          "id": 11,
+          "question": "A population has difficulty finding mates because it is extremely sparse. This may be:",
+          "options": [
+            "Allee effect",
+            "Founder effect only",
+            "Codominance",
+            "High allele frequency"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Low density can reduce mating success and population performance."
+        },
+        {
+          "id": 12,
+          "question": "Genetic rescue is intended to reduce problems associated with:",
+          "options": [
+            "Inbreeding depression in small isolated populations",
+            "All habitat loss by itself",
+            "All predator-prey interactions",
+            "Every possible mutation"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Adding genetic variation can reduce inbreeding depression."
+        },
+        {
+          "id": 13,
+          "question": "Which statement about allele frequency is correct?",
+          "options": [
+            "It is the proportion of a particular allele among all copies of that gene",
+            "It is always the number of individuals",
+            "It measures habitat size",
+            "It counts only visible traits"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Allele frequency concerns copies of alleles in the gene pool."
+        },
+        {
+          "id": 14,
+          "question": "Which is a possible consequence of the founder effect?",
+          "options": [
+            "Allele frequencies differ by chance from the source population",
+            "The new population always contains all source diversity",
+            "All individuals become genetically identical every time",
+            "No genetic drift can occur"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Small founding samples can alter allele frequencies by chance."
+        },
+        {
+          "id": 15,
+          "question": "A physically strong animal leaves no offspring. Under the evolutionary definition, its fitness may be:",
+          "options": [
+            "High because of strength",
+            "Low relative to individuals that reproduce",
+            "Unrelated to reproduction",
+            "Always equal to its territory size"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Fitness is about reproductive contribution, not strength alone."
+        },
+        {
+          "id": 16,
+          "question": "Which statement best distinguishes genotype from phenotype?",
+          "options": [
+            "Genotype is genetic constitution; phenotype is observable expression",
+            "They always mean exactly the same thing",
+            "Phenotype is the location of a gene",
+            "Genotype is only behaviour"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Genotype refers to genes; phenotype to expressed traits."
+        },
+        {
+          "id": 17,
+          "question": "Very small populations may face inbreeding and genetic drift. This is associated with:",
+          "options": [
+            "Small population problems",
+            "High sampling intensity",
+            "Cultural services",
+            "Simple random sampling"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Small population size can intensify genetic and demographic risks."
+        },
+        {
+          "id": 18,
+          "question": "Which option is a genetic tool relevant to conservation?",
+          "options": [
+            "Assessing genetic variation in an isolated population",
+            "Measuring road length only",
+            "Counting rainfall without biological data",
+            "Replacing all habitat management"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Genetic data can help assess variation and inbreeding risk."
+        },
+        {
+          "id": 19,
+          "question": "A conservation programme moves compatible individuals between isolated populations to add variation. This most closely describes:",
+          "options": [
+            "Genetic rescue",
+            "Founder effect",
+            "Allele masking",
+            "Phenotype-only classification"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Genetic rescue introduces genetic variation into a population."
+        },
+        {
+          "id": 20,
+          "question": "Which pairing is correct?",
+          "options": [
+            "Codominance — both alleles fully expressed",
+            "Phenotype — hidden genetic constitution only",
+            "Founder effect — population founded by millions with all diversity",
+            "Allee effect — fitness always increases at low density"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Codominance is the expression of both alleles."
+        }
+      ]
+    },
+    "9": {
+      "weekNumber": 9,
+      "title": "Week 9: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 9 Solutions & Practice MCQs",
+      "source": "Based on uploaded Week 9 Solutions PDF and revision material",
+      "reminders": [
+        "Infectivity = ability of a pathogen to establish infection after exposure.",
+        "Virulence = severity of disease caused by a pathogen.",
+        "Wildlife health is dynamic and involves individual, population, and ecosystem function.",
+        "Dead-end host = infected host that does not sustain further transmission.",
+        "Disease can disrupt normal function and affect behaviour, physiology, reproduction, or survival.",
+        "Anthrax management: careful carcass handling to reduce environmental contamination; follow trained authority protocols.",
+        "Acute disease = rapid onset, short duration, possible sudden mortality.",
+        "Sporadic = irregular, isolated occurrence without predictable pattern.",
+        "Horizontal transmission = between individuals of the same generation.",
+        "Precipitating factor = immediate trigger, such as migration stress in susceptible animals."
+      ],
+      "definitions": [
+        {
+          "term": "Infectivity",
+          "definition": "The ability of a pathogen to establish an infection after exposure (distinct from virulence)."
+        },
+        {
+          "term": "Wildlife health in conservation",
+          "definition": "A dynamic state involving normal function at individual, population, and ecosystem levels. Disease can affect behaviour, physiology, reproduction, and population persistence."
+        },
+        {
+          "term": "Dead-end host",
+          "definition": "A host that becomes infected but does not sustain further transmission."
+        },
+        {
+          "term": "Disease",
+          "definition": "A condition that disrupts normal function and may affect behaviour, physiology, reproduction, or survival."
+        },
+        {
+          "term": "Anthrax management",
+          "definition": "Careful carcass handling to reduce environmental contamination. Suspected carcasses should be handled only by trained authorities, not opened or moved casually."
+        },
+        {
+          "term": "Acute disease",
+          "definition": "Typically has rapid onset and short duration, and may cause sudden mortality events (contrasts with chronic disease)."
+        },
+        {
+          "term": "Sporadic occurrence",
+          "definition": "Irregular, isolated disease occurrence without a predictable pattern."
+        },
+        {
+          "term": "Horizontal transmission",
+          "definition": "Transmission between individuals of the same generation (direct contact, vectors, environmental pathways)."
+        },
+        {
+          "term": "Precipitating factor",
+          "definition": "An immediate trigger that causes disease expression or an outbreak in susceptible animals (e.g. migration stress)."
+        },
+        {
+          "term": "Virulence",
+          "definition": "The severity of disease caused by a pathogen (distinct from infectivity)."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "What does infectivity mean?",
+          "options": [
+            "Ability of a pathogen to establish infection after exposure",
+            "Severity of disease caused after symptoms appear",
+            "Probability that a diseased animal dies",
+            "Number of carcasses found in an outbreak zone"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Infectivity is the ability to establish infection after exposure."
+        },
+        {
+          "id": 2,
+          "question": "Which statement best describes wildlife health in conservation management?",
+          "options": [
+            "A fixed condition measured only by absence of visible injury",
+            "A veterinary issue unrelated to population survival",
+            "A dynamic state involving normal function at individual, population, and ecosystem levels",
+            "A measure based only on body size and population count"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Wildlife health involves function at individual, population, and ecosystem levels."
+        },
+        {
+          "id": 3,
+          "question": "What is a dead-end host?",
+          "options": [
+            "A host that increases pathogen abundance",
+            "A host that becomes infected but does not sustain further transmission",
+            "A host that always acts as a biological vector",
+            "A host that supports the complete adult parasite cycle"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "A dead-end host becomes infected but does not sustain further transmission."
+        },
+        {
+          "id": 4,
+          "question": "What is disease in wildlife health assessment?",
+          "options": [
+            "A condition that disrupts normal function and may affect behavior, physiology, reproduction, or survival",
+            "A temporary injury that always results from external trauma",
+            "A normal ecological process that never affects conservation outcomes",
+            "A population increase caused by improved habitat quality"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Disease disrupts normal function and can affect behaviour, physiology, reproduction, or survival."
+        },
+        {
+          "id": 5,
+          "question": "Which action is central to anthrax management in wildlife areas?",
+          "options": [
+            "Opening carcasses immediately for visual diagnosis",
+            "Careful carcass handling to reduce environmental contamination",
+            "Increasing scavenger access to remove infected remains",
+            "Moving infected carcasses to shared grazing areas"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "The source's accepted concept is careful carcass handling to reduce environmental contamination. Suspected anthrax carcasses require trained-authority protocols."
+        },
+        {
+          "id": 6,
+          "question": "Which description best fits an acute disease?",
+          "options": [
+            "Slow onset with subtle signs over many years",
+            "Rapid onset, short duration, and possible sudden mortality events",
+            "Low disease burden with no visible population impact",
+            "Permanent genetic condition passed through inheritance only"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Acute disease has rapid onset and short duration, sometimes with sudden mortality."
+        },
+        {
+          "id": 7,
+          "question": "What does sporadic disease occurrence mean?",
+          "options": [
+            "Disease that persists regularly in a local reservoir",
+            "Irregular and isolated disease occurrence without a predictable pattern",
+            "Sudden mass mortality across multiple countries",
+            "Continuous spread through every susceptible host"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Sporadic occurrence is irregular and isolated."
+        },
+        {
+          "id": 8,
+          "question": "What is horizontal transmission?",
+          "options": [
+            "Transmission between individuals of the same generation",
+            "Transmission only through inherited genetic traits",
+            "Transmission only through contaminated soil",
+            "Transmission only from domestic animals to wildlife"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Horizontal transmission occurs between individuals of the same generation."
+        },
+        {
+          "id": 9,
+          "question": "Which is an example of a precipitating factor?",
+          "options": [
+            "Old age lowering resistance over time",
+            "Strong immunity reducing spread",
+            "Migration stress triggering disease expression in already susceptible animals",
+            "Genetic diversity improving population resilience"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Migration stress can be an immediate trigger in already susceptible animals."
+        },
+        {
+          "id": 10,
+          "question": "What does virulence describe?",
+          "options": [
+            "Number of species living in the disease area",
+            "Proportion of animals with background immunity",
+            "Severity of disease caused by a pathogen",
+            "Amount of rainfall before an outbreak"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Virulence describes disease severity caused by a pathogen."
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "A pathogen enters a host and establishes infection. This demonstrates:",
+          "options": [
+            "Virulence",
+            "Infectivity",
+            "Prevalence",
+            "Mortality"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Infectivity is the ability to establish infection."
+        },
+        {
+          "id": 2,
+          "question": "A pathogen causes very severe disease after infection. This relates most directly to:",
+          "options": [
+            "Virulence",
+            "Allele frequency",
+            "Sampling intensity",
+            "Habitat quality"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Virulence refers to disease severity."
+        },
+        {
+          "id": 3,
+          "question": "A host is infected but does not pass the pathogen onward. It is a:",
+          "options": [
+            "Reservoir host",
+            "Dead-end host",
+            "Vector",
+            "Definitive host in every case"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: A dead-end host does not sustain further transmission."
+        },
+        {
+          "id": 4,
+          "question": "Which level is included in the assignment's description of wildlife health?",
+          "options": [
+            "Individual only",
+            "Individual, population, and ecosystem",
+            "Ecosystem only",
+            "Visible injury only"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Wildlife health is dynamic across these levels."
+        },
+        {
+          "id": 5,
+          "question": "Which may be an effect of wildlife disease?",
+          "options": [
+            "Changes in reproduction or survival",
+            "Guaranteed population growth",
+            "No effect on behaviour",
+            "Permanent elimination of all pathogens"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Disease can affect behaviour, physiology, reproduction, and survival."
+        },
+        {
+          "id": 6,
+          "question": "Which handling principle does the assignment emphasize for suspected anthrax carcasses?",
+          "options": [
+            "Open the carcass for quick inspection",
+            "Careful handling to reduce environmental contamination",
+            "Move it to a grazing area",
+            "Encourage scavengers to disperse remains"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: The source emphasizes reducing environmental contamination; follow trained authority protocols."
+        },
+        {
+          "id": 7,
+          "question": "A disease appears rapidly, lasts a short time, and causes sudden deaths. It is:",
+          "options": [
+            "Acute",
+            "Sporadic by definition",
+            "Inherited",
+            "Always endemic"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: This matches acute disease."
+        },
+        {
+          "id": 8,
+          "question": "A few isolated cases appear unpredictably over time. This pattern is:",
+          "options": [
+            "Endemic",
+            "Sporadic",
+            "Horizontal",
+            "Virulent"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Sporadic cases occur irregularly without a predictable pattern."
+        },
+        {
+          "id": 9,
+          "question": "A pathogen spreads from one adult animal to another adult animal. This is:",
+          "options": [
+            "Horizontal transmission",
+            "Vertical transmission",
+            "Genetic inheritance only",
+            "Founder effect"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Horizontal transmission is between individuals of the same generation."
+        },
+        {
+          "id": 10,
+          "question": "Stress during migration triggers disease signs in animals already susceptible. Migration stress is a:",
+          "options": [
+            "Precipitating factor",
+            "Allele",
+            "Dead-end host",
+            "Measure of virulence"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: It is an immediate trigger for disease expression."
+        },
+        {
+          "id": 11,
+          "question": "Which phrase best defines disease in wildlife health assessment?",
+          "options": [
+            "Any change in weather",
+            "Disruption of normal function that may affect behaviour, physiology, reproduction, or survival",
+            "Only a visible wound",
+            "A guaranteed population increase"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: This follows the assignment's definition."
+        },
+        {
+          "id": 12,
+          "question": "Which is NOT the same as infectivity?",
+          "options": [
+            "Ability to establish infection",
+            "Ability to infect after exposure",
+            "Severity of disease caused",
+            "Establishment of infection"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Severity is virulence, not infectivity."
+        },
+        {
+          "id": 13,
+          "question": "A local reservoir regularly maintains a disease. This is more consistent with:",
+          "options": [
+            "Endemic persistence",
+            "Sporadic occurrence",
+            "Dead-end host",
+            "Acute onset only"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Endemic disease persists regularly in a population or local reservoir."
+        },
+        {
+          "id": 14,
+          "question": "Which is a potential route of horizontal transmission?",
+          "options": [
+            "Transmission between individuals of the same generation",
+            "Only inheritance through gametes",
+            "Only traits encoded in DNA",
+            "Only transmission before birth"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Horizontal transmission is not restricted to one environmental route."
+        },
+        {
+          "id": 15,
+          "question": "A disease's virulence is high. This indicates:",
+          "options": [
+            "The pathogen always infects every host",
+            "Disease caused is severe",
+            "The host cannot be infected",
+            "There are no symptoms"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Virulence concerns severity, not whether infection is established."
+        },
+        {
+          "id": 16,
+          "question": "Which statement about wildlife health is most accurate?",
+          "options": [
+            "It is only absence of visible injury",
+            "It can involve individual, population, and ecosystem function",
+            "It is unrelated to conservation",
+            "It is measured only by body size"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: The assignment defines wildlife health as a dynamic multilevel state."
+        },
+        {
+          "id": 17,
+          "question": "A host becomes infected but contributes little or nothing to onward spread. This is:",
+          "options": [
+            "Dead-end host",
+            "Vector in every case",
+            "Reservoir by definition",
+            "A disease outbreak"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: The host does not sustain further transmission."
+        },
+        {
+          "id": 18,
+          "question": "Which event is most clearly a precipitating factor rather than a long-term predisposition?",
+          "options": [
+            "An immediate stress event triggering symptoms",
+            "A genetic tendency present from birth",
+            "Age-related decline over many years",
+            "Chronic poor nutrition over months"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: A precipitating factor is the immediate trigger."
+        },
+        {
+          "id": 19,
+          "question": "Which statement about acute disease is correct?",
+          "options": [
+            "It always lasts years",
+            "It often has rapid onset and short duration",
+            "It is always inherited",
+            "It cannot cause mortality"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Acute disease can cause sudden mortality events."
+        },
+        {
+          "id": 20,
+          "question": "Which pairing is correct?",
+          "options": [
+            "Infectivity — severity; virulence — ability to establish infection",
+            "Infectivity — establishment of infection; virulence — disease severity",
+            "Dead-end host — always sustains transmission",
+            "Sporadic — continuous predictable local persistence"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Infectivity and virulence describe different pathogen properties."
+        }
+      ]
+    },
+    "10": {
+      "weekNumber": 10,
+      "title": "Week 10: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 10 Solutions & Practice MCQs",
+      "source": "Based on uploaded Week 10 Solutions PDF and revision material",
+      "reminders": [
+        "In-situ = conservation in natural habitats; ex-situ = conservation outside natural habitats.",
+        "Habitat-like enclosures support natural movement, behaviour, welfare, health, and breeding.",
+        "Representative sampling helps capture genetic variation and avoid loss of alleles.",
+        "Compact/circular reserves can reduce edge effects and outside disturbance where feasible.",
+        "Fragmented landscapes need connectivity planning.",
+        "Indian in-situ categories: National Park, Sanctuary, Conservation Reserve, Community Reserve.",
+        "Pollination, seed dispersal, predation, decomposition, and nutrient cycling = ecological functions.",
+        "Studbooks record ancestry, births, deaths, transfers, and breeding history.",
+        "Ex-situ conservation is an insurance strategy, not a guarantee of reintroduction success.",
+        "Reserved forests may have documented status, boundaries, records, and rights positions that support notification processes."
+      ],
+      "definitions": [
+        {
+          "term": "In-situ conservation",
+          "definition": "Conserving species within their natural habitats and ecosystems. Protected areas and connected landscapes can maintain ecological processes and natural interactions."
+        },
+        {
+          "term": "Ex-situ conservation",
+          "definition": "Conserving species or genetic material outside natural habitats in designated facilities (zoos, aquaria, seed banks, gene banks, cryobanks). Acts as an insurance strategy for high-risk species."
+        },
+        {
+          "term": "Habitat-like captive enclosures",
+          "definition": "Enclosures designed to support natural movement, behaviour, welfare, health, and breeding. Different species have different ecological needs."
+        },
+        {
+          "term": "Representative sampling in ex-situ conservation",
+          "definition": "Choosing individuals in a way that captures genetic variation and reduces the chance of losing alleles."
+        },
+        {
+          "term": "Reserve shape and edge effects",
+          "definition": "Compact or circular reserves generally have less edge relative to their area than long, narrow, or irregular reserves, reducing edge effects and disturbance where feasible."
+        },
+        {
+          "term": "Connectivity planning",
+          "definition": "In fragmented landscapes, corridors and other connectivity measures help isolated wildlife populations move between patches, access resources, and maintain gene flow."
+        },
+        {
+          "term": "Protected-area categories in India",
+          "definition": "National Parks, Sanctuaries, Conservation Reserves, and Community Reserves used for in-situ conservation."
+        },
+        {
+          "term": "Ecological function",
+          "definition": "Pollination, seed dispersal, predation, decomposition, and nutrient cycling are ecological functions that sustain ecosystems."
+        },
+        {
+          "term": "Reserved forests and sanctuary notification",
+          "definition": "Reserved forests may have land status, boundaries, records, and rights positions that are already well structured, supporting faster notification processes."
+        },
+        {
+          "term": "Studbooks and conservation breeding",
+          "definition": "Studbooks record ancestry, births, deaths, transfers, and breeding history to coordinate breeding and avoid poor genetic representation."
+        },
+        {
+          "term": "Ex-situ conservation as insurance",
+          "definition": "Maintaining living individuals or genetic material outside threatened habitats reduces immediate extinction risk, though it does not replace habitat protection."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "Why should captive enclosures be habitat-like?",
+          "options": [
+            "To reduce documentation requirements",
+            "To support natural movement, behaviour, welfare, health, and breeding",
+            "To make all species follow the same diet",
+            "To avoid scientific management"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Habitat-like enclosures support species-appropriate movement, behaviour, welfare, health, and breeding."
+        },
+        {
+          "id": 2,
+          "question": "Why is representative sampling important in ex-situ conservation?",
+          "options": [
+            "It ensures only the best-looking individuals are collected",
+            "It helps capture genetic variation and avoid loss of alleles",
+            "It prevents the need for records",
+            "It replaces future restoration planning"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Representative sampling helps preserve genetic variation and alleles."
+        },
+        {
+          "id": 3,
+          "question": "Why are compact or circular reserves generally preferred where feasible?",
+          "options": [
+            "They are easier to convert into zoos",
+            "They have higher edge-to-area pressure",
+            "They usually reduce edge effects and outside disturbance",
+            "They prevent natural dispersal"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Compact shapes tend to reduce the amount of edge relative to area."
+        },
+        {
+          "id": 4,
+          "question": "A fragmented landscape with isolated wildlife populations mainly requires which management focus?",
+          "options": [
+            "Connectivity planning",
+            "Captive display planning",
+            "Scenic viewpoint development",
+            "Uniform fencing across all habitats"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Connectivity can support movement between fragmented habitats."
+        },
+        {
+          "id": 5,
+          "question": "Which group correctly represents protected-area categories used for in-situ conservation in India?",
+          "options": [
+            "National Park, Sanctuary, Conservation Reserve, and Community Reserve",
+            "Zoo, aquarium, seed bank, and cryobank",
+            "Arboretum, bambusetum, gene bank, and rescue centre",
+            "Nursery, enclosure, corridor map, and field camp"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "These are the four categories listed in the assignment."
+        },
+        {
+          "id": 6,
+          "question": "Pollination, seed dispersal, predation, decomposition, and nutrient cycling are important because they represent which aspect of biodiversity management?",
+          "options": [
+            "Revenue generation",
+            "Boundary demarcation",
+            "Ecological function",
+            "Species display"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "These processes are ecological functions."
+        },
+        {
+          "id": 7,
+          "question": "What does ex-situ conservation involve?",
+          "options": [
+            "Maintaining species only through community grazing systems",
+            "Protecting species only by expanding natural corridors",
+            "Preventing all movement of species between facilities",
+            "Moving species or genetic material to designated facilities outside natural habitats"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Ex-situ conservation takes place outside natural habitats."
+        },
+        {
+          "id": 8,
+          "question": "Why can reserved forests be strategically useful for faster sanctuary notification?",
+          "options": [
+            "They require no ecological significance",
+            "They are automatically free from all human use",
+            "They are suitable only for ex-situ conservation",
+            "Their land status, boundaries, records, and rights position are often already well structured or documented"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Their land status, boundaries, records, and rights position are often already well structured or documented."
+        },
+        {
+          "id": 9,
+          "question": "What is the main function of studbooks in conservation breeding?",
+          "options": [
+            "They record ancestry, births, deaths, transfers, and breeding history to guide management",
+            "They replace veterinary care",
+            "They identify tourist routes inside zoos",
+            "They eliminate the need for genetic diversity"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Studbooks provide records used to guide breeding and population management."
+        },
+        {
+          "id": 10,
+          "question": "Why is ex-situ conservation described as an insurance strategy?",
+          "options": [
+            "It guarantees automatic reintroduction success",
+            "It prevents immediate extinction in high-risk cases and preserves individuals or genetic material outside threatened habitats",
+            "It removes the need for genetic management",
+            "It works best when habitat loss continues unchecked"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Ex-situ conservation can preserve individuals or genetic material as a backup, but does not guarantee recovery."
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "Conservation within a species' natural habitat is:",
+          "options": [
+            "Ex-situ conservation",
+            "In-situ conservation",
+            "Studbook management",
+            "Cryopreservation only"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: In-situ conservation protects species in natural habitats."
+        },
+        {
+          "id": 2,
+          "question": "Which is an ex-situ conservation example?",
+          "options": [
+            "A national park",
+            "A wildlife corridor",
+            "A seed bank",
+            "A community reserve"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Seed banks maintain genetic material outside natural habitats."
+        },
+        {
+          "id": 3,
+          "question": "A habitat-like enclosure is designed primarily to support:",
+          "options": [
+            "Uniform behaviour across all species",
+            "Natural behaviour, welfare, health, and breeding",
+            "Less record keeping",
+            "No scientific management"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Enclosures should meet species-specific needs."
+        },
+        {
+          "id": 4,
+          "question": "Why should conservation breeding sample individuals representatively?",
+          "options": [
+            "To retain genetic variation and reduce allele loss",
+            "To select only the largest animals",
+            "To eliminate record keeping",
+            "To avoid genetic management"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Representative samples reduce the chance of losing genetic variation."
+        },
+        {
+          "id": 5,
+          "question": "Compared with a long, narrow reserve of the same area, a compact reserve often has:",
+          "options": [
+            "More edge per unit area",
+            "Less edge relative to area",
+            "No habitat",
+            "No species movement"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Compact shapes tend to reduce edge-to-area ratio."
+        },
+        {
+          "id": 6,
+          "question": "Which intervention most directly addresses isolation between habitat patches?",
+          "options": [
+            "Connectivity planning",
+            "Scenic viewpoint development",
+            "Captive display planning only",
+            "Uniform fencing"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Corridors and connectivity measures can facilitate movement."
+        },
+        {
+          "id": 7,
+          "question": "Which of these is an in-situ protected-area category listed in the assignment?",
+          "options": [
+            "Cryobank",
+            "Aquarium",
+            "Community Reserve",
+            "Seed bank"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Community Reserve is among the listed Indian protected-area categories."
+        },
+        {
+          "id": 8,
+          "question": "Pollination and seed dispersal are examples of:",
+          "options": [
+            "Ecological functions",
+            "Boundary records",
+            "Studbook entries",
+            "Captive enclosure shapes"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: These processes support ecosystem function."
+        },
+        {
+          "id": 9,
+          "question": "What information is typically included in a conservation breeding studbook?",
+          "options": [
+            "Ancestry and breeding history",
+            "Tourist ticket prices only",
+            "Rainfall forecasts only",
+            "Road construction costs"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Studbooks track ancestry and key life-history events."
+        },
+        {
+          "id": 10,
+          "question": "Why is ex-situ conservation called an insurance strategy?",
+          "options": [
+            "It guarantees every reintroduction succeeds",
+            "It can preserve individuals or genetic material outside a threatened habitat",
+            "It removes the need for wild habitat",
+            "It works only if habitat loss continues"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: It provides a backup for high-risk cases without guaranteeing recovery."
+        },
+        {
+          "id": 11,
+          "question": "Which statement about ex-situ conservation is most accurate?",
+          "options": [
+            "It makes in-situ conservation unnecessary",
+            "It can complement but not replace habitat conservation",
+            "It always restores wild populations automatically",
+            "It eliminates genetic concerns"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Ex-situ measures are most useful alongside management of threats in nature."
+        },
+        {
+          "id": 12,
+          "question": "Which is a key reason to maintain genetic diversity in captive populations?",
+          "options": [
+            "It supports future breeding and reduces allele loss",
+            "It guarantees no disease ever occurs",
+            "It makes studbooks unnecessary",
+            "It removes the need for habitat"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Genetic diversity is important for long-term viability."
+        },
+        {
+          "id": 13,
+          "question": "The 'edge effect' refers broadly to:",
+          "options": [
+            "Conditions and impacts associated with habitat boundaries",
+            "The number of genes in a chromosome",
+            "A list of breeding transfers",
+            "A type of seed bank"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Habitat edges can experience different conditions and outside disturbance."
+        },
+        {
+          "id": 14,
+          "question": "A wildlife corridor is mainly intended to:",
+          "options": [
+            "Connect separated habitat patches",
+            "Keep every animal permanently inside one enclosure",
+            "Replace all protected areas",
+            "Reduce genetic variation"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Connectivity can facilitate movement and gene flow."
+        },
+        {
+          "id": 15,
+          "question": "Which pair is correctly matched?",
+          "options": [
+            "Studbook — breeding and ancestry records",
+            "Cryobank — natural corridor",
+            "National Park — ex-situ facility",
+            "Pollination — boundary demarcation"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Studbooks record pedigree and breeding histories."
+        },
+        {
+          "id": 16,
+          "question": "A reserve's compact shape may help conservation because it can:",
+          "options": [
+            "Reduce edge effects in some contexts",
+            "Prevent all natural dispersal",
+            "Guarantee no disturbance",
+            "Remove all external threats"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Compactness may reduce edge-to-area pressure, though it cannot eliminate every threat."
+        },
+        {
+          "id": 17,
+          "question": "Which action best fits in-situ conservation?",
+          "options": [
+            "Protecting a species in a sanctuary in its natural range",
+            "Storing seeds in a seed bank",
+            "Keeping genetic material in a cryobank",
+            "Maintaining animals only in an aquarium"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: A sanctuary protects species within natural habitats."
+        },
+        {
+          "id": 18,
+          "question": "What is the main risk of collecting only a few non-representative individuals for captive breeding?",
+          "options": [
+            "Loss of alleles and genetic variation",
+            "Guaranteed increase in diversity",
+            "Elimination of all edge effects",
+            "Automatic restoration success"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Unrepresentative samples may omit genetic variation."
+        },
+        {
+          "id": 19,
+          "question": "Which is NOT an ecological function listed in Question 6?",
+          "options": [
+            "Pollination",
+            "Decomposition",
+            "Nutrient cycling",
+            "Boundary demarcation"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "Why: Boundary demarcation is not an ecological function."
+        },
+        {
+          "id": 20,
+          "question": "Which statement is correct about reserved forests in the assignment's context?",
+          "options": [
+            "They may have already documented land status, boundaries, records, and rights",
+            "They are always free of human use",
+            "They are only for ex-situ conservation",
+            "They require no ecological significance"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: The assignment identifies documentation and status as a possible strategic advantage."
         }
       ]
     }

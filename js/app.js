@@ -12,7 +12,7 @@
 
   // Application State
   const state = {
-    currentWeek: 6,
+    currentWeek: 10,
     currentTab: 'study',
     assignmentAnswersShown: false,
     extraAnswersShown: false,
@@ -376,8 +376,8 @@
     initTabs();
     initQuizButtons();
 
-    // Default to Week 6 as latest
-    selectWeek(6);
+    // Default to Week 10 as latest
+    selectWeek(10);
   }
 
   if (document.readyState === 'loading') {

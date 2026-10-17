@@ -21,7 +21,7 @@ For each week, the portal provides exactly 3 focused pages:
 1. **Study Notes (Study Page):**
    - High-yield concept reminders.
    - Core definitions and concepts table directly from course notes.
-   - Last-minute traps and checklists (where applicable).
+   - Last-minute checklists and traps (where applicable).
 
 2. **Assignment MCQs (MCQ Page):**
    - 10 official assignment questions for the week.
@@ -44,7 +44,10 @@ For each week, the portal provides exactly 3 focused pages:
 | **Week 4** | **Active & Ready** | Study Notes (14 Definitions, Reminders), Assignment 4 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 5** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 5 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 6** | **Active & Ready** | Study Notes (11 Concepts, Reminders), Assignment 6 (10 MCQs), Extra Practice (20 MCQs) |
-| **Week 7–12** | *Upcoming* | Content will be added as materials are provided each week |
+| **Week 8** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 8 (10 MCQs), Extra Practice (20 MCQs) |
+| **Week 9** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 9 (10 MCQs), Extra Practice (20 MCQs) |
+| **Week 10** | **Active & Ready** | Study Notes (11 Concepts, Reminders), Assignment 10 (10 MCQs), Extra Practice (20 MCQs) |
+| **Remaining Weeks** | *Upcoming* | Content will be added as materials are provided |
 
 ---
 
