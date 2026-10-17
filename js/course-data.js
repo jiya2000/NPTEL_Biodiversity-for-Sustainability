@@ -1,7 +1,17 @@
 /**
- * Biodiversity for Sustainability
- * Strictly contains only the content and MCQs provided in the official course PDFs and assignments
- * No external or invented content
+ * Biodiversity for Sustainability - Course Revision and Practice Data
+ * 
+ * Source and Verification Note:
+ * 1. Assignment MCQs (Weeks 0–12):
+ *    - Questions and options are drawn directly from course assignment solution documents.
+ *    - For assignment PDFs where no printed official answer key was included in the source file,
+ *      answers and explanations have been identified and inferred from course syllabus concepts
+ *      and option wording.
+ * 2. Extra Practice MCQs (240 questions across Weeks 1–12):
+ *    - Newly written exam-style study aids and practice questions grounded in course concepts,
+ *      provided with rationales to reinforce revision (not official assignment questions).
+ * 3. High-Yield Study Notes & Definitions:
+ *    - Curated from weekly course study packs and lecture revision summaries.
  */
 
 window.COURSE_DATA = {
@@ -639,16 +649,16 @@ window.COURSE_DATA = {
         },
         {
           "id": 14,
-          "question": "How do wetlands contribute to water security?",
+          "question": "Which of the following is classified as a supporting ecosystem service that underpins all other services?",
           "options": [
-            "By increasing fossil fuel production",
-            "By storing and filtering water",
-            "By eliminating all floods",
-            "By replacing all water infrastructure"
+            "Timber harvesting for construction",
+            "Nutrient cycling and soil formation",
+            "Commercial fish harvesting",
+            "Recreational eco-tourism"
           ],
           "answer": 1,
           "letter": "B",
-          "explanation": "Why: Wetlands can store water, improve water quality and influence water flows."
+          "explanation": "Why: Supporting services (such as nutrient cycling, primary production, and soil formation) differ from provisioning, regulating, and cultural services because they are fundamental ecological processes required for the production of all other ecosystem services."
         },
         {
           "id": 15,
@@ -1679,7 +1689,7 @@ window.COURSE_DATA = {
       "source": "Based on uploaded Week 4 Solutions PDF and revision material",
       "reminders": [
         "Climate normals: the supplied assignment identifies 30 years as the classical period for calculating climate averages.",
-        "Shelford's Law of Tolerance: organisms need conditions within their tolerance limits.",
+        "Shelford's Law of Tolerance: organisms survive and reproduce within critical environmental limits; outside their physiological coping capacity, conditions exceed tolerance limits and prevent survival or performance (represented in Assignment 4 as the population falling to zero in the zone of intolerance).",
         "Extinct in the Wild: survives only in captivity, cultivation or other human-managed settings.",
         "Genetic rescue: introducing individuals from another population can increase diversity and reduce inbreeding.",
         "Eutrophication: excess nutrients -> algal growth -> oxygen decline -> harm to aquatic life.",
@@ -1701,7 +1711,7 @@ window.COURSE_DATA = {
         },
         {
           "term": "Shelford's Law of Tolerance",
-          "definition": "Organisms survive and perform within environmental tolerance limits; conditions outside their coping capacity can cause population decline."
+          "definition": "States that the abundance and distribution of an organism are governed by environmental factors falling between minimum and maximum tolerance limits. Beyond these physiological coping limits (zones of physiological stress and intolerance), survival, reproduction, or ecological performance becomes impossible."
         },
         {
           "term": "Extinct in the Wild",
@@ -1795,7 +1805,7 @@ window.COURSE_DATA = {
           ],
           "answer": 3,
           "letter": "D",
-          "explanation": "The population drops to zero"
+          "explanation": "Option (D) corresponds to the assignment's intended answer representing the zone of intolerance where the species cannot persist. Ecologically, Shelford's Law of Tolerance establishes that an organism's survival, growth, and reproduction are bounded by minimum and maximum environmental limits; when environmental conditions exceed these physiological coping limits, survival and performance become impossible, resulting in population collapse or local absence."
         },
         {
           "id": 5,
@@ -2602,7 +2612,7 @@ window.COURSE_DATA = {
         "Ecological species concept = niche, resources, and environmental conditions used.",
         "Habitat quality = food, water, shelter, breeding sites, and low disturbance.",
         "Genetic diversity = variation in hereditary information among individuals and populations.",
-        "Biodiversity hotspot = high species richness + high endemism + significant threat.",
+        "Biodiversity hotspot: In formal scientific criteria (Myers et al.), defined by high plant endemism (at least 1,500 endemic vascular plant species, >0.5% of world total) and severe threat (loss of at least 70% of original primary natural vegetation). Introductory course assignments summarize this triad as high species richness, high endemism, and significant threat.",
         "Temporal isolation acts before fertilization; hybrid sterility, hybrid breakdown, and embryo inviability act after fertilization.",
         "Allelopathy = one organism releases chemicals that inhibit or affect another.",
         "Alpha diversity = local/site diversity; beta diversity = differences among sites; gamma diversity = total diversity across a larger region.",
@@ -2629,7 +2639,7 @@ window.COURSE_DATA = {
         },
         {
           "term": "Biodiversity hotspots",
-          "definition": "Characterized by high species richness, high endemism (species restricted to a region), and significant threat. Important conservation priorities under pressure."
+          "definition": "Formal scientific criteria (Myers et al.) require: (1) high endemism (containing at least 1,500 endemic vascular plant species, >0.5% of world total) and (2) high threat (loss of at least 70% of original primary natural vegetation). In introductory course assignment framing, this is commonly summarized as the combination of high species richness, high endemism, and significant threat."
         },
         {
           "term": "Reproductive isolation",
@@ -2707,7 +2717,7 @@ window.COURSE_DATA = {
           ],
           "answer": 3,
           "letter": "d",
-          "explanation": "The option combines richness, endemism, and threat."
+          "explanation": "Option (d) is the intended assignment answer summarizing the triad framing. Note: Under formal scientific criteria (Myers et al.), biodiversity hotspots are strictly defined by containing at least 1,500 endemic vascular plant species (>0.5% of world total) and having lost at least 70% of original primary natural vegetation, rather than general species richness alone."
         },
         {
           "id": 5,
@@ -2830,16 +2840,16 @@ window.COURSE_DATA = {
         },
         {
           "id": 4,
-          "question": "Which set best characterizes a biodiversity hotspot?",
+          "question": "Which set best characterizes the formal scientific criteria defining a biodiversity hotspot (Myers et al.)?",
           "options": [
-            "High richness, high endemism, significant threat",
-            "Low richness, low endemism, no threat",
-            "High rainfall only",
-            "High abundance without endemism"
+            "High vascular plant endemism (at least 1,500 endemic species) and severe threat (at least 70% loss of primary vegetation)",
+            "Low species richness, low endemism, and absence of human threat",
+            "High annual rainfall, high elevation, and high primary productivity",
+            "High animal abundance without any endemic plant species"
           ],
           "answer": 0,
           "letter": "A",
-          "explanation": "Why: These three features define the hotspot framing in the assignment."
+          "explanation": "Why: Under the formal Myers et al. criteria, a region must meet two quantitative criteria: it must contain at least 1,500 endemic species of vascular plants (>0.5% of world total) and must have lost at least 70% of its original primary native vegetation."
         },
         {
           "id": 5,
@@ -5234,16 +5244,16 @@ window.COURSE_DATA = {
         },
         {
           "id": 14,
-          "question": "Which pairing is correct?",
+          "question": "Which wildfire classification correctly describes a fire advancing through the upper tree canopy?",
           "options": [
-            "Crown fire — treetops",
-            "Surface fire — only tree crowns",
-            "PIT tag — sedative",
-            "Studbook — wildfire type"
+            "Crown fire",
+            "Surface fire",
+            "Ground fire",
+            "Subsurface fire"
           ],
           "answer": 0,
           "letter": "A",
-          "explanation": "Why: Crown fires spread through treetops."
+          "explanation": "Why: Crown fires burn and advance through the tops and crowns of trees and shrubs, whereas surface fires burn across ground litter and grasses, and ground fires consume subsurface organic matter."
         },
         {
           "id": 15,
@@ -5312,16 +5322,16 @@ window.COURSE_DATA = {
         },
         {
           "id": 20,
-          "question": "Which pairing is correct?",
+          "question": "Which statement correctly describes the action of neuromuscular blocking agents in wildlife restraint?",
           "options": [
-            "Neuromuscular blockers — paralysis of voluntary muscles without sedation or analgesia",
-            "PIT tags — short-term sedation",
-            "Behavioural restraint — cages and chutes",
-            "Mechanical restraint — training only"
+            "They cause paralysis of voluntary muscles without providing sedation or analgesia",
+            "They induce general anesthesia with analgesia but no muscle relaxation",
+            "They produce light behavioral calming without affecting motor coordination",
+            "They are electronic microchips used for permanent animal tagging"
           ],
           "answer": 0,
           "letter": "A",
-          "explanation": "Why: This is the distinction given in the assignment."
+          "explanation": "Why: Neuromuscular blockers (e.g. succinylcholine) paralyze voluntary skeletal muscles without producing central nervous system depression, sedation, or pain relief (analgesia), meaning the animal remains fully conscious unless combined with anesthetics."
         }
       ]
     },
@@ -5329,7 +5339,7 @@ window.COURSE_DATA = {
       "weekNumber": 12,
       "title": "Week 12: Biodiversity for Sustainability",
       "subtitle": "Revision Notes, Assignment 12 Solutions & Practice MCQs",
-      "source": "Based on uploaded Week 12 Solutions PDF and revision material",
+      "source": "Based on uploaded Assignment 12 Solutions (2026) PDF (course questions and options; answers inferred from option wording/concepts) and revision study pack",
       "reminders": [
         "Wildlife-road fences should guide animals toward safe crossing structures.",
         "Linear infrastructure includes roads and railways that extend across landscapes.",
