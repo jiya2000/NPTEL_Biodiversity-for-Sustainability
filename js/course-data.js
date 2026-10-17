@@ -1,5 +1,5 @@
 /**
- * NPTEL: Biodiversity for Sustainability
+ * Biodiversity for Sustainability
  * Strictly contains only the content and MCQs provided in the official course PDFs
  * No external or invented content
  */

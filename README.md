@@ -1,10 +1,10 @@
-# NPTEL: Biodiversity for Sustainability - Revision and Practice Portal
+# Biodiversity for Sustainability - Revision and Practice Portal
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-emerald?style=for-the-badge&logo=github)](https://jiya2000.github.io/NPTEL_Biodiversity-for-Sustainability/)
-[![NPTEL Course](https://img.shields.io/badge/NPTEL-SWAYAM%202026-blue?style=for-the-badge)](https://swayam.gov.in)
+[![Course](https://img.shields.io/badge/Course-Biodiversity%20for%20Sustainability-blue?style=for-the-badge)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-A clean, week-wise study and exam practice web application built strictly from course materials and assignment solutions for the **NPTEL / SWAYAM course: Biodiversity for Sustainability**.
+A clean, week-wise study and exam practice web application built strictly from course materials and assignment solutions for the **Biodiversity for Sustainability** course.
 
 ---
 
@@ -53,4 +53,4 @@ For each week, the portal provides exactly 3 focused pages:
 
 ---
 
-*Disclaimer: This portal is an educational study aid created strictly from course revision materials and assignment solutions. Refer to official NPTEL/SWAYAM portals for official exam dates, proctoring guidelines, and certified grade sheets.*
+*Disclaimer: This portal is an educational study aid created strictly from course revision materials and assignment solutions. Refer to official course guidelines for official exam dates, proctoring guidelines, and certified grade sheets.*

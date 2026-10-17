@@ -1,5 +1,5 @@
 /**
- * NPTEL: Biodiversity for Sustainability
+ * Biodiversity for Sustainability
  * Clean, Simple, Single-Page App Logic
  * Strictly handles:
  * 1. Week Switching (Week 1, Week 2, Week 3)
@@ -24,7 +24,7 @@
 
   // --- Theme Management ---
   function initTheme() {
-    const savedTheme = localStorage.getItem('nptel_theme') || 'dark';
+    const savedTheme = localStorage.getItem('app_theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
@@ -33,7 +33,7 @@
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('nptel_theme', next);
+        localStorage.setItem('app_theme', next);
         themeBtn.textContent = next === 'dark' ? 'Light Theme' : 'Dark Theme';
       });
     }
