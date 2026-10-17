@@ -32,8 +32,8 @@ The application separates weekly study from comprehensive mock testing via top-l
    - Live score counter, instant feedback, and answer reveals.
 
 3. **Extra Questions Practice (Separate Standalone Mode):**
-   - Full bank of 220 exam-style practice questions with detailed explanations.
-   - Week-wise filter selector (`All Weeks (220)` or individual weeks).
+   - Full bank of 240 exam-style practice questions with detailed explanations.
+   - Week-wise filter selector (`All Weeks (240)` or individual weeks).
    - Shuffle mode toggle (`Shuffle: ON / OFF`) and `Reshuffle` button.
 
 ---
@@ -42,18 +42,20 @@ The application separates weekly study from comprehensive mock testing via top-l
 
 | Week | Status | Content Available |
 | :---: | :---: | :--- |
+| **Week 0** | **Active & Ready** | Assignment 0 MCQs (10 Diagnostic / Prerequisite Questions) |
 | **Week 1** | **Active & Ready** | Study Notes (32 Definitions, Reminders, Traps), Assignment 1 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 2** | **Active & Ready** | Study Notes (15 Definitions, Reminders), Assignment 2 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 3** | **Active & Ready** | Study Notes (15 Definitions, Reminders), Assignment 3 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 4** | **Active & Ready** | Study Notes (14 Definitions, Reminders), Assignment 4 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 5** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 5 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 6** | **Active & Ready** | Study Notes (11 Concepts, Reminders), Assignment 6 (10 MCQs), Extra Practice (20 MCQs) |
+| **Week 7** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 7 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 8** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 8 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 9** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 9 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 10** | **Active & Ready** | Study Notes (11 Concepts, Reminders), Assignment 10 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 11** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 11 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 12** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 12 (10 MCQs), Extra Practice (20 MCQs) |
-| **Week 7** | *Upcoming* | Content will be added when provided |
+| **Full Course** | **Complete** | **120 Assignment Questions** (Weeks 1–12), **240 Extra Practice MCQs**, plus **Assignment 0** |
 
 ---
 

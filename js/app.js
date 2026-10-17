@@ -6,7 +6,9 @@
  *    - "Week-by-Week Portal" (Week selector + strictly 3 tabs: Study Notes, Assignment MCQs, Extra MCQs)
  *    - "All-Weeks Quiz" (Completely separate mock exam across all weeks with/without shuffle)
  *    - "Extra Questions Practice" (Dedicated practice section with week-wise & shuffle options)
- * 2. Interactive Quiz Feedback & Answer Reveals
+ * 2. Complete coverage: Weeks 0 through 12
+ *    (For Week 0: strictly Assignment 0 MCQs only)
+ * 3. Interactive Quiz Feedback & Answer Reveals
  */
 
 (function () {
@@ -36,8 +38,8 @@
       allExtra: false
     },
     filterWeek: {
-      allQuizzes: 'all',
-      allExtra: 'all'
+      allQuizzes: 'all', // 'all' (120 Qs) | 'with0' (130 Qs) | weekNum
+      allExtra: 'all'    // 'all' (240 Qs) | weekNum
     },
     userChoices: {
       assignment: {}, // { [weekNum]: { [qId]: optionIndex } }
@@ -142,7 +144,7 @@
 
       updateBannerTitle(
         'All-Weeks Assignment Quiz',
-        '110 Official Assignment Questions across all 11 available weeks (Weeks 1–6 & 8–12)'
+        '120 Official Assignment Questions across all 12 weeks (Weeks 1 to 12) • With or Without Shuffle'
       );
       renderQuiz('allQuizzes');
     } else if (modeName === 'all-extra') {
@@ -155,7 +157,7 @@
 
       updateBannerTitle(
         'Extra Questions Practice',
-        '220 Practice Exam-Style Questions with Explanations • Week-wise & Shuffle Modes'
+        '240 Practice Exam-Style Questions with Explanations • Week-wise & Shuffle Modes'
       );
       renderQuiz('allExtra');
     }
@@ -201,10 +203,19 @@
     const countAssign = document.getElementById('count-assignment');
     const countExtra = document.getElementById('count-extra');
     if (countAssign) countAssign.textContent = weekData.assignmentMCQs ? weekData.assignmentMCQs.length : 10;
-    if (countExtra) countExtra.textContent = weekData.extraMCQs ? weekData.extraMCQs.length : 20;
+    if (countExtra) countExtra.textContent = weekData.extraMCQs ? weekData.extraMCQs.length : 0;
 
     if (state.currentMode === 'weekwise') {
       updateBannerTitle(weekData.title, weekData.subtitle);
+
+      // Week 0: only MCQs exist, no study notes or extra MCQs
+      if (weekNum === 0) {
+        if (state.currentTab !== 'assignment') {
+          switchTab('assignment');
+          return;
+        }
+      }
+
       renderStudyNotes(weekData);
       if (state.currentTab === 'assignment') {
         renderQuiz('assignment');
@@ -262,21 +273,44 @@
   function renderStudyNotes(weekData) {
     if (!weekData) return;
 
-    // High Yield Reminders
+    const remindersSection = document.getElementById('reminders-section');
+    const defsSection = document.getElementById('definitions-section');
     const remindersList = document.getElementById('reminders-list');
-    if (remindersList && weekData.reminders) {
-      remindersList.innerHTML = weekData.reminders.map(point => `<li>${point}</li>`).join('');
+    const tbody = document.getElementById('definitions-tbody');
+
+    // Week 0: strictly Assignment 0 MCQs only
+    if (weekData.weekNumber === 0) {
+      if (remindersSection) {
+        remindersSection.innerHTML = `
+          <h3 class="section-title">Week 0 Information</h3>
+          <p style="padding: 1.25rem 1.5rem; color: var(--text-muted); background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); line-height: 1.6;">
+            Week 0 contains only Assignment 0 MCQs. Please switch to the <strong>Assignment MCQs</strong> tab above to view and practice the questions.
+          </p>
+        `;
+      }
+      if (defsSection) defsSection.style.display = 'none';
+      return;
     }
 
-    // Definitions Table
-    const tbody = document.getElementById('definitions-tbody');
-    if (tbody && weekData.definitions) {
-      tbody.innerHTML = weekData.definitions.map(d => `
-        <tr>
-          <td class="term-col"><strong>${d.term}</strong></td>
-          <td class="def-col">${d.definition}</td>
-        </tr>
-      `).join('');
+    // Normal weeks: restore reminders and definitions layout
+    if (remindersSection) {
+      remindersSection.innerHTML = `
+        <h3 class="section-title">High-Yield Reminders</h3>
+        <ul class="reminders-list" id="reminders-list">
+          ${(weekData.reminders || []).map(point => `<li>${point}</li>`).join('')}
+        </ul>
+      `;
+    }
+    if (defsSection) {
+      defsSection.style.display = '';
+      if (tbody && weekData.definitions) {
+        tbody.innerHTML = weekData.definitions.map(d => `
+          <tr>
+            <td class="term-col"><strong>${d.term}</strong></td>
+            <td class="def-col">${d.definition}</td>
+          </tr>
+        `).join('');
+      }
     }
 
     // Traps (Week 1 only or when available)
@@ -322,9 +356,17 @@
 
     if (viewType === 'allQuizzes') {
       const weeks = getWeekList();
-      const targetWeeks = state.filterWeek.allQuizzes === 'all'
-        ? weeks
-        : [parseInt(state.filterWeek.allQuizzes, 10)];
+      let targetWeeks;
+
+      if (state.filterWeek.allQuizzes === 'all') {
+        // Standard full course: All 12 weeks (Weeks 1 to 12 = 120 questions)
+        targetWeeks = weeks.filter(w => w !== 0);
+      } else if (state.filterWeek.allQuizzes === 'with0') {
+        // All weeks including Week 0 (130 questions)
+        targetWeeks = weeks;
+      } else {
+        targetWeeks = [parseInt(state.filterWeek.allQuizzes, 10)];
+      }
 
       const list = [];
       targetWeeks.forEach(w => {
@@ -345,7 +387,7 @@
     if (viewType === 'allExtra') {
       const weeks = getWeekList();
       const targetWeeks = state.filterWeek.allExtra === 'all'
-        ? weeks
+        ? weeks.filter(w => w !== 0) // Week 0 has no extra MCQs
         : [parseInt(state.filterWeek.allExtra, 10)];
 
       const list = [];
@@ -463,6 +505,17 @@
     const isAssignmentType = (viewType === 'assignment' || viewType === 'allQuizzes');
     const storeKey = isAssignmentType ? 'assignment' : 'extra';
 
+    // Handle empty state (e.g., Week 0 on extra practice)
+    if (!questions || questions.length === 0) {
+      container.innerHTML = `
+        <div style="padding: 2.5rem 1.5rem; text-align: center; color: var(--text-muted); background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+          <p>No extra practice questions for Week 0. Please select the <strong>Assignment MCQs</strong> tab to practice Assignment 0.</p>
+        </div>
+      `;
+      updateQuizHeader(viewType, []);
+      return;
+    }
+
     container.innerHTML = questions.map((q, qIdx) => {
       const userChoice = (state.userChoices[storeKey][q.weekNum] &&
         typeof state.userChoices[storeKey][q.weekNum][q.id] === 'number')
@@ -576,6 +629,11 @@
     const displayEl = document.getElementById(`${slug}-score-display`);
     if (!displayEl) return;
 
+    if (questions.length === 0) {
+      displayEl.textContent = '0 Questions Available';
+      return;
+    }
+
     if (answeredCount === 0) {
       if (viewType === 'assignment') {
         displayEl.textContent = `${questions.length} Questions from Official Assignment`;
@@ -583,13 +641,17 @@
         displayEl.textContent = `${questions.length} Practice Exam-Style Questions with Explanations`;
       } else if (viewType === 'allQuizzes') {
         const filter = state.filterWeek.allQuizzes;
-        displayEl.textContent = filter === 'all'
-          ? `110 Questions from All Official Assignments`
-          : `Week ${filter}: ${questions.length} Official Assignment Questions`;
+        if (filter === 'all') {
+          displayEl.textContent = `120 Questions from All 12 Official Assignments`;
+        } else if (filter === 'with0') {
+          displayEl.textContent = `130 Questions from All Assignments (Including Week 0)`;
+        } else {
+          displayEl.textContent = `Week ${filter}: ${questions.length} Official Assignment Questions`;
+        }
       } else if (viewType === 'allExtra') {
         const filter = state.filterWeek.allExtra;
         displayEl.textContent = filter === 'all'
-          ? `220 Practice Exam-Style Questions with Explanations`
+          ? `240 Practice Exam-Style Questions with Explanations`
           : `Week ${filter}: ${questions.length} Practice Questions with Explanations`;
       }
     } else {
@@ -635,7 +697,7 @@
           state.userChoices[storeKey][state.currentWeek] = {};
         } else if (viewType === 'allQuizzes') {
           const filter = state.filterWeek.allQuizzes;
-          if (filter === 'all') {
+          if (filter === 'all' || filter === 'with0') {
             state.userChoices.assignment = {};
           } else {
             state.userChoices.assignment[filter] = {};

@@ -1,12 +1,153 @@
 /**
  * Biodiversity for Sustainability
- * Strictly contains only the content and MCQs provided in the official course PDFs
+ * Strictly contains only the content and MCQs provided in the official course PDFs and assignments
  * No external or invented content
  */
 
 window.COURSE_DATA = {
   "activeWeek": 12,
   "weeks": {
+    "0": {
+      "weekNumber": 0,
+      "title": "Week 0: Biodiversity for Sustainability",
+      "subtitle": "Assignment 0 Solutions & Diagnostic MCQs",
+      "source": "Assignment 0 Screenshots",
+      "reminders": [],
+      "definitions": [],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "Which approach in ecology uses models and predictions to simplify reality and identify patterns?",
+          "options": [
+            "Theoretical ecology",
+            "Field ecology",
+            "Laboratory ecology",
+            "Descriptive conservation"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Theoretical ecology uses mathematical models and conceptual abstractions to simplify complex natural systems, identify fundamental patterns, and generate testable predictions."
+        },
+        {
+          "id": 2,
+          "question": "Which statement best describes the role of forests in climate regulation?",
+          "options": [
+            "Forests store carbon and vegetation influences local temperature and moisture",
+            "Forests prevent all climatic variation",
+            "Forests regulate only animal populations",
+            "Forests affect climate only through visible wildlife"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Forests act as major carbon sinks and actively influence regional temperature, transpiration, and microclimate moisture cycles."
+        },
+        {
+          "id": 3,
+          "question": "Genetic diversity refers to:",
+          "options": [
+            "Variation among ecosystems",
+            "Variation in ecological roles",
+            "Variation within a species",
+            "Variation among climate zones"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Genetic diversity represents the variety of genes and heritable variation found within a species or population."
+        },
+        {
+          "id": 4,
+          "question": "Ecosystem diversity means:",
+          "options": [
+            "Diversity of genes within one population",
+            "Variety of ecosystems and habitats across space",
+            "Number of individuals of one species",
+            "Number of economic activities in a region"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Ecosystem diversity refers to the variety of distinct habitats, biological communities, and ecological processes across a given spatial scale."
+        },
+        {
+          "id": 5,
+          "question": "Which ecological support is directly connected with food security?",
+          "options": [
+            "Pollination and nutrient cycling",
+            "Road construction and industrial output",
+            "Political boundaries and administration",
+            "Urban zoning and traffic control"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Ecosystem services such as animal pollination of crops and soil nutrient cycling are fundamental ecological supports directly sustaining food security and agriculture."
+        },
+        {
+          "id": 6,
+          "question": "Why is pollution difficult to manage in sustainability terms?",
+          "options": [
+            "Waste disappears when it leaves human sight",
+            "Pollution may move through air, water, soil, food chains, and living bodies",
+            "Pollution affects only the point where it is released",
+            "Pollution has no connection with ecosystems"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Pollutants are dynamic and diffuse across environmental media (air, water, soil), bioaccumulate through trophic levels, and cross jurisdictional boundaries."
+        },
+        {
+          "id": 7,
+          "question": "Which are the three pillars of sustainability?",
+          "options": [
+            "Genetic, species, and ecosystem sustainability",
+            "Habitat, population, and community sustainability",
+            "Food, water, and climate sustainability",
+            "Environmental, social, and economic sustainability"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "The three recognized pillars of sustainable development are environmental protection, social equity, and economic viability."
+        },
+        {
+          "id": 8,
+          "question": "What is environmental injustice?",
+          "options": [
+            "Equal sharing of environmental benefits and burdens",
+            "A situation where vulnerable communities often bear more pollution, risk, or reduced access to clean resources",
+            "The scientific study of population regulation",
+            "The natural variation of climate across regions"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Environmental injustice occurs when marginalized, vulnerable, or low-income populations disproportionately suffer environmental harms, pollution, and lack of access to clean resources."
+        },
+        {
+          "id": 9,
+          "question": "Functional diversity refers to:",
+          "options": [
+            "Variety in ecological roles and traits",
+            "Variety in political institutions",
+            "Variety in land ownership systems",
+            "Variety in human population size"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Functional diversity measures the range and value of species traits and organismal roles in maintaining ecosystem functioning."
+        },
+        {
+          "id": 10,
+          "question": "Which approach in ecology is most directly associated with controlled experiments and systematic manipulation of variables?",
+          "options": [
+            "Field ecology",
+            "Laboratory ecology",
+            "Landscape observation",
+            "Social sustainability"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Laboratory ecology allows researchers to isolate specific environmental factors and systematically manipulate variables under highly controlled conditions."
+        }
+      ],
+      "extraMCQs": []
+    },
     "1": {
       "weekNumber": 1,
       "title": "Week 1: Biodiversity for Sustainability",
@@ -2907,6 +3048,460 @@ window.COURSE_DATA = {
           "answer": 1,
           "letter": "B",
           "explanation": "Why: The ecological species concept focuses on niche and resource use."
+        }
+      ]
+    },
+    "7": {
+      "weekNumber": 7,
+      "title": "Week 7: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 7 Answers & Practice MCQs",
+      "source": "Assignment 7 Solutions & Week 7 Revision Notes (2026)",
+      "reminders": [
+        "Simple random sampling: every unit has an equal chance.",
+        "Stratified sampling: especially useful when density varies across habitat types.",
+        "Equipment bias: faulty calibration; bias overall means systematic deviation from the true value.",
+        "Camera-trap tiger identification: unique stripe patterns.",
+        "Population losses: mortality + emigration. Population gains: births + immigration.",
+        "Population: same-species individuals in a defined area capable of interbreeding.",
+        "PPS: larger sampling units receive a higher chance of selection.",
+        "Sampling intensity = sample units ÷ total population units.",
+        "Accuracy is closeness to truth; precision is repeatability; bias is systematic error.",
+        "Distance sampling uses distances to account for imperfect detection when estimating abundance."
+      ],
+      "definitions": [
+        {
+          "term": "Wildlife population and population dynamics",
+          "definition": "A population is individuals of the same species in a defined area that are capable of interbreeding. Population size changes through births (natality), deaths (mortality), immigration, and emigration. Births and immigration add individuals; mortality and emigration remove individuals."
+        },
+        {
+          "term": "Why count wildlife?",
+          "definition": "Counts and estimates help monitor population status, trends, distribution, and conservation outcomes. A census attempts to count all individuals, while sampling observes a subset and uses it to estimate the population."
+        },
+        {
+          "term": "Simple random sampling (SRS)",
+          "definition": "Every sampling unit has an equal chance of selection. Random selection reduces deliberate selection bias, though a small sample may still fail to represent all habitat types by chance."
+        },
+        {
+          "term": "Stratified sampling",
+          "definition": "The study area is divided into meaningful strata, such as habitat types, and samples are drawn from each. It is useful when animal density or habitat conditions vary across strata, helping ensure that important habitat types are represented."
+        },
+        {
+          "term": "Probability proportional to size (PPS)",
+          "definition": "Sampling units with larger size measures have a higher chance of selection. The relevant measure of 'size' must be defined for the survey; PPS is not the same as giving every unit an equal chance."
+        },
+        {
+          "term": "Bias, accuracy, and precision",
+          "definition": "Bias is systematic deviation from the true value. Accuracy concerns closeness to the true value. Precision concerns how consistent repeated estimates are with one another. A measurement can be precise but biased."
+        },
+        {
+          "term": "Observer and equipment bias",
+          "definition": "Observer skill can cause missed detections or inconsistent records. Equipment bias can arise from faulty calibration or a measurement device that systematically misreads values. These are different from random variation."
+        },
+        {
+          "term": "Detectability and camera traps",
+          "definition": "Animals may be present but not detected because of dense vegetation, behaviour, camera placement, or imperfect equipment. In camera-trap tiger estimation, individuals can be distinguished using their unique stripe patterns."
+        },
+        {
+          "term": "Sampling intensity",
+          "definition": "In the assignment, sampling intensity is calculated as sample units divided by total population units. It describes the fraction of units sampled."
+        },
+        {
+          "term": "Distance sampling and transects",
+          "definition": "Distance sampling commonly records distances from a line or point to detected animals and uses how detections decline with distance to estimate detectability and abundance. Transects are defined survey paths; results depend on survey design and assumptions."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "Simple random sampling gives:",
+          "options": [
+            "Larger units a higher chance of selection",
+            "Every sampling unit an equal chance of selection",
+            "Only remote areas a chance of selection",
+            "Every kth unit after a fixed start without randomness"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Every sampling unit has an equal chance of selection."
+        },
+        {
+          "id": 2,
+          "question": "Stratified sampling is especially useful when:",
+          "options": [
+            "The whole landscape is uniform",
+            "Animal density varies across habitat types",
+            "Complete census is always possible",
+            "Sampling units cannot be mapped"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Stratification helps represent habitat types with different animal densities."
+        },
+        {
+          "id": 3,
+          "question": "Which is an example of equipment bias?",
+          "options": [
+            "Missed detections due to low observer skill",
+            "Faulty calibration of a measuring device",
+            "Dense vegetation hiding animals",
+            "Unrealistic movement assumptions in a model"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Faulty calibration can systematically distort measurements."
+        },
+        {
+          "id": 4,
+          "question": "Bias in wildlife monitoring means:",
+          "options": [
+            "Random scatter around a true value",
+            "Systematic deviation from the true value",
+            "Higher cost of data collection",
+            "Larger sample size than required"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Bias is systematic error rather than random scatter."
+        },
+        {
+          "id": 5,
+          "question": "In camera-trap based tiger estimation, individual tigers can be identified by:",
+          "options": [
+            "Herd size",
+            "Nesting banks",
+            "Unique stripe patterns",
+            "Flowering season"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Each tiger's stripe pattern can be used as an individual identifier."
+        },
+        {
+          "id": 6,
+          "question": "Which pair represents losses from a population?",
+          "options": [
+            "Natality and immigration",
+            "Births and recruitment",
+            "Mortality and emigration",
+            "Density and dispersal"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Deaths and individuals leaving the population reduce its size."
+        },
+        {
+          "id": 7,
+          "question": "A population in wildlife studies is best understood as which of the following?",
+          "options": [
+            "All species living in a habitat during one season",
+            "Individuals of the same species in a defined area that are capable of interbreeding",
+            "All animals counted during a field survey",
+            "Individuals of different species using the same corridor"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "This is the population definition used in the screenshot."
+        },
+        {
+          "id": 8,
+          "question": "Which pair represents gains to a population?",
+          "options": [
+            "Births and immigration",
+            "Deaths and emigration",
+            "Births and deaths",
+            "Immigration and emigration"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Births and immigration add individuals."
+        },
+        {
+          "id": 9,
+          "question": "PPS sampling means:",
+          "options": [
+            "Larger sampling units receive a higher chance of selection",
+            "Every unit has the same chance regardless of size",
+            "Only point transects are used",
+            "Animals are removed after each capture"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "PPS stands for probability proportional to size."
+        },
+        {
+          "id": 10,
+          "question": "Sampling intensity is calculated as:",
+          "options": [
+            "Total animals divided by total area",
+            "Sample units divided by total population units",
+            "Marked animals divided by recaptured animals",
+            "Detection distance divided by transect length"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Use sample units divided by total population units, as accepted by the assessment."
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "A survey randomly selects plots so that each plot has an equal chance. This is:",
+          "options": [
+            "PPS sampling",
+            "Simple random sampling",
+            "Convenience sampling",
+            "Stratified sampling"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: SRS gives each sampling unit an equal chance."
+        },
+        {
+          "id": 2,
+          "question": "A forest contains grassland, scrub, and dense forest with different wildlife densities. Which method can ensure all are represented?",
+          "options": [
+            "Stratified sampling",
+            "Only one random plot",
+            "PPS by default",
+            "Census of every animal is mandatory"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Stratification samples each meaningful habitat group."
+        },
+        {
+          "id": 3,
+          "question": "Repeated measurements are tightly grouped but all are far from the true value. They are:",
+          "options": [
+            "Precise but biased",
+            "Accurate and unbiased by definition",
+            "Randomly selected",
+            "A census"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Precision does not guarantee accuracy."
+        },
+        {
+          "id": 4,
+          "question": "A rangefinder consistently records distances 5 metres too high. This is:",
+          "options": [
+            "Random variation only",
+            "Systematic bias",
+            "Immigration",
+            "Sampling intensity"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: A consistent directional error is bias."
+        },
+        {
+          "id": 5,
+          "question": "Which can identify an individual tiger in camera-trap photographs?",
+          "options": [
+            "Its unique stripe pattern",
+            "The habitat's rainfall alone",
+            "Its herd size",
+            "The transect's length"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Stripe patterns distinguish individuals."
+        },
+        {
+          "id": 6,
+          "question": "Which process increases population size, all else equal?",
+          "options": [
+            "Mortality",
+            "Emigration",
+            "Immigration",
+            "Equipment bias"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Immigration brings individuals into the defined area."
+        },
+        {
+          "id": 7,
+          "question": "Which process reduces population size, all else equal?",
+          "options": [
+            "Natality",
+            "Immigration",
+            "Recruitment",
+            "Emigration"
+          ],
+          "answer": 3,
+          "letter": "D",
+          "explanation": "Why: Emigration removes individuals from the population."
+        },
+        {
+          "id": 8,
+          "question": "A device is not calibrated correctly. This is primarily:",
+          "options": [
+            "Equipment bias",
+            "Cultural service",
+            "Gamma diversity",
+            "Population gain"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Faulty calibration can cause systematic measurement error."
+        },
+        {
+          "id": 9,
+          "question": "If 12 sampling units are sampled from 60 total units, sampling intensity is:",
+          "options": [
+            "5%",
+            "20%",
+            "50%",
+            "72%"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: 12 ÷ 60 = 0.20 = 20%."
+        },
+        {
+          "id": 10,
+          "question": "A study samples larger forest blocks more often because selection probability scales with block size. This is:",
+          "options": [
+            "Simple random sampling",
+            "PPS sampling",
+            "Temporal isolation",
+            "A full census"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: PPS gives larger units a greater chance of selection."
+        },
+        {
+          "id": 11,
+          "question": "Why can wildlife counts underestimate actual abundance?",
+          "options": [
+            "Every animal is always visible",
+            "Some animals are present but not detected",
+            "Sampling removes all bias",
+            "Detection is independent of habitat in all cases"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Imperfect detectability can cause missed individuals."
+        },
+        {
+          "id": 12,
+          "question": "Which is the best description of a population in this assignment?",
+          "options": [
+            "All species in a biome",
+            "Same-species individuals in a defined area capable of interbreeding",
+            "All animals seen in one camera image",
+            "All organisms in a food web"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: The definition is restricted to the same species and defined area."
+        },
+        {
+          "id": 13,
+          "question": "A transect is best described as:",
+          "options": [
+            "A defined route along which observations are recorded",
+            "A measure of genetic diversity",
+            "A type of population loss",
+            "A camera-trap stripe"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Transects are standardized survey lines or paths."
+        },
+        {
+          "id": 14,
+          "question": "In distance sampling, recording distance from the transect to detected animals helps estimate:",
+          "options": [
+            "Detectability and abundance",
+            "Natality only",
+            "Stripe colour",
+            "Equipment cost only"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Detection probability generally changes with distance."
+        },
+        {
+          "id": 15,
+          "question": "An observer misses animals because they cannot identify tracks reliably. This is most closely related to:",
+          "options": [
+            "Observer skill",
+            "PPS",
+            "Immigration",
+            "Population gain"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Observer skill can affect detection and identification."
+        },
+        {
+          "id": 16,
+          "question": "Which is a gain to a population?",
+          "options": [
+            "Mortality",
+            "Emigration",
+            "Births",
+            "Equipment failure"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Births add new individuals."
+        },
+        {
+          "id": 17,
+          "question": "A small random sample happens to miss one habitat type. This automatically proves bias?",
+          "options": [
+            "Yes, always",
+            "No; it may be sampling variation, though representativeness is a concern",
+            "It proves PPS was used",
+            "It proves the census was complete"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Random samples can be unrepresentative by chance; bias is systematic deviation."
+        },
+        {
+          "id": 18,
+          "question": "A survey divides a landscape into habitat strata and samples within each. The main purpose is to:",
+          "options": [
+            "Represent important habitat groups",
+            "Ensure every unit has a size-proportional chance",
+            "Remove all measurement error",
+            "Count only the largest animals"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Stratification can improve coverage of heterogeneous landscapes."
+        },
+        {
+          "id": 19,
+          "question": "A wildlife estimate is 100 every time, while the true value is 120. This estimate is:",
+          "options": [
+            "Unbiased because it is consistent",
+            "Precise but biased low",
+            "Accurate by definition",
+            "A population gain"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Consistency indicates precision; systematic underestimation indicates bias."
+        },
+        {
+          "id": 20,
+          "question": "Which formula matches the assignment's sampling-intensity definition?",
+          "options": [
+            "Total area ÷ animals detected",
+            "Sample units ÷ total population units",
+            "Deaths ÷ births",
+            "Immigration ÷ emigration"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: This is the accepted formula in Question 10."
         }
       ]
     },
