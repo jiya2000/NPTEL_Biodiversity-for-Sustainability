@@ -47,7 +47,9 @@ For each week, the portal provides exactly 3 focused pages:
 | **Week 8** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 8 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 9** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 9 (10 MCQs), Extra Practice (20 MCQs) |
 | **Week 10** | **Active & Ready** | Study Notes (11 Concepts, Reminders), Assignment 10 (10 MCQs), Extra Practice (20 MCQs) |
-| **Remaining Weeks** | *Upcoming* | Content will be added as materials are provided |
+| **Week 11** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 11 (10 MCQs), Extra Practice (20 MCQs) |
+| **Week 12** | **Active & Ready** | Study Notes (10 Concepts, Reminders), Assignment 12 (10 MCQs), Extra Practice (20 MCQs) |
+| **Week 7** | *Upcoming* | Content will be added when provided |
 
 ---
 

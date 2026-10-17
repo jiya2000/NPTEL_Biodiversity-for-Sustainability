@@ -5,7 +5,7 @@
  */
 
 window.COURSE_DATA = {
-  "activeWeek": 10,
+  "activeWeek": 12,
   "weeks": {
     "1": {
       "weekNumber": 1,
@@ -4273,6 +4273,914 @@ window.COURSE_DATA = {
           "answer": 0,
           "letter": "A",
           "explanation": "Why: The assignment identifies documentation and status as a possible strategic advantage."
+        }
+      ]
+    },
+    "11": {
+      "weekNumber": 11,
+      "title": "Week 11: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 11 Solutions & Practice MCQs",
+      "source": "Based on uploaded Week 11 Solutions PDF and revision material",
+      "reminders": [
+        "PIT tags = long-term individual identification.",
+        "Small reptiles: support the body and avoid squeezing.",
+        "Habitat tools can help or harm depending on timing, intensity, location, and monitoring.",
+        "Jab stick: suitable when an animal is approachable, confined, or partially restrained (assignment framing).",
+        "Crown fire = fire that burns treetops and can spread rapidly.",
+        "Behavioural restraint = training, conditioning, desensitisation.",
+        "Mechanical restraint = cages, traps, poles, nets, chutes.",
+        "Ketch-All pole = short-distance control while keeping handlers away.",
+        "Neuromuscular blockers paralyse voluntary muscles but do not provide sedation or analgesia.",
+        "Wildfire can create hydrophobic soil, reducing infiltration and increasing runoff."
+      ],
+      "definitions": [
+        {
+          "term": "PIT tags",
+          "definition": "Passive Integrated Transponder (PIT) tags are small electronic identifiers used to distinguish individual animals over time, supporting long-term identification and monitoring."
+        },
+        {
+          "term": "Safe handling of small reptiles",
+          "definition": "Support the animal's body and avoid squeezing. Handling should be performed by trained personnel with stress and injury minimized."
+        },
+        {
+          "term": "Habitat management requires context",
+          "definition": "Fire, grazing, water provisioning, and plantation can have different effects depending on timing, intensity, location, and monitoring. Evaluate ecological purpose and outcomes."
+        },
+        {
+          "term": "Jab stick",
+          "definition": "Most suitable when an animal is approachable, confined, or partially restrained. A specialist wildlife-handling tool requiring training."
+        },
+        {
+          "term": "Wildfire types",
+          "definition": "Ground fires burn below or at soil surface; surface fires burn litter, grasses, shrubs, low vegetation; crown fires spread through treetops and move rapidly."
+        },
+        {
+          "term": "Restraint categories",
+          "definition": "Behavioural restraint (training/conditioning), Physical restraint (direct physical control), Mechanical restraint (cages, traps, poles, nets, chutes), Chemical restraint (drugs)."
+        },
+        {
+          "term": "Ketch-All pole",
+          "definition": "Provides short-distance control while allowing handlers to maintain distance. Should be used only by trained professionals."
+        },
+        {
+          "term": "Neuromuscular blockers",
+          "definition": "Drugs that paralyse voluntary muscles without providing sedation or analgesia. Paralysis alone does not relieve pain or fear."
+        },
+        {
+          "term": "Wildfire effects on soil",
+          "definition": "In some conditions, a water-repellent (hydrophobic) soil layer reduces infiltration and increases surface runoff, potentially increasing erosion and post-fire flooding risk."
+        },
+        {
+          "term": "Wildlife handling and welfare",
+          "definition": "Restraint and immobilisation carry risks. Correct method depends on species, context, trained staff, monitoring, and welfare safeguards."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "What is the main purpose of PIT tags?",
+          "options": [
+            "To sedate animals during transport",
+            "To create artificial movement routes",
+            "To prevent conflict with livestock",
+            "To allow long-term individual identification"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "PIT tags support long-term individual identification."
+        },
+        {
+          "id": 2,
+          "question": "Which practice is appropriate while physically handling small reptiles?",
+          "options": [
+            "Holding only the tail to restrict movement",
+            "Supporting the body and avoiding squeezing",
+            "Keeping the animal exposed to heat for long periods",
+            "Applying pressure to the abdomen for control"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "The assignment recommends body support and avoiding squeezing."
+        },
+        {
+          "id": 3,
+          "question": "Which statement reflects the central caution in habitat management?",
+          "options": [
+            "Fire and grazing always damage habitats",
+            "Water provisioning is always beneficial",
+            "Management tools can help or harm depending on timing, intensity, location, and monitoring",
+            "Plantation is automatically equal to restoration"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Management outcomes depend on context, implementation, and monitoring."
+        },
+        {
+          "id": 4,
+          "question": "When is a jab stick most suitable?",
+          "options": [
+            "When the animal is distant and hidden in dense vegetation",
+            "When the animal is approachable, confined, or partially restrained",
+            "When no trained personnel are available",
+            "When the animal must be monitored from the air"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "This is the situation specified in the assignment."
+        },
+        {
+          "id": 5,
+          "question": "Which type of wildfire burns treetops and can spread rapidly?",
+          "options": [
+            "Ground fire",
+            "Surface fire",
+            "Crown fire",
+            "Prescribed fire"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Crown fires spread through treetops."
+        },
+        {
+          "id": 6,
+          "question": "Which form of restraint is based on training, conditioning, or desensitisation?",
+          "options": [
+            "Behavioural restraint",
+            "Physical restraint",
+            "Chemical restraint",
+            "Mechanical restraint"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Behavioural restraint relies on training and conditioning."
+        },
+        {
+          "id": 7,
+          "question": "Which form of restraint uses cages, traps, poles, nets, or chutes?",
+          "options": [
+            "Chemical restraint",
+            "Behavioural restraint",
+            "Physical restraint",
+            "Mechanical restraint"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "Mechanical restraint uses equipment such as cages, traps, poles, nets, or chutes."
+        },
+        {
+          "id": 8,
+          "question": "Which statement best describes a Ketch-All pole?",
+          "options": [
+            "It is used to create long-term animal enclosures",
+            "It is a device for measuring animal temperature",
+            "It provides short-distance control while keeping handlers away",
+            "It is used to guide animals into pitfall traps"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "The assignment describes short-distance control while keeping handlers away."
+        },
+        {
+          "id": 9,
+          "question": "Which drug group immobilises animals through paralysis of voluntary muscles without providing sedation or analgesia?",
+          "options": [
+            "CNS depressants",
+            "Tranquillisers",
+            "Dissociatives",
+            "Neuromuscular blockers"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "The accepted concept is neuromuscular blockers; they do not themselves provide sedation or analgesia."
+        },
+        {
+          "id": 10,
+          "question": "Which is a physical effect of wildfire?",
+          "options": [
+            "Endocrine disruption",
+            "Hydrophobic soil reducing infiltration and increasing runoff",
+            "Dart leakage during immobilisation",
+            "Formation of ghost nets"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Hydrophobic soil can reduce infiltration and increase runoff."
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "PIT tags are mainly used for:",
+          "options": [
+            "Long-term individual identification",
+            "Sedating animals",
+            "Creating corridors",
+            "Measuring rainfall"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: They provide a persistent individual identifier."
+        },
+        {
+          "id": 2,
+          "question": "When handling a small reptile, the assignment recommends:",
+          "options": [
+            "Holding only its tail",
+            "Supporting its body and avoiding squeezing",
+            "Pressing its abdomen",
+            "Leaving it in direct heat"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Body support and gentle handling reduce injury risk."
+        },
+        {
+          "id": 3,
+          "question": "Which statement about habitat-management tools is most accurate?",
+          "options": [
+            "Fire is always harmful",
+            "Water provisioning is always beneficial",
+            "Effects depend on timing, intensity, location, and monitoring",
+            "Plantation always equals restoration"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Context determines whether an intervention helps or harms."
+        },
+        {
+          "id": 4,
+          "question": "Which fire can burn through treetops and spread rapidly?",
+          "options": [
+            "Ground fire",
+            "Surface fire",
+            "Crown fire",
+            "Prescribed fire by definition"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Crown fires involve the tree canopy."
+        },
+        {
+          "id": 5,
+          "question": "Training and desensitisation are associated with:",
+          "options": [
+            "Behavioural restraint",
+            "Chemical restraint",
+            "Mechanical restraint",
+            "Crown fire"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Behavioural restraint uses training and conditioning."
+        },
+        {
+          "id": 6,
+          "question": "Cages, traps, poles, nets, and chutes are examples of equipment used in:",
+          "options": [
+            "Mechanical restraint",
+            "Behavioural restraint",
+            "Only chemical restraint",
+            "Fire management"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: These are mechanical restraint tools."
+        },
+        {
+          "id": 7,
+          "question": "Which restraint category uses drugs?",
+          "options": [
+            "Behavioural",
+            "Chemical",
+            "Mechanical",
+            "Habitat-based"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Chemical restraint uses drugs."
+        },
+        {
+          "id": 8,
+          "question": "Which is a key limitation of neuromuscular blockers?",
+          "options": [
+            "They provide complete analgesia",
+            "They paralyse voluntary muscles but do not provide sedation or analgesia",
+            "They are a form of habitat restoration",
+            "They only identify individuals"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Paralysis does not equal sedation or pain relief."
+        },
+        {
+          "id": 9,
+          "question": "After a wildfire, water-repellent soil may cause:",
+          "options": [
+            "Increased infiltration in every case",
+            "Reduced infiltration and increased runoff",
+            "No change to runoff ever",
+            "More genetic diversity directly"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Hydrophobic soil can increase surface runoff."
+        },
+        {
+          "id": 10,
+          "question": "A Ketch-All pole is described in the assignment as providing:",
+          "options": [
+            "Long-term enclosure",
+            "Short-distance control while keeping handlers away",
+            "Temperature measurement",
+            "A way to create artificial corridors"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: This matches the assignment description."
+        },
+        {
+          "id": 11,
+          "question": "A planned burn used for habitat management is called:",
+          "options": [
+            "Crown fire",
+            "Prescribed fire",
+            "Ground fire only",
+            "Hydrophobic fire"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Prescribed fire is intentionally planned and managed."
+        },
+        {
+          "id": 12,
+          "question": "Which practice is NOT recommended by the assignment for small reptiles?",
+          "options": [
+            "Supporting the body",
+            "Avoiding squeezing",
+            "Holding only the tail to restrict movement",
+            "Using species-appropriate procedures"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: The assignment specifically rejects holding only the tail."
+        },
+        {
+          "id": 13,
+          "question": "Why is monitoring important after habitat management?",
+          "options": [
+            "To know whether the intervention helped or harmed",
+            "To eliminate all ecological variation",
+            "To avoid recording outcomes",
+            "To make all habitats identical"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Monitoring helps evaluate outcomes and adjust management."
+        },
+        {
+          "id": 14,
+          "question": "Which pairing is correct?",
+          "options": [
+            "Crown fire — treetops",
+            "Surface fire — only tree crowns",
+            "PIT tag — sedative",
+            "Studbook — wildfire type"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Crown fires spread through treetops."
+        },
+        {
+          "id": 15,
+          "question": "Which restraint method is based on conditioning the animal to cooperate?",
+          "options": [
+            "Behavioural",
+            "Mechanical",
+            "Chemical",
+            "Neuromuscular"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Training and conditioning are behavioural restraint."
+        },
+        {
+          "id": 16,
+          "question": "A management intervention has different effects depending on season and intensity. This illustrates:",
+          "options": [
+            "Context-dependent habitat management",
+            "Automatic restoration",
+            "PIT tagging",
+            "Allele frequency"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Timing and intensity affect outcomes."
+        },
+        {
+          "id": 17,
+          "question": "What is a primary purpose of individual animal identification in monitoring?",
+          "options": [
+            "Track individuals across observations over time",
+            "Guarantee no disease",
+            "Replace all habitat protection",
+            "Prevent natural movement"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Individual identification supports long-term monitoring."
+        },
+        {
+          "id": 18,
+          "question": "Which is the safest general principle for wildlife restraint?",
+          "options": [
+            "Use specialist methods without training",
+            "Match the method to species and context and use trained personnel",
+            "Assume every species responds identically",
+            "Avoid monitoring"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Handling must be species-appropriate and conducted by trained staff."
+        },
+        {
+          "id": 19,
+          "question": "A soil layer repels water after a fire. What is a possible result?",
+          "options": [
+            "Higher runoff and erosion risk",
+            "Guaranteed groundwater recharge",
+            "No surface flow",
+            "No change in soil properties"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Reduced infiltration can increase runoff and erosion."
+        },
+        {
+          "id": 20,
+          "question": "Which pairing is correct?",
+          "options": [
+            "Neuromuscular blockers — paralysis of voluntary muscles without sedation or analgesia",
+            "PIT tags — short-term sedation",
+            "Behavioural restraint — cages and chutes",
+            "Mechanical restraint — training only"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: This is the distinction given in the assignment."
+        }
+      ]
+    },
+    "12": {
+      "weekNumber": 12,
+      "title": "Week 12: Biodiversity for Sustainability",
+      "subtitle": "Revision Notes, Assignment 12 Solutions & Practice MCQs",
+      "source": "Based on uploaded Week 12 Solutions PDF and revision material",
+      "reminders": [
+        "Wildlife-road fences should guide animals toward safe crossing structures.",
+        "Linear infrastructure includes roads and railways that extend across landscapes.",
+        "Road barrier effect = animals avoid crossing, reducing movement between habitat areas.",
+        "Total Economic Value = use values + non-use values.",
+        "Contingent valuation = surveys asking willingness to pay for conservation.",
+        "Oil spill = release of liquid petroleum hydrocarbons into the environment.",
+        "Canopy bridge = elevated crossing for arboreal mammals and some reptiles.",
+        "Mitigation hierarchy: Avoid -> Minimise -> Restore -> Offset.",
+        "Petroleum toxicity is especially associated with aromatic hydrocarbons, particularly PAHs.",
+        "Monitoring is needed after construction to assess mitigation effectiveness."
+      ],
+      "definitions": [
+        {
+          "term": "Wildlife-road mitigation and fences",
+          "definition": "Fences used in wildlife-road mitigation should guide animals toward safe crossing structures rather than permanently blocking all movement. Fencing needs to be planned together with crossings and monitored."
+        },
+        {
+          "term": "Linear infrastructure",
+          "definition": "Infrastructure that extends as lines across landscapes, such as roads, railways, and some pipelines. Can fragment habitat, obstruct animal movement, and change landscape connectivity."
+        },
+        {
+          "term": "Road barrier effect",
+          "definition": "Occurs when animals avoid crossing a road, reducing movement between habitat areas, isolating populations, and restricting access to food and mates."
+        },
+        {
+          "term": "Total Economic Value (TEV)",
+          "definition": "A framework intended to capture both use and non-use values. Use values include direct/indirect benefits; non-use values include existence and bequest values."
+        },
+        {
+          "term": "Contingent valuation method",
+          "definition": "Uses surveys to ask people their willingness to pay for conservation or a specified environmental improvement."
+        },
+        {
+          "term": "Oil spills",
+          "definition": "The release of liquid petroleum hydrocarbons into the environment, potentially harming organisms and habitats."
+        },
+        {
+          "term": "Canopy bridges",
+          "definition": "Structures that provide crossing routes above ground for arboreal mammals and some reptiles, helping maintain movement across roads or other linear infrastructure."
+        },
+        {
+          "term": "Mitigation hierarchy",
+          "definition": "The sequence: avoid impacts where possible, minimise unavoidable impacts, restore affected areas, and offset residual impacts. 'Avoid' means keeping infrastructure away from critical habitat."
+        },
+        {
+          "term": "Petroleum toxicity and PAHs",
+          "definition": "Aromatic hydrocarbons, especially polycyclic aromatic hydrocarbons (PAHs), are associated with petroleum toxicity and can persist in the environment."
+        },
+        {
+          "term": "Monitoring and mitigation",
+          "definition": "Mitigation should be paired with monitoring to assess whether animals use crossings, collisions decline, and habitat connectivity is maintained."
+        }
+      ],
+      "assignmentMCQs": [
+        {
+          "id": 1,
+          "question": "What should fences do in wildlife-road mitigation?",
+          "options": [
+            "Block all animal movement permanently",
+            "Guide animals toward safe crossing structures",
+            "Increase vehicle speed near hotspots",
+            "Replace monitoring after construction"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "Fences should direct animals toward safe crossing structures."
+        },
+        {
+          "id": 2,
+          "question": "Which of the following is an example of linear infrastructure?",
+          "options": [
+            "Wetland food web",
+            "Railway",
+            "Tiger population",
+            "Carbon stock"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "A railway is linear infrastructure."
+        },
+        {
+          "id": 3,
+          "question": "What is the barrier effect of a road?",
+          "options": [
+            "A road becomes wider after repeated use",
+            "Animals are attracted to vegetation along road edges",
+            "Animals avoid crossing, reducing movement between habitat areas",
+            "Roadside soil becomes more fertile due to runoff"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Road avoidance can reduce movement between habitat areas."
+        },
+        {
+          "id": 4,
+          "question": "What is Total Economic Value designed to capture?",
+          "options": [
+            "Only direct market income from biodiversity",
+            "Only tourism earnings from protected areas",
+            "Both use and non-use values",
+            "Only the cost of artificial habitat restoration"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "TEV captures both use and non-use values."
+        },
+        {
+          "id": 5,
+          "question": "Which valuation method uses surveys to ask willingness to pay for conservation?",
+          "options": [
+            "Market price method",
+            "Benefits transfer method",
+            "Contingent valuation method",
+            "Damage cost avoided method"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Contingent valuation uses surveys to elicit willingness to pay."
+        },
+        {
+          "id": 6,
+          "question": "What is linear infrastructure?",
+          "options": [
+            "Facilities that extend as lines across landscapes",
+            "A protected-area zoning system based on circles",
+            "A method for valuing non-use benefits",
+            "A seasonal migration pattern of animals"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Linear infrastructure consists of facilities extending as lines across landscapes."
+        },
+        {
+          "id": 7,
+          "question": "What is an oil spill?",
+          "options": [
+            "A gradual increase in salt concentration in coastal water",
+            "The release of liquid petroleum hydrocarbons into the environment",
+            "The natural movement of sediments along a shoreline",
+            "The biological decay of organic matter in wetlands"
+          ],
+          "answer": 1,
+          "letter": "b",
+          "explanation": "This is the definition given in the assignment."
+        },
+        {
+          "id": 8,
+          "question": "Which structure is designed for arboreal mammals and some reptiles?",
+          "options": [
+            "Canopy bridge",
+            "In-situ burn area",
+            "Skimmer channel",
+            "Benefits-transfer site"
+          ],
+          "answer": 0,
+          "letter": "a",
+          "explanation": "Canopy bridges provide elevated crossing routes."
+        },
+        {
+          "id": 9,
+          "question": "Which mitigation hierarchy step means keeping infrastructure away from critical habitat where possible?",
+          "options": [
+            "Restore",
+            "Offset",
+            "Minimise",
+            "Avoid"
+          ],
+          "answer": 3,
+          "letter": "d",
+          "explanation": "'Avoid' means preventing the impact by choosing an alternative location or design."
+        },
+        {
+          "id": 10,
+          "question": "Which compounds are especially associated with toxicity in petroleum oil?",
+          "options": [
+            "Biogenic sugars",
+            "Pyrogenic salts",
+            "Aromatic hydrocarbons, especially PAHs",
+            "Soil nutrients"
+          ],
+          "answer": 2,
+          "letter": "c",
+          "explanation": "Aromatic hydrocarbons, especially PAHs, are associated with petroleum toxicity."
+        }
+      ],
+      "extraMCQs": [
+        {
+          "id": 1,
+          "question": "Fences along a wildlife road should primarily:",
+          "options": [
+            "Block every animal permanently",
+            "Guide animals to safe crossing structures",
+            "Replace all monitoring",
+            "Increase vehicle speeds"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Fences are paired with safe crossings to guide movement."
+        },
+        {
+          "id": 2,
+          "question": "Which is linear infrastructure?",
+          "options": [
+            "Railway",
+            "Wetland food web",
+            "Carbon stock",
+            "Tiger population"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Railways extend linearly across landscapes."
+        },
+        {
+          "id": 3,
+          "question": "A road reduces movement because animals avoid crossing it. This is:",
+          "options": [
+            "Barrier effect",
+            "Contingent valuation",
+            "Use value",
+            "Oil toxicity"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Road avoidance can separate habitat areas."
+        },
+        {
+          "id": 4,
+          "question": "Total Economic Value includes:",
+          "options": [
+            "Only market income",
+            "Use and non-use values",
+            "Only tourism",
+            "Only restoration cost"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: TEV includes both use and non-use values."
+        },
+        {
+          "id": 5,
+          "question": "A survey asks how much respondents would pay to conserve a wetland. Which method is used?",
+          "options": [
+            "Contingent valuation",
+            "Market price only",
+            "Damage cost avoided only",
+            "PIT tagging"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Contingent valuation asks willingness to pay through surveys."
+        },
+        {
+          "id": 6,
+          "question": "Which is a non-use value example?",
+          "options": [
+            "Direct sale of timber",
+            "Existence value of a threatened species",
+            "Paid safari ticket",
+            "Harvested fish sale"
+          ],
+          "answer": 1,
+          "letter": "B",
+          "explanation": "Why: Existence value does not require direct use."
+        },
+        {
+          "id": 7,
+          "question": "An elevated bridge intended for arboreal mammals is a:",
+          "options": [
+            "Canopy bridge",
+            "Skimmer channel",
+            "Ground fire",
+            "Studbook"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Canopy bridges facilitate movement above ground."
+        },
+        {
+          "id": 8,
+          "question": "What is the first step in the usual mitigation hierarchy?",
+          "options": [
+            "Offset",
+            "Restore",
+            "Avoid",
+            "Minimise"
+          ],
+          "answer": 2,
+          "letter": "C",
+          "explanation": "Why: Avoid impacts first where feasible."
+        },
+        {
+          "id": 9,
+          "question": "After an impact cannot be avoided, the next hierarchy step is generally to:",
+          "options": [
+            "Minimise",
+            "Offset immediately",
+            "Ignore it",
+            "Increase fragmentation"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Minimise unavoidable impacts before restoration and offsets."
+        },
+        {
+          "id": 10,
+          "question": "Which compounds are especially associated with petroleum toxicity?",
+          "options": [
+            "PAHs",
+            "Biogenic sugars",
+            "Soil nutrients",
+            "Water vapour"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Polycyclic aromatic hydrocarbons are important petroleum-associated toxic compounds."
+        },
+        {
+          "id": 11,
+          "question": "A fence funnels animals to an underpass but no one checks if animals use it. What is missing?",
+          "options": [
+            "Post-construction monitoring",
+            "Linear infrastructure",
+            "TEV",
+            "Oil spill definition"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Monitoring evaluates whether mitigation works."
+        },
+        {
+          "id": 12,
+          "question": "A railway divides a habitat and restricts movement between patches. This illustrates:",
+          "options": [
+            "Barrier effect",
+            "Allele frequency",
+            "Founder effect",
+            "Sporadic disease"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Linear infrastructure can impede movement."
+        },
+        {
+          "id": 13,
+          "question": "Which option best describes an oil spill?",
+          "options": [
+            "Petroleum hydrocarbons released into the environment",
+            "Natural sediment movement only",
+            "A rise in salinity only",
+            "Decomposition in a wetland"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: This follows the assignment definition."
+        },
+        {
+          "id": 14,
+          "question": "Which option is a use value of biodiversity?",
+          "options": [
+            "Direct recreational benefit from visiting a natural area",
+            "Existence value without use",
+            "Bequest value only",
+            "No relationship to people"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Recreation is a use value."
+        },
+        {
+          "id": 15,
+          "question": "Which statement about fences is most appropriate?",
+          "options": [
+            "They should be designed with safe crossings",
+            "They should always block all wildlife movement",
+            "They eliminate the need for maintenance",
+            "They guarantee zero collisions"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Fences should direct animals toward crossing structures."
+        },
+        {
+          "id": 16,
+          "question": "A road alignment is shifted to avoid a critical breeding habitat. This is:",
+          "options": [
+            "Avoid",
+            "Minimise",
+            "Restore",
+            "Offset"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Avoidance prevents impacts where possible."
+        },
+        {
+          "id": 17,
+          "question": "Planting vegetation after construction to repair damaged habitat is most closely:",
+          "options": [
+            "Restore",
+            "Avoid",
+            "Contingent valuation",
+            "PPS sampling"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Restoration aims to recover affected habitat."
+        },
+        {
+          "id": 18,
+          "question": "Compensating for residual impacts after avoidance, minimisation, and restoration is:",
+          "options": [
+            "Offset",
+            "Avoid",
+            "PIT tagging",
+            "Crown fire"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Offsets address residual impacts under the mitigation hierarchy."
+        },
+        {
+          "id": 19,
+          "question": "Why can PAHs be a concern after oil spills?",
+          "options": [
+            "They can be toxic to organisms",
+            "They are always harmless nutrients",
+            "They eliminate all pollution",
+            "They are a type of wildlife crossing"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: PAHs are associated with petroleum toxicity."
+        },
+        {
+          "id": 20,
+          "question": "Which pairing is correct?",
+          "options": [
+            "Contingent valuation — willingness-to-pay surveys",
+            "Canopy bridge — underwater oil removal",
+            "TEV — only direct market value",
+            "Avoid — compensate after all impacts"
+          ],
+          "answer": 0,
+          "letter": "A",
+          "explanation": "Why: Contingent valuation uses surveys to estimate willingness to pay."
         }
       ]
     }
