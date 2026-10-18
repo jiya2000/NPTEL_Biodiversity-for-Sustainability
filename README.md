@@ -38,6 +38,17 @@ The application separates weekly study from comprehensive mock testing via top-l
    - Week-wise filter selector (`All Weeks (240)` or individual weeks).
    - Shuffle mode toggle (`Shuffle: ON / OFF`) and `Reshuffle` button.
 
+4. **Laws & Principles (Separate Standalone Mode):**
+   - Comprehensive high-yield reference pack for ecology, biodiversity, and sustainability laws, named rules, population formulas, and governance principles.
+   - Organized into 7 focused sections:
+     - **8 Must-Know Ecological Laws** (Liebig, Shelford, Gause, Darwin-Wallace, Mendel, Hardy-Weinberg, Lindeman) with scientists, core concepts, application examples, and MCQ clues.
+     - **12 Named Ecological Rules** (Bergmann, Allen, Gloger, Jordan, Rapoport, Species-Area, Island Biogeography, Ecological Release, Allee Effect, Founder Effect, Bottleneck Effect, Mass-Energy Conservation).
+     - **Population & Community Ecology Principles** with mathematical growth models (Exponential J-curve vs. Logistic S-curve, Lotka-Volterra, r/K selection, etc.).
+     - **Biodiversity & Evolution Principles** (Species concepts, genetic drift, inbreeding depression, genetic rescue, formal Myers hotspot criteria, MVP, Mitigation Hierarchy).
+     - **Sustainability Principles** (Precautionary, Polluter Pays, Prevention, Intergenerational/Intragenerational Equity, CBDR, Tragedy of the Commons, IPAT, Natural Capital, EIA, LCA).
+     - **Interactive Scientist-to-Principle Match Key** with click-to-reveal toggle.
+     - **5 Interactive Quick Practice MCQs** with instant grading, explanations, and quiz reset.
+
 ---
 
 ## Course Roadmap

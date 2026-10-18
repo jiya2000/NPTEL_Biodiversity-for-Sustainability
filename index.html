@@ -35,6 +35,9 @@
         <button class="mode-btn" data-mode="all-extra" id="mode-all-extra">
           Extra Questions Practice
         </button>
+        <button class="mode-btn" data-mode="laws-principles" id="mode-laws-principles">
+          Laws & Principles
+        </button>
       </div>
     </div>
   </nav>
@@ -236,6 +239,618 @@
       <div class="questions-list" id="all-extra-questions-container">
         <!-- Rendered dynamically -->
       </div>
+    </section>
+
+    <!-- PAGE 6: LAWS & PRINCIPLES -->
+    <section class="view-panel" id="view-laws-principles">
+      <!-- Quick Jump Navigation -->
+      <nav class="quick-jump-bar" aria-label="Section Quick Jump">
+        <span class="quick-jump-label">Jump to:</span>
+        <a href="#laws-must-know" class="quick-jump-btn">Must-Know Laws</a>
+        <a href="#laws-named-rules" class="quick-jump-btn">Named Ecological Rules</a>
+        <a href="#laws-population" class="quick-jump-btn">Population Ecology</a>
+        <a href="#laws-biodiversity" class="quick-jump-btn">Biodiversity &amp; Evolution</a>
+        <a href="#laws-sustainability" class="quick-jump-btn">Sustainability Principles</a>
+        <a href="#laws-scientist-match" class="quick-jump-btn">Scientist Match Key</a>
+        <a href="#laws-quick-quiz" class="quick-jump-btn">Quick Check Quiz</a>
+      </nav>
+
+      <!-- 1. Must-Know Ecological Laws -->
+      <section class="content-section" id="laws-must-know">
+        <h3 class="section-title">1. Must-Know Ecological Laws</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+          Essential ecological laws frequently tested in definitions, direct applications, and match-the-following questions.
+        </p>
+
+        <!-- Law 1 -->
+        <article class="law-card">
+          <div class="law-header">
+            <h4 class="law-title">1. Liebig’s Law of the Minimum</h4>
+            <div class="law-meta">
+              <span class="scientist-badge">Justus von Liebig</span>
+              <span class="clue-badge">MCQ: Scarcest essential nutrient limits growth</span>
+            </div>
+          </div>
+          <div class="law-body">
+            <p class="law-item"><strong>Core Idea:</strong> Growth is limited by the essential resource that is in shortest supply relative to the organism's needs, rather than by the total amount of resources available.</p>
+            <div class="law-example"><strong>Example:</strong> A plant has abundant water, carbon dioxide, and sunlight, but soil nitrogen is deficient. Nitrogen limits its growth regardless of how much additional water or sunlight is supplied.</div>
+            <p class="law-item"><strong>Exam Tip:</strong> Look for scenarios where increasing non-limiting resources produces no additional growth until the single deficient factor is corrected.</p>
+          </div>
+        </article>
+
+        <!-- Law 2 -->
+        <article class="law-card">
+          <div class="law-header">
+            <h4 class="law-title">2. Shelford’s Law of Tolerance</h4>
+            <div class="law-meta">
+              <span class="scientist-badge">Victor Ernest Shelford</span>
+              <span class="clue-badge">MCQ: Minimum limit + optimum range + maximum limit</span>
+            </div>
+          </div>
+          <div class="law-body">
+            <p class="law-item"><strong>Core Idea:</strong> An organism survives, grows, and reproduces only within a specific tolerable range of an environmental gradient, bounded by distinct ecological minimum and maximum limits.</p>
+            <div class="law-example"><strong>Example:</strong> A fish species may die if water temperature rises too high or drops too low, even when food and dissolved oxygen are plentiful.</div>
+            <div class="law-trap"><strong>Important Distinction:</strong> Outside the tolerance range (the zone of intolerance), survival or reproduction becomes impossible; the law does not imply that every population instantly drops to zero the second a condition crosses a boundary, but rather that sustained persistence is unviable.</div>
+          </div>
+        </article>
+
+        <!-- Law 3 -->
+        <article class="law-card">
+          <div class="law-header">
+            <h4 class="law-title">3. Competitive Exclusion Principle (Gause’s Law)</h4>
+            <div class="law-meta">
+              <span class="scientist-badge">Georgy Gause</span>
+              <span class="clue-badge">MCQ: Complete competitors cannot coexist indefinitely</span>
+            </div>
+          </div>
+          <div class="law-body">
+            <p class="law-item"><strong>Core Idea:</strong> Two species competing for the exact same limiting resource while occupying identical ecological niches cannot coexist indefinitely under constant environmental conditions. One will outcompete and exclude the other.</p>
+            <div class="law-example"><strong>Example:</strong> In laboratory cultures, two protozoan species (<em>Paramecium aurelia</em> and <em>Paramecium caudatum</em>) grown together on a single limiting bacterial food source result in the competitive exclusion of <em>P. caudatum</em>.</div>
+            <p class="law-item"><strong>Coexistence Mechanism:</strong> In nature, competing species coexist primarily by niche differentiation (partitioning resources, utilizing different microhabitats, or shifting activity times).</p>
+          </div>
+        </article>
+
+        <!-- Law 4 -->
+        <article class="law-card">
+          <div class="law-header">
+            <h4 class="law-title">4. Darwin’s Theory of Natural Selection</h4>
+            <div class="law-meta">
+              <span class="scientist-badge">Charles Darwin &amp; Alfred Russel Wallace</span>
+              <span class="clue-badge">MCQ: Heritable variation + differential reproduction</span>
+            </div>
+          </div>
+          <div class="law-body">
+            <p class="law-item"><strong>Core Idea:</strong> Individuals possessing heritable traits that enhance their survival and reproductive success in a given environment tend to leave more surviving offspring. Over successive generations, those advantageous traits become more prevalent in the population.</p>
+            <div class="law-example"><strong>Example:</strong> Better-camouflaged insects avoid visually hunting predators more frequently and reproduce more, causing cryptic coloration alleles to increase across generations.</div>
+            <div class="law-trap"><strong>Common Trap:</strong> Individual organisms do not evolve or adapt intentionally during their lifetime; evolution by natural selection is a population-level process occurring over generational time.</div>
+          </div>
+        </article>
+
+        <!-- Law 5 -->
+        <article class="law-card">
+          <div class="law-header">
+            <h4 class="law-title">5. Mendel’s Law of Segregation</h4>
+            <div class="law-meta">
+              <span class="scientist-badge">Gregor Mendel</span>
+              <span class="clue-badge">MCQ: Two alleles separate during gamete formation</span>
+            </div>
+          </div>
+          <div class="law-body">
+            <p class="law-item"><strong>Core Idea:</strong> Each diploid individual possesses two alleles for any particular gene. These two alleles segregate (separate) during gamete formation (meiosis), such that each gamete carries only one allele with equal probability.</p>
+            <div class="law-example"><strong>Example:</strong> A heterozygous organism with genotype <em>Aa</em> produces 50% gametes carrying allele <em>A</em> and 50% carrying allele <em>a</em>.</div>
+          </div>
+        </article>
+
+        <!-- Law 6 -->
+        <article class="law-card">
+          <div class="law-header">
+            <h4 class="law-title">6. Mendel’s Law of Independent Assortment</h4>
+            <div class="law-meta">
+              <span class="scientist-badge">Gregor Mendel</span>
+              <span class="clue-badge">MCQ: Unlinked gene pairs assort independently</span>
+            </div>
+          </div>
+          <div class="law-body">
+            <p class="law-item"><strong>Core Idea:</strong> Alleles of two or more different genes assort independently of one another during gamete formation, provided the genes are located on different chromosomes or are far apart on the same chromosome.</p>
+            <div class="law-example"><strong>Example:</strong> In a dihybrid cross involving unlinked loci (<em>AaBb</em>), four distinct gametic combinations (<em>AB</em>, <em>Ab</em>, <em>aB</em>, <em>ab</em>) are produced in equal 1:1:1:1 proportions.</div>
+            <div class="law-trap"><strong>Exception / Trap:</strong> Strongly linked genes located close together on the same chromosome do not assort independently unless genetic recombination (crossing over) occurs between them.</div>
+          </div>
+        </article>
+
+        <!-- Law 7 -->
+        <article class="law-card">
+          <div class="law-header">
+            <h4 class="law-title">7. Hardy–Weinberg Principle</h4>
+            <div class="law-meta">
+              <span class="scientist-badge">G. H. Hardy &amp; Wilhelm Weinberg</span>
+              <span class="clue-badge">MCQ: Genetic equilibrium in absence of evolutionary forces</span>
+            </div>
+          </div>
+          <div class="law-body">
+            <p class="law-item"><strong>Core Idea:</strong> Allele and genotype frequencies in a population remain constant across generations (genetic equilibrium) in the absence of evolutionary influences.</p>
+            <div class="formula-box">
+              Allele Frequencies: p + q = 1<br>
+              Genotype Frequencies: p² + 2pq + q² = 1
+            </div>
+            <p class="law-item"><strong>Required Assumptions:</strong> (1) Infinitely large population size, (2) Completely random mating, (3) No mutation, (4) No gene flow (no migration), and (5) No natural selection.</p>
+            <div class="law-trap"><strong>Disrupting Factors:</strong> Small population size (genetic drift), non-random mating, gene flow, mutations, and natural selection violate equilibrium and drive evolutionary change.</div>
+          </div>
+        </article>
+
+        <!-- Law 8 -->
+        <article class="law-card">
+          <div class="law-header">
+            <h4 class="law-title">8. Lindeman’s 10% Law</h4>
+            <div class="law-meta">
+              <span class="scientist-badge">Raymond Lindeman</span>
+              <span class="clue-badge">MCQ: Energy transfer efficiency between trophic levels</span>
+            </div>
+          </div>
+          <div class="law-body">
+            <p class="law-item"><strong>Core Idea:</strong> In simplified trophic dynamics, approximately 10% of the energy assimilated at one trophic level is transferred to and stored as biomass in the next trophic level. Approximately 90% is dissipated as heat through respiration, metabolic maintenance, or unconsumed waste.</p>
+            <div class="law-example"><strong>Example:</strong> In an idealized food chain, 10,000 kJ of solar energy assimilated by primary producers supports roughly 1,000 kJ at the primary consumer level and 100 kJ at the secondary consumer level.</div>
+            <div class="law-trap"><strong>Rule of Thumb:</strong> 10% is an empirical generalization and ecological rule of thumb, not an invariant universal constant across all ecosystems.</div>
+          </div>
+        </article>
+      </section>
+
+      <!-- 2. Other Ecological Laws & Named Rules -->
+      <section class="content-section" id="laws-named-rules">
+        <h3 class="section-title">2. Other Ecological Laws and Named Rules</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+          Geographical, morphological, and ecological rules describing broad evolutionary and ecological patterns.
+        </p>
+
+        <div class="definitions-table-wrapper">
+          <table class="definitions-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Law / Rule</th>
+                <th style="width: 45%;">Main Concept to Remember</th>
+                <th style="width: 30%;">Typical MCQ Clue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="term-col"><strong>Bergmann’s Rule</strong></td>
+                <td class="def-col">Within broadly distributed taxonomic clades of endothermic animals, populations and species of larger body size are found in colder climates, whereas smaller-bodied species inhabit warmer regions (lower surface-area-to-volume ratio minimizes heat dissipation).</td>
+                <td class="def-col">Body size and climate / latitude</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Allen’s Rule</strong></td>
+                <td class="def-col">Endothermic animals living in cold climates tend to have shorter limbs, ears, tails, and external appendages than closely related forms from warmer climates to minimize convective heat loss.</td>
+                <td class="def-col">Ears, limbs, and appendage length</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Gloger’s Rule</strong></td>
+                <td class="def-col">Within related groups of warm-blooded animals, more heavily pigmented (darker) individuals tend to be found in warm, humid environments, whereas paler forms occur in arid or cold environments.</td>
+                <td class="def-col">Color pigmentation and humidity</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Jordan’s Rule</strong></td>
+                <td class="def-col">In many teleost fish taxa, species or populations inhabiting colder, higher-latitude waters tend to have higher vertebral counts than related forms living in warm waters.</td>
+                <td class="def-col">Fish vertebrae number and water temperature</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Rapoport’s Rule</strong></td>
+                <td class="def-col">Species’ geographical range sizes tend to increase at higher latitudes, meaning tropical species generally possess narrower latitudinal ranges than temperate and polar species.</td>
+                <td class="def-col">Latitude and geographical range size</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Species–Area Relationship</strong></td>
+                <td class="def-col">The number of species found in a habitat increases as a power function of the area sampled (S = cA^z). Larger continuous areas support larger populations and more microhabitats.</td>
+                <td class="def-col">Habitat area and species richness</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Island Biogeography Theory</strong></td>
+                <td class="def-col">Formulated by MacArthur and Wilson. Species richness on an island represents a dynamic equilibrium between immigration rate (governed primarily by distance from mainland) and extinction rate (governed primarily by island area).</td>
+                <td class="def-col">Island size, isolation, immigration, and extinction</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Ecological Release</strong></td>
+                <td class="def-col">A species expands its realized niche, habitat breadth, or resource utilization when released from interspecific competition or predation pressure (often observed in island colonizers).</td>
+                <td class="def-col">Niche expansion under reduced competition</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Allee Effect</strong></td>
+                <td class="def-col">A phenomenon where per-capita population growth rate, individual fitness, or reproductive success declines at critically low population sizes or densities (e.g. difficulty locating mates, breakdown of social defenses).</td>
+                <td class="def-col">Low density leading to reproductive decline</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Founder Effect</strong></td>
+                <td class="def-col">The loss of genetic variation that occurs when a new colony is established by a very small number of individuals originating from a larger ancestral population.</td>
+                <td class="def-col">Small colonizing group with non-representative gene pool</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Bottleneck Effect</strong></td>
+                <td class="def-col">A sharp, sudden reduction in population size caused by an environmental disaster, disease outbreak, or human persecution, resulting in severe loss of genetic diversity via random genetic drift.</td>
+                <td class="def-col">Sudden population crash causing genetic loss</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Mass–Energy Conservation</strong></td>
+                <td class="def-col">Fundamental physical law in ecology: chemical elements and matter cycle indefinitely through biogeochemical pools, whereas energy flows unidirectionally through food webs and dissipates as metabolic heat.</td>
+                <td class="def-col">Nutrient cycling vs unidirectional energy flow</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 0.75rem;">
+          Note: Bergmann’s, Allen’s, Gloger’s, and Rapoport’s rules represent broad biogeographical generalizations with known taxonomic exceptions, rather than strict universal laws.
+        </p>
+      </section>
+
+      <!-- 3. Population and Community Ecology Principles -->
+      <section class="content-section" id="laws-population">
+        <h3 class="section-title">3. Population and Community Ecology Principles</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+          Core mathematical models, population growth curves, and community dynamics to memorize.
+        </p>
+
+        <div class="definitions-table-wrapper">
+          <table class="definitions-table">
+            <thead>
+              <tr>
+                <th style="width: 30%;">Principle / Concept</th>
+                <th style="width: 70%;">Core Meaning &amp; Exam Application</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="term-col"><strong>Malthusian Principle</strong></td>
+                <td class="def-col">Populations possess the intrinsic capacity to expand exponentially when resources are unlimited, while food and resource production generally increases more slowly, inevitably creating resource pressure.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Exponential Growth</strong></td>
+                <td class="def-col">Idealized continuous population increase in an unlimited environment: <code>dN/dt = rN</code>. Produces a classic <strong>J-shaped curve</strong> where growth rate accelerates as population size N increases.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Logistic Growth</strong></td>
+                <td class="def-col">Density-dependent growth that incorporates environmental resistance: <code>dN/dt = rN(1 - N/K)</code>. Produces a classic <strong>S-shaped (sigmoid) curve</strong> where growth rate slows as population approaches carrying capacity K.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Carrying Capacity (K)</strong></td>
+                <td class="def-col">The maximum sustainable population size of a species that a given environment can support over time without degrading the resource base.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Lotka–Volterra Model</strong></td>
+                <td class="def-col">A system of coupled differential equations modeling the reciprocal, coupled cyclical population oscillations of interacting predator and prey populations.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>r/K Selection Theory</strong></td>
+                <td class="def-col">Life-history framework: <em>r-selected</em> species emphasize high reproductive rates, small body size, early maturity, and many offspring in fluctuating environments; <em>K-selected</em> species emphasize competitive ability, large body size, high parental investment, and few offspring near carrying capacity.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Metapopulation Concept</strong></td>
+                <td class="def-col">A regional network of spatially separated local populations of the same species connected by occasional dispersal, maintained by a balance of local patch extinctions and recolonizations.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Source–Sink Dynamics</strong></td>
+                <td class="def-col">High-quality source patches produce a net demographic surplus of individuals that disperse into lower-quality sink patches, where local mortality exceeds reproduction and the population persists only through immigration.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Ecological Succession</strong></td>
+                <td class="def-col">The progressive, predictable change in species composition, community structure, and ecosystem properties over time following the exposure of new ground (primary) or disturbance (secondary).</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Keystone Species Concept</strong></td>
+                <td class="def-col">A species that exerts a disproportionately strong structuring effect on community composition, diversity, and physical architecture relative to its numerical abundance or biomass.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Trophic Cascade</strong></td>
+                <td class="def-col">Indirect ecological effects triggered by the addition or removal of top apex predators that propagate downward through intermediate trophic levels to alter plant abundance or ecosystem properties.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Intermediate Disturbance Hypothesis</strong></td>
+                <td class="def-col">Hypothesizes that local species richness peaks at intermediate frequencies or intensities of disturbance, where neither competitive exclusion nor severe disturbance mortality dominates.</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Density-Dependent Regulation</strong></td>
+                <td class="def-col">Factors whose proportional impact on population vital rates changes with population density (e.g. intra-specific competition, contagious disease transmission, territorial crowding).</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Density-Independent Effects</strong></td>
+                <td class="def-col">Environmental shocks whose per-capita mortality rate is independent of population density (e.g. catastrophic flash floods, severe hard freezes, wildfires).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 4. Biodiversity, Evolution & Conservation Principles -->
+      <section class="content-section" id="laws-biodiversity">
+        <h3 class="section-title">4. Biodiversity, Evolution and Conservation Principles</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+          Crucial concepts regarding speciation, population genetics, and conservation intervention standards.
+        </p>
+
+        <div class="definitions-table-wrapper">
+          <table class="definitions-table">
+            <thead>
+              <tr>
+                <th style="width: 30%;">Principle / Concept</th>
+                <th style="width: 45%;">Main Concept</th>
+                <th style="width: 25%;">How It May Be Asked</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="term-col"><strong>Biological Species Concept</strong></td>
+                <td class="def-col">Defines species as groups of actually or potentially interbreeding natural populations that are reproductively isolated from other such groups.</td>
+                <td class="def-col">Interbreeding and reproductive isolation</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Ecological Species Concept</strong></td>
+                <td class="def-col">Delineates species by their ecological niche, environmental adaptations, and the specific resource spectrum they exploit.</td>
+                <td class="def-col">Niche-based species definition</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Morphological Species Concept</strong></td>
+                <td class="def-col">Distinguishes species based on shared, measurable structural and phenotypic anatomical characteristics.</td>
+                <td class="def-col">Visible morphological similarity</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Genetic Drift</strong></td>
+                <td class="def-col">Stochastic, random fluctuations in allele frequencies across generations due to sampling error, exerting dominant effects in small populations.</td>
+                <td class="def-col">Random allele frequency fluctuations</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Gene Flow</strong></td>
+                <td class="def-col">The transfer of genetic variation between populations through the immigration and successful reproduction of individuals.</td>
+                <td class="def-col">Immigration and inter-population exchange</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Inbreeding Depression</strong></td>
+                <td class="def-col">Decreased biological fitness, survival, and reproductive output resulting from matings between close genetic relatives, exposing deleterious recessive alleles.</td>
+                <td class="def-col">Mating between relatives reducing fitness</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Genetic Rescue</strong></td>
+                <td class="def-col">The mitigation of inbreeding depression and restoration of fitness achieved by translocating individuals from a distinct outbred population into an inbred population.</td>
+                <td class="def-col">Introducing new alleles to reverse inbreeding</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Biodiversity Hotspot Criteria</strong></td>
+                <td class="def-col">Formal scientific criteria (Myers et al.) requiring: (1) at least 1,500 endemic vascular plant species (&gt;0.5% of world total) and (2) at least 70% loss of primary natural vegetation.</td>
+                <td class="def-col">High plant endemism + severe habitat loss</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Minimum Viable Population</strong></td>
+                <td class="def-col">The smallest isolated population size estimated to have a specified probability of persistence (e.g. 99%) over a given timeframe (e.g. 1,000 years).</td>
+                <td class="def-col">Quantitative threshold for extinction risk</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Extinction Vortex</strong></td>
+                <td class="def-col">A compounding, self-reinforcing downward spiral where small population size causes inbreeding and drift, reducing fitness and demographic rates, which shrinks population size further.</td>
+                <td class="def-col">Self-reinforcing feedback loop of decline</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Habitat Fragmentation</strong></td>
+                <td class="def-col">The process whereby a continuous expanse of natural habitat is transformed into multiple smaller, isolated habitat fragments divided by an altered human matrix.</td>
+                <td class="def-col">Subdivision into smaller, isolated patches</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Edge Effect</strong></td>
+                <td class="def-col">Distinct microclimatic changes (increased wind, altered solar radiation, moisture loss) and biological shifts occurring at the interface between fragmented habitat and surrounding matrix.</td>
+                <td class="def-col">Boundary vs interior environmental differences</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Mitigation Hierarchy</strong></td>
+                <td class="def-col">The mandatory sequential prioritization framework in environmental planning: (1) <strong>Avoid</strong> impacts first, (2) <strong>Minimise</strong> unavoidable impacts, (3) <strong>Restore</strong> degraded areas, and (4) <strong>Offset</strong> residual significant impacts as a last resort.</td>
+                <td class="def-col">Correct sequence: Avoid -&gt; Minimise -&gt; Restore -&gt; Offset</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 5. Sustainability and Environmental Principles -->
+      <section class="content-section" id="laws-sustainability">
+        <h3 class="section-title">5. Sustainability and Environmental Principles</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+          Governance, environmental economics, and sustainability frameworks tested in exams.
+        </p>
+
+        <div class="definitions-table-wrapper">
+          <table class="definitions-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Principle / Concept</th>
+                <th style="width: 50%;">Explanation &amp; Significance</th>
+                <th style="width: 25%;">MCQ Clue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="term-col"><strong>Precautionary Principle</strong></td>
+                <td class="def-col">Where there are credible threats of serious or irreversible environmental harm, the lack of full scientific certainty shall not be used as a reason to postpone proportionate preventive action.</td>
+                <td class="def-col">Scientific uncertainty is no excuse to delay prevention</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Polluter Pays Principle</strong></td>
+                <td class="def-col">The party responsible for generating environmental pollution must internalize the full social and economic costs of pollution prevention, abatement, and ecological restoration.</td>
+                <td class="def-col">Internalizing costs of environmental damage</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Prevention Principle</strong></td>
+                <td class="def-col">Anticipating and stopping environmental damage at its source before it occurs is fundamentally preferable and more cost-effective than attempting cleanup or remediation afterward.</td>
+                <td class="def-col">Prevent harm rather than remediate</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Intergenerational Equity</strong></td>
+                <td class="def-col">The ethical mandate that the present human generation holds the Earth in common trust and must manage resources so that future generations inherit an intact, viable planet.</td>
+                <td class="def-col">Fairness across generations</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Intragenerational Equity</strong></td>
+                <td class="def-col">Justice, fairness, and non-discrimination in the allocation of environmental benefits, access to natural resources, and exposure to environmental pollution burdens among people living today.</td>
+                <td class="def-col">Fairness among people living today</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>CBDR Principle</strong></td>
+                <td class="def-col">Common but Differentiated Responsibilities: all nations share responsibility for protecting the global environment, but historical contributions and socioeconomic capacities differ, dictating differentiated commitments.</td>
+                <td class="def-col">Shared responsibility, different capacities</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Tragedy of the Commons</strong></td>
+                <td class="def-col">Economic dilemma where individual users acting independently in their self-interest deplete or degrade a shared, open-access common-pool resource, undermining the collective welfare.</td>
+                <td class="def-col">Overexploitation of shared open-access resources</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>IPAT Equation</strong></td>
+                <td class="def-col">A master conceptual framework describing environmental impact: <code>I = P × A × T</code> (Impact = Population × Affluence / per capita consumption × Technology intensity).</td>
+                <td class="def-col">Formula linking population, affluence, and technology</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Precaution vs Prevention</strong></td>
+                <td class="def-col"><strong>Precaution</strong> applies when a credible risk exists but scientific knowledge is incomplete or uncertain; <strong>Prevention</strong> applies to known, scientifically established, or quantifiable environmental hazards.</td>
+                <td class="def-col">Uncertain risk vs known, established risk</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Natural Capital</strong></td>
+                <td class="def-col">The world's stock of natural assets (forests, water, living biodiversity, atmosphere, and soils) that produce a continuous flow of valuable ecosystem goods and services.</td>
+                <td class="def-col">Ecosystems and biodiversity viewed as capital assets</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Strong Sustainability</strong></td>
+                <td class="def-col">Maintains that key natural capital assets provide critical, life-supporting ecological functions that cannot be substituted by human-made, industrial, or financial capital.</td>
+                <td class="def-col">Natural capital is non-substitutable</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Weak Sustainability</strong></td>
+                <td class="def-col">Assumes that total capital stock across generations is what matters, permitting substitution between natural capital and manufactured or technological capital.</td>
+                <td class="def-col">Natural and manufactured capital are substitutable</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Circular Economy</strong></td>
+                <td class="def-col">An industrial and economic model restorative and regenerative by design, eliminating waste through continuous closed loops of reuse, remanufacture, and biological recycling.</td>
+                <td class="def-col">Eliminating linear take-make-waste cycles</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Environmental Impact Assessment (EIA)</strong></td>
+                <td class="def-col">A formal legal procedure to predict, evaluate, and design mitigation measures for the biophysical and social consequences of a proposed development prior to authorization.</td>
+                <td class="def-col">Anticipating project impacts before approval</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Life Cycle Assessment (LCA)</strong></td>
+                <td class="def-col">A standardized cradle-to-grave accounting methodology evaluating all environmental burdens associated with a product, from raw material extraction through disposal.</td>
+                <td class="def-col">Cradle-to-grave product footprint</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Additionality</strong></td>
+                <td class="def-col">The requirement that the carbon sequestration or biodiversity benefit of an intervention is genuinely additional to what would have occurred under a business-as-usual baseline.</td>
+                <td class="def-col">Would the benefit occur anyway without intervention?</td>
+              </tr>
+              <tr>
+                <td class="term-col"><strong>Adaptive Management</strong></td>
+                <td class="def-col">A structured, iterative management cycle of "learning by doing", where management actions are treated as experiments, outcomes are rigorously monitored, and policies are adjusted based on findings.</td>
+                <td class="def-col">Iterative cycle of monitoring and adjusting actions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. Scientist-to-Principle Match Key -->
+      <section class="content-section" id="laws-scientist-match">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color);">
+          <h3 class="section-title" style="margin-bottom: 0; padding-bottom: 0; border-bottom: none;">6. Scientist-to-Principle Match Key</h3>
+          <button id="btn-toggle-match-key" class="btn btn-outline btn-sm">Reveal Answer Key</button>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+          Match the scientist to their respective ecological principle or law. Test your recall first before clicking Reveal Answer Key.
+        </p>
+
+        <div class="definitions-table-wrapper">
+          <table class="match-table">
+            <thead>
+              <tr>
+                <th style="width: 40%;">Scientist / Authors</th>
+                <th style="width: 60%;">Associated Law or Principle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Justus von Liebig</strong></td>
+                <td>
+                  <span class="match-answer-hidden">?</span>
+                  <span class="match-answer-revealed" style="display: none;">Law of the Minimum</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Victor Ernest Shelford</strong></td>
+                <td>
+                  <span class="match-answer-hidden">?</span>
+                  <span class="match-answer-revealed" style="display: none;">Law of Tolerance</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Georgy Gause</strong></td>
+                <td>
+                  <span class="match-answer-hidden">?</span>
+                  <span class="match-answer-revealed" style="display: none;">Competitive Exclusion Principle (Gause’s Law)</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Charles Darwin &amp; Alfred Russel Wallace</strong></td>
+                <td>
+                  <span class="match-answer-hidden">?</span>
+                  <span class="match-answer-revealed" style="display: none;">Theory of Evolution by Natural Selection</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Gregor Mendel</strong></td>
+                <td>
+                  <span class="match-answer-hidden">?</span>
+                  <span class="match-answer-revealed" style="display: none;">Laws of Inheritance (Segregation &amp; Independent Assortment)</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>G. H. Hardy &amp; Wilhelm Weinberg</strong></td>
+                <td>
+                  <span class="match-answer-hidden">?</span>
+                  <span class="match-answer-revealed" style="display: none;">Hardy–Weinberg Equilibrium Principle</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Raymond Lindeman</strong></td>
+                <td>
+                  <span class="match-answer-hidden">?</span>
+                  <span class="match-answer-revealed" style="display: none;">10% Trophic Energy Transfer Law</span>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Robert MacArthur &amp; Edward O. Wilson</strong></td>
+                <td>
+                  <span class="match-answer-hidden">?</span>
+                  <span class="match-answer-revealed" style="display: none;">Theory of Island Biogeography</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 7. Quick Check MCQs -->
+      <section class="content-section" id="laws-quick-quiz">
+        <h3 class="section-title">7. Quick Check Practice MCQs</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+          Test your mastery of the laws and principles with these five high-yield scenario questions.
+        </p>
+
+        <div class="quiz-controls-header">
+          <div class="quiz-status-text">
+            <span id="laws-score-display">5 Quick Check Practice Questions</span>
+          </div>
+          <div class="quiz-actions">
+            <button id="btn-toggle-laws-answers" class="btn btn-outline btn-sm">Show All Answers</button>
+            <button id="btn-reset-laws" class="btn btn-outline btn-sm">Reset Quiz</button>
+          </div>
+        </div>
+
+        <div class="questions-list" id="laws-questions-container">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </section>
     </section>
 
   </main>

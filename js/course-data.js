@@ -5789,5 +5789,72 @@ window.COURSE_DATA = {
         }
       ]
     }
-  }
+  },
+  "lawsQuiz": [
+    {
+      "id": 1,
+      "question": "A plant has sufficient water and sunlight, but its growth is limited by nitrogen deficiency. Which principle applies?",
+      "options": [
+        "Shelford's Law of Tolerance",
+        "Liebig's Law of the Minimum",
+        "Gause's Law",
+        "Hardy–Weinberg Principle"
+      ],
+      "answer": 1,
+      "letter": "B",
+      "explanation": "Liebig's Law of the Minimum states that growth and yield are controlled not by total resources available, but by the scarcest essential resource relative to the organism's requirements."
+    },
+    {
+      "id": 2,
+      "question": "Two species compete for the same limiting resource and occupy essentially the same niche. Which principle predicts that they cannot coexist indefinitely under constant conditions?",
+      "options": [
+        "Allen's Rule",
+        "Lindeman's Law",
+        "Competitive Exclusion Principle",
+        "Mendel's Law of Segregation"
+      ],
+      "answer": 2,
+      "letter": "C",
+      "explanation": "Gause's Competitive Exclusion Principle states that two species competing for the exact same limiting resource under constant conditions cannot coexist indefinitely if their ecological niches are identical."
+    },
+    {
+      "id": 3,
+      "question": "Which law explains why an organism may fail to survive even when food is plentiful, because temperature exceeds its tolerance?",
+      "options": [
+        "Shelford's Law of Tolerance",
+        "Law of the Minimum",
+        "Independent Assortment",
+        "Polluter Pays Principle"
+      ],
+      "answer": 0,
+      "letter": "A",
+      "explanation": "Shelford's Law of Tolerance dictates that survival, reproduction, and performance are bounded by critical minimum and maximum environmental limits, regardless of the availability of food or other resources."
+    },
+    {
+      "id": 4,
+      "question": "Which principle is most directly associated with the approximate 10% transfer of energy between trophic levels?",
+      "options": [
+        "Hardy–Weinberg Principle",
+        "Lindeman's 10% Law",
+        "Founder Effect",
+        "Precautionary Principle"
+      ],
+      "answer": 1,
+      "letter": "B",
+      "explanation": "Raymond Lindeman's 10% Law establishes that in ecological energy-transfer models, approximately 10% of energy entering a trophic level is converted into biomass available to the next trophic level."
+    },
+    {
+      "id": 5,
+      "question": "Which condition is NOT part of the standard Hardy–Weinberg equilibrium assumptions?",
+      "options": [
+        "Random mating",
+        "No migration (no gene flow)",
+        "Natural selection acting on the population",
+        "No mutation"
+      ],
+      "answer": 2,
+      "letter": "C",
+      "explanation": "The Hardy–Weinberg equilibrium principle strictly assumes the absence of natural selection, no mutation, no gene flow (migration), random mating, and an infinitely large population for allele frequencies to remain stable across generations."
+    }
+  ]
 };

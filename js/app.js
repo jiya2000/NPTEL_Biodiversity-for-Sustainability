@@ -35,7 +35,8 @@
       assignment: false,
       extra: false,
       allQuizzes: false,
-      allExtra: false
+      allExtra: false,
+      laws: false
     },
     filterWeek: {
       allQuizzes: 'all', // 'all' (all 130 Qs including Week 0) | 'weeks1-12' (120 Qs) | weekNum
@@ -43,7 +44,8 @@
     },
     userChoices: {
       assignment: {}, // { [weekNum]: { [qId]: optionIndex } }
-      extra: {}       // { [weekNum]: { [qId]: optionIndex } }
+      extra: {},      // { [weekNum]: { [qId]: optionIndex } }
+      laws: {}        // { [qId]: optionIndex }
     }
   };
 
@@ -160,6 +162,19 @@
         '240 Practice Exam-Style Questions with Explanations • Week-wise & Shuffle Modes'
       );
       renderQuiz('allExtra');
+    } else if (modeName === 'laws-principles') {
+      // Hide week-specific bars entirely
+      if (weekBarContainer) weekBarContainer.style.display = 'none';
+      if (tabBarContainer) tabBarContainer.style.display = 'none';
+
+      const panel = document.getElementById('view-laws-principles');
+      if (panel) panel.classList.add('active');
+
+      updateBannerTitle(
+        'Ecology, Biodiversity & Sustainability: Laws & Principles',
+        'Essential ecological laws, named rules, population formulas, and sustainability principles for exam memorisation'
+      );
+      renderLawsQuiz();
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -718,6 +733,155 @@
     }
   }
 
+  // --- Laws & Principles Section Management ---
+  let matchKeyRevealed = false;
+
+  function initLawsSection() {
+    // 1. Scientist Match Key Toggle
+    const btnMatchKey = document.getElementById('btn-toggle-match-key');
+    if (btnMatchKey) {
+      btnMatchKey.addEventListener('click', () => {
+        matchKeyRevealed = !matchKeyRevealed;
+        btnMatchKey.textContent = matchKeyRevealed ? 'Hide Answer Key' : 'Reveal Answer Key';
+        
+        document.querySelectorAll('.match-answer-hidden').forEach(el => {
+          el.style.display = matchKeyRevealed ? 'none' : 'inline-block';
+        });
+        document.querySelectorAll('.match-answer-revealed').forEach(el => {
+          el.style.display = matchKeyRevealed ? 'inline-block' : 'none';
+        });
+      });
+    }
+
+    // 2. Laws Quick Check Quiz Controls
+    const btnToggleAnswers = document.getElementById('btn-toggle-laws-answers');
+    if (btnToggleAnswers) {
+      btnToggleAnswers.addEventListener('click', () => {
+        state.answersShown.laws = !state.answersShown.laws;
+        btnToggleAnswers.textContent = state.answersShown.laws ? 'Hide All Answers' : 'Show All Answers';
+        renderLawsQuiz();
+      });
+    }
+
+    const btnResetLaws = document.getElementById('btn-reset-laws');
+    if (btnResetLaws) {
+      btnResetLaws.addEventListener('click', () => {
+        state.userChoices.laws = {};
+        state.answersShown.laws = false;
+        if (btnToggleAnswers) btnToggleAnswers.textContent = 'Show All Answers';
+        renderLawsQuiz();
+      });
+    }
+
+    // 3. Quick-jump smooth scroll
+    document.querySelectorAll('.quick-jump-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const href = btn.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  }
+
+  function renderLawsQuiz() {
+    const container = document.getElementById('laws-questions-container');
+    if (!container) return;
+
+    const questions = (window.COURSE_DATA && window.COURSE_DATA.lawsQuiz) ? window.COURSE_DATA.lawsQuiz : [];
+    const showAll = state.answersShown.laws;
+    const store = state.userChoices.laws;
+
+    let answeredCount = 0;
+    let correctCount = 0;
+
+    questions.forEach(q => {
+      if (typeof store[q.id] === 'number') {
+        answeredCount++;
+        if (store[q.id] === q.answer) {
+          correctCount++;
+        }
+      }
+    });
+
+    const displayEl = document.getElementById('laws-score-display');
+    if (displayEl) {
+      if (answeredCount === 0) {
+        displayEl.textContent = `${questions.length} Quick Check Practice Questions`;
+      } else {
+        const pct = Math.round((correctCount / questions.length) * 100);
+        displayEl.textContent = `Score: ${correctCount}/${questions.length} (${pct}%) • ${answeredCount} of ${questions.length} Answered`;
+      }
+    }
+
+    container.innerHTML = questions.map((q, qIdx) => {
+      const userChoice = typeof store[q.id] === 'number' ? store[q.id] : null;
+      const isAnswered = typeof userChoice === 'number';
+      const isCorrect = userChoice === q.answer;
+
+      return `
+        <div class="mcq-card" id="laws-q-${q.id}">
+          <div class="mcq-header">
+            <span class="mcq-num">Quick Check Question ${qIdx + 1} of ${questions.length}</span>
+            ${isAnswered ? `
+              <span class="status-tag ${isCorrect ? 'correct' : 'incorrect'}">
+                ${isCorrect ? 'Correct' : 'Incorrect'}
+              </span>
+            ` : ''}
+          </div>
+          <div class="mcq-question">${q.question}</div>
+          <div class="mcq-options">
+            ${q.options.map((opt, optIdx) => {
+              const letter = String.fromCharCode(65 + optIdx);
+              let optionClass = 'mcq-opt';
+
+              if (showAll) {
+                if (optIdx === q.answer) optionClass += ' is-correct';
+              } else if (isAnswered) {
+                if (optIdx === q.answer) {
+                  optionClass += ' is-correct';
+                } else if (optIdx === userChoice) {
+                  optionClass += ' is-wrong';
+                }
+              }
+
+              return `
+                <button class="${optionClass}" 
+                  data-q="${q.id}" 
+                  data-opt="${optIdx}" 
+                  type="button" 
+                  aria-label="Option ${letter}: ${opt}">
+                  <span class="opt-letter">${letter}.</span>
+                  <span class="opt-text">${opt}</span>
+                </button>
+              `;
+            }).join('')}
+          </div>
+          ${(showAll || isAnswered) ? `
+            <div class="mcq-solution">
+              <strong>Correct Answer: (${q.letter ? q.letter.toUpperCase() : String.fromCharCode(65 + q.answer)})</strong>
+              <p>${q.explanation || q.options[q.answer]}</p>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }).join('');
+
+    // Attach click listeners to option buttons
+    container.querySelectorAll('.mcq-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const qId = parseInt(btn.getAttribute('data-q'), 10);
+        const optIdx = parseInt(btn.getAttribute('data-opt'), 10);
+        state.userChoices.laws[qId] = optIdx;
+        renderLawsQuiz();
+      });
+    });
+  }
+
   // --- App Initialization ---
   function init() {
     initTheme();
@@ -733,6 +897,9 @@
     // Initialize in-panel week filters for All Weeks Quiz and Extra Questions Practice
     initFilters('allQuizzes');
     initFilters('allExtra');
+
+    // Initialize Laws and Principles Section
+    initLawsSection();
 
     // Default to Week 12 as latest in weekwise mode
     selectWeek(12);
